@@ -4,6 +4,7 @@ map OR <F3>
 map [15~ <F5>
 map [20~ <F9>
 
+" Find out current term with		i -> <C-r>=$TERM<CR>
 if $TERM ==# 'screen'
 endif
 
