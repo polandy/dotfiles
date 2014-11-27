@@ -4,8 +4,6 @@ map [11~ :set number
 map [12~ :set nonumber
 " F3: check perl syntax
 map [13~ :w:!perl -c %
-" F4: format perl file
-map [14~ my:%!perltidy -bl -q -l=260 -pt=2 -sbt=2 -bt=2 -bbt=2 -nsfs -nwls="." -nwrs="." -ole=unix -iob -et=4 -i=4'y
 " F5: execute current file
 map [15~ :w:!./%
 " F9: Paste toggle
@@ -46,15 +44,28 @@ if has("autocmd")
      \| exe "normal! g'\"" | endif
 endif
 
-" xml
-augroup xml
-	au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-augroup END
+if has("autocmd")
+	" perl
+	augroup perl
+		au FileType perl setlocal equalprg=perltidy\ -bl\ -q\ -l=260\ -pt=2\ -sbt=2\ -bt=2\ -bbt=2\ -nsfs\ -nwls=\".\"\ -nwrs=\".\"\ -ole=unix\ -iob\ -et=4\ -i=2
+	augroup END
 
-" puppet
-augroup puppet
-	autocmd FileType puppet setlocal equalprg=~/.dev/puppet-tidy
-augroup END
+	" xml
+	augroup xml
+		au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+	augroup END
+
+	" puppet
+	augroup puppet
+		au FileType puppet setlocal equalprg=~/.dev/puppet-tidy
+	augroup END
+
+	" markdown
+	augroup md
+		autocmd FileType mkd setlocal tw=0
+		autocmd FileType mkd setlocal nocursorline
+	augroup END
+endif
 
 " load pathogen modules
 execute pathogen#infect()
