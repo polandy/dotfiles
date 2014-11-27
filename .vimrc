@@ -1,13 +1,23 @@
+if $TERM ==# 'screen'
+	map OP <F1>
+	map OQ <F2>
+	map OR <F3>
+	map [15~ <F5>
+	map [20~ <F9>
+endif
+
 " F1: set number
-map [11~ :set number
+nmap <F1> :set number
 " F2: set nonumber
-map [12~ :set nonumber
+nmap <F2> :set nonumber
 " F3: check perl syntax
-map [13~ :w:!perl -c %
+"map <F3> :w:!perl -c %
 " F5: execute current file
-map [15~ :w:!./%
+nmap <F5> :w:!./%
 " F9: Paste toggle
-set pastetoggle=[20~
+set pastetoggle=<F9>
+
+
 
 
 syntax on	" Highlight syntax
@@ -48,6 +58,7 @@ if has("autocmd")
 	" perl
 	augroup perl
 		au FileType perl setlocal equalprg=perltidy\ -bl\ -q\ -l=260\ -pt=2\ -sbt=2\ -bt=2\ -bbt=2\ -nsfs\ -nwls=\".\"\ -nwrs=\".\"\ -ole=unix\ -iob\ -et=4\ -i=2
+		au FileType perl nmap <F3> :w:!perl -c %
 	augroup END
 
 	" xml
