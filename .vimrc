@@ -10,60 +10,27 @@ map [14~ my:%!perltidy -bl -q -l=260 -pt=2 -sbt=2 -bt=2 -bbt=2 -nsfs -nwls="." 
 map [15~ :w:!./%
 " F9: Paste toggle
 set pastetoggle=[20~
-" Alt-left arrow: previous file
-"map [D gT
-" Alt-right arrow: next file
-"map [C gt
-"map [C  gt
-" Alt-up arrow: save
-"map [A :w
-"
-"
-"Map for sia report
-map [17~ :w:!perl main.pl
-"
-"
-"
-set nocompatible " use Vim defaults (much better!)
-set bs=indent,eol,start " allow backspacing over everything in insert mode
-set ruler " show the cursor position all the time
-"
-"
-" Highlight syntax
-syntax on
+
+
+syntax on	" Highlight syntax
 colorscheme evening
-" highlight search patterns
-set hlsearch
-" find files in subdirectories
-set path=**
-"
-" handy for email and programming
-set autoindent        
-" precede each line with a number so i can easily do
-"                      " stuff like- :77,87!fmt to format a block of text
-"set number            
-" hm. don't recall, but I know I like it.  ;-)
-set remap             
-" *always* show me changes that commands make
-set report=1          
-" got stuck in by default somewhere, so i left it.
-" set scroll=15         
-" i like minimal indentation. see tabstops (ts), too.
-set shiftwidth=4      
-" match parens and braces. good for programming.
-" set showmatch         
-" portable method to show the current mode on bottom line
-set showmode          
-" this should be the same as the next line. not always.
-set tabstop=4         
-" only indent 2 spaces. see shiftwidth (sw) above.
-set ts=4              
-" no news is good news.
-set terse             
-" sorry. don't recall.
+filetype plugin indent on	" auto indent
+set nocompatible	" use Vim defaults (much better!)
+set bs=indent,eol,start	" allow backspacing over everything in insert mode
+set ruler	" show the cursor position all the time
+set hlsearch	 " highlight search patterns
+set path=** 	" find files in subdirectories
+set autoindent	" handy for email and programming
+set remap	" hm. don't recall, but I know I like it.  ;-)
+set report=1	" *always* show me changes that commands make
+set shiftwidth=2	" i like minimal indentation. see tabstops (ts), too.
+set showmode	" portable method to show the current mode on bottom line
+set tabstop=2	" this should be the same as the next line. not always.
+set ts=2	" only indent 2 spaces. see shiftwidth (sw) above.
+set terse	" no news is good news.
 
 " where to put temporary files. good for most systems
-set directory=/tmp    
+set directory=/tmp
 "
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
@@ -79,8 +46,18 @@ if has("autocmd")
      \| exe "normal! g'\"" | endif
 endif
 
-" formatting
-au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+" xml
+augroup xml
+	au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+augroup END
+
+" puppet
+augroup puppet
+	autocmd FileType puppet setlocal equalprg=~/.dev/puppet-tidy
+augroup END
+
+" load pathogen modules
+execute pathogen#infect()
 
 
 " inside screen / tmux
