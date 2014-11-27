@@ -1,9 +1,13 @@
+map OP <F1>
+map OQ <F2>
+map OR <F3>
+map [15~ <F5>
+map [20~ <F9>
+
 if $TERM ==# 'screen'
-	map OP <F1>
-	map OQ <F2>
-	map OR <F3>
-	map [15~ <F5>
-	map [20~ <F9>
+endif
+
+if $TERM ==# 'xterm'
 endif
 
 " F1: set number
@@ -15,7 +19,7 @@ nmap <F2> :set nonumber
 " F5: execute current file
 nmap <F5> :w:!./%
 " F9: Paste toggle
-set pastetoggle=<F9>
+set pastetoggle=[20~
 
 
 
