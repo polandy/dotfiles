@@ -4,3 +4,12 @@
 [submodule ".vim/bundle/yaml"]
 	path = .vim/bundle/yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/nerdtree-tabs"]
+	path = .vim/bundle/nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule ".vim/bundle/ctrl-p"]
+	path = .vim/bundle/ctrl-p
+	url = https://github.com/kien/ctrlp.vim.git

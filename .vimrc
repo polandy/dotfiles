@@ -3,6 +3,8 @@ map OQ <F2>
 map OR <F3>
 map [15~ <F5>
 map [20~ <F9>
+map [23~ <F11>
+map [24~ <F12>
 
 " Find out current term with		i -> <C-r>=$TERM<CR>
 if $TERM ==# 'screen'
@@ -21,6 +23,10 @@ nmap <F2> :set nonumber
 nmap <F5> :w:!./%
 " F9: Paste toggle
 set pastetoggle=[20~
+" F12: NERDTroggle
+nmap <F11> :NERDTreeTabsClose
+" F12: NERDTroggle
+nmap <F12> :NERDTreeFocusToggle
 
 
 
@@ -85,6 +91,9 @@ endif
 
 " load pathogen modules
 execute pathogen#infect()
+
+" CTRL-P
+let g:ctrlp_by_filename = 1
 
 
 " inside screen / tmux
