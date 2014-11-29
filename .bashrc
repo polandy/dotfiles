@@ -6,6 +6,9 @@ if [ -f $DIR/.bashrc_local ]; then
   . $DIR/.bashrc_local
 fi
 
+# make sure to use right history file
+HISTFILE=$HOME/.bash_history
+
 # Source global definitions
 #if [ -f /etc/bashrc ]; then
 #  . /etc/bashrc
