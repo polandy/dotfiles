@@ -13,3 +13,9 @@
 [submodule ".vim/bundle/ctrl-p"]
 	path = .vim/bundle/ctrl-p
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/latex"]
+	path = .vim/bundle/latex
+	url = git://github.com/lervag/vim-latex
+[submodule ".vim/bundle/neocomplete"]
+	path = .vim/bundle/neocomplete
+	url = https://github.com/Shougo/neocomplete.vim.git
