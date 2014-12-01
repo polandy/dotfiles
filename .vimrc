@@ -1,6 +1,8 @@
+set nocompatible	" use Vim defaults (much better!)
 map OP <F1>
 map OQ <F2>
 map OR <F3>
+map OS <F4>
 map [15~ <F5>
 map [20~ <F9>
 map [23~ <F11>
@@ -34,7 +36,6 @@ nmap <F12> :NERDTreeFocusToggle
 syntax on	" Highlight syntax
 colorscheme evening
 filetype plugin indent on	" auto indent
-set nocompatible	" use Vim defaults (much better!)
 set bs=indent,eol,start	" allow backspacing over everything in insert mode
 set ruler	" show the cursor position all the time
 set hlsearch	 " highlight search patterns
@@ -75,6 +76,8 @@ if has("autocmd")
 	" xml
 	augroup xml
 		au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+		au FileType xml nmap <F3> :w:!puppet parser validate %
+		au FileType xml nmap <F4> :w:!puppet-lint %
 	augroup END
 
 	" puppet
