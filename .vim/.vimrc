@@ -1,3 +1,4 @@
+set nocompatible	" use Vim defaults (much better!)
 " allow portable .vim and .vimrc location
 " set default 'runtimepath' (without ~/.vim folders)
 let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
@@ -13,6 +14,7 @@ let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable
 map OP <F1>
 map OQ <F2>
 map OR <F3>
+map OS <F4>
 map [15~ <F5>
 map [20~ <F9>
 map [23~ <F11>
@@ -29,8 +31,8 @@ endif
 nmap <F1> :set number
 " F2: set nonumber
 nmap <F2> :set nonumber
-" F3: check perl syntax
-"map <F3> :w:!perl -c %
+" F3: check syntax (see file types below)
+" F4: check linting (see file types below)
 " F5: execute current file
 nmap <F5> :w:!./%
 " F9: Paste toggle
@@ -46,7 +48,6 @@ nmap <F12> :NERDTreeFocusToggle
 syntax on	" Highlight syntax
 colorscheme evening
 filetype plugin indent on	" auto indent
-set nocompatible	" use Vim defaults (much better!)
 set bs=indent,eol,start	" allow backspacing over everything in insert mode
 set ruler	" show the cursor position all the time
 set hlsearch	 " highlight search patterns
@@ -77,6 +78,7 @@ if has("autocmd")
      \| exe "normal! g'\"" | endif
 endif
 
+
 if has("autocmd")
 	" perl
 	augroup perl
@@ -92,6 +94,14 @@ if has("autocmd")
 	" puppet
 	augroup puppet
 		au FileType puppet setlocal equalprg=~/.dev/puppet-tidy
+		au FileType puppet nmap <F3> :w:!puppet parser validate %
+		au FileType puppet nmap <F4> :w:!puppet-lint %
+	augroup END
+
+	" ruby
+	augroup ruby
+		au FileType ruby setlocal equalprg=~/.dev/puppet-tidy
+		au FileType ruby nmap <F3> :w:!ruby -c %
 	augroup END
 
 	" markdown
@@ -158,14 +168,14 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+		\ 'default' : '',
+		\ 'vimshell' : $HOME.'/.vimshell_hist',
+		\ 'scheme' : $HOME.'/.gosh_completions'
+				\ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+		let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
@@ -177,9 +187,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+	return neocomplete#close_popup() . "\<CR>"
+	" For no inserting <CR> key.
+	"return pumvisible() ? neocomplete#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -219,7 +229,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+	let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
