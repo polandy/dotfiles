@@ -6,6 +6,9 @@ if [ -f $DIR/.bashrc_local ]; then
   . $DIR/.bashrc_local
 fi
 
+# make sure to use right history file
+HISTFILE=$HOME/.bash_history
+
 # Source global definitions
 #if [ -f /etc/bashrc ]; then
 #  . /etc/bashrc
@@ -82,11 +85,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias sm="HOME=$DIR su -m"
-alias vi="vim -p -u $DIR/.vimrc"
+alias vim="vim -p -u $DIR/.vim/.vimrc"
+alias vi=vim
 alias bash="bash --rcfile $DIR/.bashrc"
 
 # vim related vars
-export EDITOR=vi
+export EDITOR=vim
 export VISUAL_EDITOR=vim
 
 # use my tmux.conf if it exists
