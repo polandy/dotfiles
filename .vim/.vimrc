@@ -116,7 +116,7 @@ execute pathogen#infect()
 
 
 " CTRL-P
-let g:ctrlp_by_filename = 1
+"let g:ctrlp_by_filename = 1
 let g:ctrlp_open_new_file = 't'
 " switch ctrl-t and cr new tab/this tab
 let g:ctrlp_prompt_mappings = {
