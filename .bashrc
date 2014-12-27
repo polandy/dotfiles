@@ -67,7 +67,6 @@ NONE=$'\033[m'
 
 #random grep color
 export GREP_COLOR="1;3$((RANDOM%6+1))"
-export GREP_OPTIONS='--color=auto'
 export GRC_HOME=~/.grc
 
 # PS1='`id -un`@$HOSTNAME: $PWD#' # f.e: joschi@host-a: /home/joschi#
@@ -87,6 +86,7 @@ alias .....='cd ../../../..'
 alias sm="HOME=$DIR su -m"
 alias vim="vim -p -u $DIR/.vim/.vimrc"
 alias vi=vim
+alias grep='grep --color=auto'
 alias bash="bash --rcfile $DIR/.bashrc"
 
 # vim related vars
