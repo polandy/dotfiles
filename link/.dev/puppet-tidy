@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+ 
+use strict;
+use FindBin;
+use lib "$FindBin::Bin";
+use Puppet::Tidy;
+ 
+my (@output, $source);
+
+while (<>) {
+	$source .= $_;
+}
+ 
+Puppet::Tidy::puppettidy(source => $source, destination => \@output);
+
+print "@output";
