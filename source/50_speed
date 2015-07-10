@@ -1,0 +1,14 @@
+# download speed of a file
+# or better, speed of file growth
+speed() {
+	while [ 1 ]
+	do 
+		old=$(du -k $1 |cut -d"/" -f1)
+		sleep 1
+		new=$(du -k $1 |cut -d"/" -f1)
+		speed=$(expr $new - $old)
+		size=$(du -h $1 |cut -d"/" -f1)
+		echo "$speed KB/s - $size"
+	done
+}
+

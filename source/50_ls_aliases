@@ -1,0 +1,20 @@
+
+# Show only the top entries of a directory
+lh () {
+  ll $1 |head -$2
+}
+
+# Show only the top entries of a directory
+lht () {
+  ll -t $1 |head -$2
+}
+
+# Show only the last entries of a directory
+lt () {
+  ll $1 |tail -$2
+}
+
+# Show only the last entries of a directory (time sorted
+ltt () {
+  ll -t $1 |tail -$2
+}
