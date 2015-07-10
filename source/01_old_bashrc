@@ -1,29 +1,7 @@
-export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"	# dir this script is in
-export HOME=$(eval echo ~$(id -un))	# home dir of current user
 
 # Source local specific stuff
-if [ -f $DIR/.bashrc_local ]; then
-  . $DIR/.bashrc_local
-fi
-
-# make sure to use right history file
-HISTFILE=$HOME/.bash_history
-
-# Source global definitions
-#if [ -f /etc/bashrc ]; then
-#  . /etc/bashrc
-#fi
-
-
-# Load other user's rc and profile file
-SMRC=$(readlink -f $HOME/.bashrc)
-DMRC=$(readlink -f "${BASH_SOURCE[0]}")
-if [ $DMRC != $SMRC ]; then
-  SMPF=$HOME/.profile
-  SMBP=$HOME/.bash_profile
-  [ -f $SMPF ] && . $SMPF
-  [ -f $SMRC ] && . $SMRC
-  [ -f $SMBP ] && . $SMBP
+if [ -f $INIT_DIR/.bashrc_local ]; then
+  . $INIT_DIR/.bashrc_local
 fi
 
 # Source bash completion stuff
@@ -83,20 +61,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias sm="HOME=$DIR su -m"
-alias vim="vim -p -u $DIR/.vim/.vimrc"
+alias vim="vim -p -u $INIT_DIR/.vim/.vimrc"
 alias vi=vim
 alias grep='grep --color=auto'
-alias bash="bash --rcfile $DIR/.bashrc"
+alias bash="bash --rcfile $INIT_DIR/.bashrc"
 
 # vim related vars
 export EDITOR=vim
 export VISUAL_EDITOR=vim
-
-# use my tmux.conf if it exists
-if [ -r $DIR/.tmux.conf ]; then
-  alias tmux="HOME=$DIR tmux -f $DIR/.tmux.conf"
-fi
 
 # format json
 jsonformat() {
@@ -136,6 +108,3 @@ ltt () {
   ll -t $1 |tail -$2
 }
 
-unset DIR
-
-cd $HOME
