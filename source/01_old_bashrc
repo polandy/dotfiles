@@ -56,55 +56,15 @@ alias la='ls -lsah'
 alias lr='ls -lsahtr'
 alias mv='mv'
 alias cp='cp -r'
-alias rrd='/usr/local/rrdtool/bin/rrdtool'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias vim="vim -p -u $INIT_DIR/.vim/.vimrc"
 alias vi=vim
 alias grep='grep --color=auto'
+alias vim="vim -p -u $INIT_DIR/.vim/.vimrc"
 alias bash="bash --rcfile $INIT_DIR/.bashrc"
 
 # vim related vars
 export EDITOR=vim
 export VISUAL_EDITOR=vim
-
-# format json
-jsonformat() {
-	cat $1 | perl -0007 -MJSON -ne 'print to_json(from_json($_, {allow_nonref=>1}), {pretty=>1})'
-}
-
-# download speed of a file
-speed() {
-	while [ 1 ]
-	do 
-		old=$(du -k $1 |cut -d"/" -f1)
-		sleep 1
-		new=$(du -k $1 |cut -d"/" -f1)
-		speed=$(expr $new - $old)
-		size=$(du -h $1 |cut -d"/" -f1)
-		echo "$speed KB/s - $size"
-	done
-}
-
-# Show only the top entries of a directory
-lh () {
-  ll $1 |head -$2
-}
-
-# Show only the top entries of a directory
-lht () {
-  ll -t $1 |head -$2
-}
-
-# Show only the last entries of a directory
-lt () {
-  ll $1 |tail -$2
-}
-
-# Show only the last entries of a directory (time sorted
-ltt () {
-  ll -t $1 |tail -$2
-}
-
