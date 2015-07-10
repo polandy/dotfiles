@@ -50,5 +50,5 @@ fi
 
 src
 
-unset $INIT_DIR
+unset INIT_DIR
 cd $HOME_DIR
