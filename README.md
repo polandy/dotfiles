@@ -1,7 +1,7 @@
 Installation
 ============
-    git init  
-    git remote add origin https://github.com/joschi03/dotfiles.git
-    git fetch
-    git checkout -t origin/master
-    git submodule update --init
+
+bash -c "$(curl -fsSL https://raw.github.com/joschi03/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+
+Copyright by
+https://github.com/cowboy/dotfiles
