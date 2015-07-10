@@ -1,21 +1,27 @@
 [submodule ".vim/bundle/puppet"]
-	path = .vim/bundle/puppet
+	path = link/.vim/bundle/puppet
 	url = https://github.com/rodjek/vim-puppet.git
 [submodule ".vim/bundle/yaml"]
-	path = .vim/bundle/yaml
+	path = link/.vim/bundle/yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+	path = link/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/nerdtree-tabs"]
-	path = .vim/bundle/nerdtree-tabs
+	path = link/.vim/bundle/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule ".vim/bundle/ctrl-p"]
-	path = .vim/bundle/ctrl-p
+	path = link/.vim/bundle/ctrl-p
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/latex"]
-	path = .vim/bundle/latex
+	path = link/.vim/bundle/latex
 	url = https://github.com/lervag/vim-latex
 [submodule ".vim/bundle/neocomplete"]
-	path = .vim/bundle/neocomplete
+	path = link/.vim/bundle/neocomplete
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "git-extras"]
+	path = vendor/git-extras
+	url = git://github.com/visionmedia/git-extras.git
+[submodule "z"]
+	path = vendor/z
+	url = git://github.com/rupa/z.git
