@@ -51,4 +51,5 @@ fi
 src
 
 unset INIT_DIR
+export HOME=$HOME_DIR
 cd $HOME_DIR
