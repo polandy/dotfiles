@@ -4,10 +4,10 @@ if [ -f $INIT_DIR/.bashrc_local ]; then
   . $INIT_DIR/.bashrc_local
 fi
 
-# Source bash completion stuff
-if [ -f /etc/bash_completion ]; then
- source /etc/bash_completion
-fi
+## Source bash completion stuff
+#if [ -f /etc/bash_completion ]; then
+# source /etc/bash_completion
+#fi
 
 set -o notify # Report status of terminated bg jobs immediately
 set -o vi # vi mode
@@ -48,9 +48,9 @@ export GREP_COLOR="1;3$((RANDOM%6+1))"
 export GRC_HOME=~/.grc
 
 # Some useful aliases
-alias ll='ls -lsh'
-alias la='ls -lsah'
-alias lr='ls -lsahtr'
+alias ll='ls -lsh --color'
+alias la='ls -lsah --color'
+alias lr='ls -lsahtr --color'
 alias mv='mv'
 alias cp='cp -r'
 alias ..='cd ..'
