@@ -21,7 +21,10 @@
 	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "git-extras"]
 	path = vendor/git-extras
-	url = git://github.com/visionmedia/git-extras.git
+	url = https://github.com/visionmedia/git-extras.git
 [submodule "z"]
 	path = vendor/z
 	url = git://github.com/rupa/z.git
+[submodule "link/.vim/bundle/vim-better-whitespace"]
+	path = link/.vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
