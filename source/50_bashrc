@@ -48,15 +48,8 @@ export GREP_COLOR="1;3$((RANDOM%6+1))"
 export GRC_HOME=~/.grc
 
 # Some useful aliases
-alias ll='ls -lsh --color'
-alias la='ls -lsah --color'
-alias lr='ls -lsahtr --color'
 alias mv='mv'
 alias cp='cp -r'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias vi=vim
 alias grep='grep --color=auto'
 alias vim="vim -p -u $INIT_DIR/.vim/.vimrc"

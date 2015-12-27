@@ -3,11 +3,11 @@
 speed() {
 	while [ 1 ]
 	do 
-		old=$(du -k $1 |cut -d"/" -f1)
+		old=$(du -sk $1 |cut -d"/" -f1 |cut -f1)
 		sleep 1
-		new=$(du -k $1 |cut -d"/" -f1)
+		new=$(du -sk $1 |cut -d"/" -f1 |cut -f1)
 		speed=$(expr $new - $old)
-		size=$(du -h $1 |cut -d"/" -f1)
+		size=$(du -sh $1 |cut -d"/" -f1 |cut -f1)
 		echo "$speed KB/s - $size"
 	done
 }
