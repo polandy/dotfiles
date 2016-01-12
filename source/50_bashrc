@@ -10,7 +10,6 @@ fi
 #fi
 
 set -o notify # Report status of terminated bg jobs immediately
-set -o vi # vi mode
 
 shopt -s extglob # extended pattern matching features
 shopt -s cdspell # correct dir spelling errors on cd
