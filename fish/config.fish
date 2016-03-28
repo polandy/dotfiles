@@ -63,7 +63,7 @@ alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && p
 # vim related stuff
 alias vim="nvim -p -u ~/.vim/.vimrc"
 set -x EDITOR vi
-set -x VISUAL_EDITOR vim
+set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
