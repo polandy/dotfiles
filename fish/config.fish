@@ -71,4 +71,3 @@ set -x VISUAL_EDITOR vim
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
 end
-

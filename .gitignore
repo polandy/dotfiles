@@ -8,5 +8,8 @@
 /link/.ssh/*.pem
 /link/.ssh/known_hosts
 
+# ignore local fish config
+/fish/config_local.fish
+
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
