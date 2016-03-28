@@ -60,12 +60,9 @@ end
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
-# aliases
-alias vi='vim'
-
 # vim related stuff
 alias vim="nvim -p -u ~/.vim/.vimrc"
-set -x EDITOR vim
+set -x EDITOR vi
 set -x VISUAL_EDITOR vim
 
 if test -e ~/.config/fish/config_local.fish
