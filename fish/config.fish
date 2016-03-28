@@ -61,7 +61,7 @@ end
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
 # vim related stuff
-alias vim="nvim -p -u ~/.vim/.vimrc"
+alias vim="nvim -p"
 set -x EDITOR vi
 set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
