@@ -13,6 +13,8 @@
 /fish/fish_history
 /fish/fishd*
 
+# ignore deoplete stuff
+\.\-rplugin*
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
