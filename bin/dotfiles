@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 [[ "$1" == "source" ]] || \
 
-echo 'Dotfiles - "joschi03" Janosch Rohdewald'
+echo 'Dotfiles - "nordewal" Janosch Rohdewald'
 
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then cat <<HELP
 
