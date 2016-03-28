@@ -10,6 +10,8 @@
 
 # ignore local fish config
 /fish/config_local.fish
+/fish/fish_history
+/fish/fishd*
 
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
