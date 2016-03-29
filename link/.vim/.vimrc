@@ -68,6 +68,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" true color for neovim
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 syntax on	" Highlight syntax
 set background=dark
