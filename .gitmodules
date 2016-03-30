@@ -31,3 +31,18 @@
 [submodule "link/.vim/bundle/deoplete.nvim"]
 	path = link/.vim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "link/.vim/bundle/vim-endwise"]
+	path = link/.vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "link/.vim/bundle/ultisnips"]
+	path = link/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "link/.vim/bundle/vim-snippets"]
+	path = link/.vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "link/.vim/bundle/vim-commentary"]
+	path = link/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "link/.vim/bundle/vim-fish"]
+	path = link/.vim/bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git
