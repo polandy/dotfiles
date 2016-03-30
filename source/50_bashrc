@@ -51,7 +51,7 @@ alias mv='mv'
 alias cp='cp -r'
 alias vi=vim
 alias grep='grep --color=auto'
-alias vim="vim -p -u $INIT_DIR/.vim/.vimrc"
+alias vim="vim -p -u $INIT_DIR/.config/vim/vimrc"
 alias bash="bash --rcfile $INIT_DIR/.bashrc"
 
 # vim related vars

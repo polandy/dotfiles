@@ -1,48 +1,48 @@
-[submodule ".vim/bundle/puppet"]
-	path = link/.vim/bundle/puppet
+[submodule "config/vim/bundle/puppet"]
+	path = config/vim/bundle/puppet
 	url = https://github.com/rodjek/vim-puppet.git
-[submodule ".vim/bundle/yaml"]
-	path = link/.vim/bundle/yaml
+[submodule "config/vim/bundle/yaml"]
+	path = config/vim/bundle/yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
-[submodule ".vim/bundle/nerdtree"]
-	path = link/.vim/bundle/nerdtree
+[submodule "config/vim/bundle/nerdtree"]
+	path = config/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/nerdtree-tabs"]
-	path = link/.vim/bundle/nerdtree-tabs
+[submodule "config/vim/bundle/nerdtree-tabs"]
+	path = config/vim/bundle/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule ".vim/bundle/ctrl-p"]
-	path = link/.vim/bundle/ctrl-p
+[submodule "config/vim/bundle/ctrl-p"]
+	path = config/vim/bundle/ctrl-p
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/latex"]
-	path = link/.vim/bundle/latex
+[submodule "config/vim/bundle/latex"]
+	path = config/vim/bundle/latex
 	url = https://github.com/lervag/vim-latex
 [submodule "git-extras"]
 	path = vendor/git-extras
 	url = https://github.com/visionmedia/git-extras.git
-[submodule "link/.vim/bundle/vim-better-whitespace"]
-	path = link/.vim/bundle/vim-better-whitespace
+[submodule "config/vim/bundle/vim-better-whitespace"]
+	path = config/vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule "link/.vim/bundle/syntastic"]
-	path = link/.vim/bundle/syntastic
+[submodule "config/vim/bundle/syntastic"]
+	path = config/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "link/.vim/bundle/gruvbox"]
-	path = link/.vim/bundle/gruvbox
+[submodule "config/vim/bundle/gruvbox"]
+	path = config/vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "link/.vim/bundle/deoplete.nvim"]
-	path = link/.vim/bundle/deoplete.nvim
+[submodule "config/vim/bundle/deoplete.nvim"]
+	path = config/vim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "link/.vim/bundle/vim-endwise"]
-	path = link/.vim/bundle/vim-endwise
+[submodule "config/vim/bundle/vim-endwise"]
+	path = config/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "link/.vim/bundle/ultisnips"]
-	path = link/.vim/bundle/ultisnips
+[submodule "config/vim/bundle/ultisnips"]
+	path = config/vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
-[submodule "link/.vim/bundle/vim-snippets"]
-	path = link/.vim/bundle/vim-snippets
+[submodule "config/vim/bundle/vim-snippets"]
+	path = config/vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "link/.vim/bundle/vim-commentary"]
-	path = link/.vim/bundle/vim-commentary
+[submodule "config/vim/bundle/vim-commentary"]
+	path = config/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "link/.vim/bundle/vim-fish"]
-	path = link/.vim/bundle/vim-fish
+[submodule "config/vim/bundle/vim-fish"]
+	path = config/vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git

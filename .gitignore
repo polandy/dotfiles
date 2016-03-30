@@ -9,9 +9,9 @@
 /link/.ssh/known_hosts
 
 # ignore local fish config
-/fish/config_local.fish
-/fish/fish_history
-/fish/fishd*
+/config/fish/config_local.fish
+/config/fish/fish_history
+/config/fish/fishd*
 
 # ignore deoplete stuff
 *-rplugin*
