@@ -220,13 +220,13 @@ function link_do() {
 }
 
 # Link files to .config
-function link_config_header() { e_header "Linking files into ~/.config directory"; }
-function link_config_test() {
+function config_header() { e_header "Linking files into ~/.config directory"; }
+function config_test() {
   [[ "$1" -ef "$2" ]] && echo "same file"
 }
-function link_config_do() {
+function config_do() {
   e_success "Linking ~/.config/$1."
-  ln -sf ${2#$HOME/} ~/.config/
+  ln -sf $2 ~/.config/
 }
 
 # Copy, link, init, etc.
@@ -328,7 +328,7 @@ backup=
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
 do_stuff "link"
-do_stuff "link_config"
+do_stuff "config"
 do_stuff "init"
 
 # Alert if backups were made.
