@@ -15,3 +15,6 @@ bash -c "$(curl -fsSL https://raw.github.com/nordewal/dotfiles/master/bin/dotfil
 1. Install neovim!!
 2. open vim
 3. run ':UpdateRemotePlugins'
+
+## Install powerline fonts for airline
+powerline-fonts-git

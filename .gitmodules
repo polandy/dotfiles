@@ -46,3 +46,18 @@
 [submodule "config/vim/bundle/vim-fish"]
 	path = config/vim/bundle/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule "config/vim/bundle/vim-airline"]
+	path = config/vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "config/vim/bundle/vim-fugitive"]
+	path = config/vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "config/vim/bundle/fugitive-gitlab.vim"]
+	path = config/vim/bundle/fugitive-gitlab.vim
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule "config/vim/bundle/--force"]
+	path = config/vim/bundle/--force
+	url = https://github.com/tpope/vim-rake.git
+[submodule "config/vim/bundle/vim-rake"]
+	path = config/vim/bundle/vim-rake
+	url = https://github.com/tpope/vim-rake.git

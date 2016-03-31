@@ -30,7 +30,8 @@ map [1;5C <C-right>
 nmap <F1> :set number
 " F2: set nonumber
 nmap <F2> :set nonumber
-" F3: check syntax (see file types below)
+" F3: run rake
+nmap <F3> :w:Rake SPEC=%:p
 " F4: check linting (see file types below)
 " F5: execute current file
 nmap <F5> :w:!./%
@@ -47,14 +48,13 @@ execute pathogen#infect()
 " deoplete config
 let g:deoplete#enable_at_startup = 1
 " deoplete tab-complete
-"inoremap <silent><expr><Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " ultisnips config
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-f>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
 
 
 " syntastic config
@@ -65,7 +65,13 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 1
+" let g:syntastic_auto_jump = 3
+
+map <C-s> :w:SyntasticCheck
+map <C-q> :SyntasticReset
+
 
 " true color for neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -76,6 +82,7 @@ colorscheme gruvbox
 filetype on
 filetype plugin on
 filetype indent on	" auto indent
+set number
 set bs=indent,eol,start	" allow backspacing over everything in insert mode
 set ruler	" show the cursor position all the time
 set hlsearch	 " highlight search patterns
@@ -116,7 +123,6 @@ if has("autocmd")
 	" perl
 	augroup perl
 		au FileType perl setlocal equalprg=perltidy\ -bl\ -q\ -l=260\ -pt=2\ -sbt=2\ -bt=2\ -bbt=2\ -nsfs\ -nwls=\".\"\ -nwrs=\".\"\ -ole=unix\ -iob\ -et=4\ -i=2
-		au FileType perl nmap <F3> :w:!perl -c %
 	augroup END
 
 	" xml
@@ -127,7 +133,6 @@ if has("autocmd")
 	" puppet
 	augroup puppet
 		au FileType puppet setlocal equalprg=~/.dev/puppet-tidy
-		au FileType puppet nmap <F3> :w:!puppet parser validate %
 		au FileType puppet nmap <F4> :w:!puppet-lint %
 		au FileType puppet nmap <F5> :w:!ruby -c %
 		au FileType puppet nmap <F6> :w:!rvm all do bundle exec rake
@@ -135,7 +140,6 @@ if has("autocmd")
 
 	" ruby
 	augroup ruby
-		au FileType ruby nmap <F3> :w:!puppet parser validate %
 		au FileType ruby nmap <F4> :w:!puppet-lint %
 		au FileType ruby nmap <F5> :w:!ruby -c %
 		au FileType ruby nmap <F6> :w:!rvm all do bundle exec rake
@@ -157,9 +161,13 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
+" airline
+let g:airline_powerline_fonts = 1
+
 
 " insert mode
 map <C-t> <Esc>:tabnew
-map <C-q> <Esc>:tabclose
 map <C-right> <Esc>:tabnext
 map <C-left> <Esc>:tabprevious
+
+source ~/.config/vim/vimrc_local
