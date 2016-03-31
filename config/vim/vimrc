@@ -26,13 +26,6 @@ map [24~ <F12>
 map [1;5D <C-left>
 map [1;5C <C-right>
 
-" Find out current term with		i -> <C-r>=$TERM<CR>
-if $TERM ==# 'screen'
-endif
-
-if $TERM ==# 'xterm'
-endif
-
 " F1: set number
 nmap <F1> :set number
 " F2: set nonumber
@@ -54,9 +47,15 @@ execute pathogen#infect()
 " deoplete config
 let g:deoplete#enable_at_startup = 1
 " deoplete tab-complete
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
-" ,<Tab> for regular tab
-inoremap <Leader><Tab> <Space><Space>
+"inoremap <silent><expr><Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+
+" ultisnips config
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+
 
 " syntastic config
 set statusline+=%#warningmsg#
@@ -65,8 +64,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
 " true color for neovim
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
