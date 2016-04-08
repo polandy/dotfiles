@@ -1,5 +1,5 @@
 # dotfiles related stuff
-set -gx PATH $PATH /home/joschi/.dotfiles/bin
+set -gx PATH $PATH ~/.dotfiles/bin
 
 # locale
 set -g LANG en_US.UTF-8
