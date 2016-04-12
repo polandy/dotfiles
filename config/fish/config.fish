@@ -25,32 +25,26 @@ git config --global alias.subst "submodule status --recursive"
 # abbreviations
 abbr -a g='git'
 abbr -a gp='git push'
-abbr -a gpa='gp --all'
+abbr -a gpa='git push --all'
 abbr -a gu='git pull'
 abbr -a gl='git log'
 abbr -a gs='git status'
-abbr -a gst='gs'
 abbr -a gd='git diff'
-abbr -a gdc='gd --cached'
+abbr -a gdc='git diff --cached'
 abbr -a gm='git commit -m'
 abbr -a gma='git commit -am'
 abbr -a gb='git branch'
 abbr -a gba='git branch -a'
-abbr -a gco='gc'
-abbr -a gcb='gc -b'
+abbr -a gc='git checkout'
+abbr -a gcb='git checkout -b'
 abbr -a gr='git remote'
-abbr -a grv='gr -v'
+abbr -a grv='git remote -v'
 abbr -a gcd='git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 abbr -a glol='git lol'
 abbr -a glola='git lola'
 abbr -a gua="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
 abbr -a gsa="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
 
-# Checkout master by default
-function gc
-  set arg $argv master
-  git checkout "$argv"
-end
 # Add all files by default
 function ga
   set arg $argv .
