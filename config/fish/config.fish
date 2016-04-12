@@ -1,5 +1,5 @@
 # dotfiles related stuff
-set -gx PATH $PATH /home/joschi/.dotfiles/bin
+set -gx PATH $PATH ~/.dotfiles/bin
 
 # locale
 set -g LANG en_US.UTF-8
@@ -55,6 +55,7 @@ end
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
 # vim related stuff
+alias vi="vim"
 alias vim="nvim -p"
 set -x EDITOR vi
 set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
