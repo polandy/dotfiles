@@ -1,9 +1,3 @@
-[submodule "config/vim/bundle/puppet"]
-	path = config/vim/bundle/puppet
-	url = https://github.com/rodjek/vim-puppet.git
-[submodule "config/vim/bundle/yaml"]
-	path = config/vim/bundle/yaml
-	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule "config/vim/bundle/nerdtree"]
 	path = config/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -55,9 +49,6 @@
 [submodule "config/vim/bundle/fugitive-gitlab.vim"]
 	path = config/vim/bundle/fugitive-gitlab.vim
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
-[submodule "config/vim/bundle/--force"]
-	path = config/vim/bundle/--force
-	url = https://github.com/tpope/vim-rake.git
 [submodule "config/vim/bundle/vim-rake"]
 	path = config/vim/bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
