@@ -14,23 +14,34 @@ git config --global alias.ci commit
 git config --global alias.cm commit
 git config --global alias.st status
 git config --global alias.ad add
-git config --global alias.df diff
-git config --global alias.dfc "diff --cached"
 git config --global alias.br branch
-git config --global alias.lol "log --graph --decorate --pretty=oneline --abbrev-commit"
-git config --global alias.lola "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 git config --global alias.subup "submodule update --init --recursive"
 git config --global alias.subst "submodule status --recursive"
+
+# NDBJS git alias
+git config --global alias.s "status"
+git config --global alias.br "branch"
+git config --global alias.f "fetch"
+git config --global alias.d "diff"
+git config --global alias.dt "difftool -y"
+git config --global alias.dtc "difftool --cached -y"
+git config --global alias.up "pull --rebase"
+git config --global alias.co "checkout"
+git config --global alias.ci "commit"
+git config --global alias.rb "rebase"
+git config --global alias.lol "log --graph --pretty=oneline --abbrev-commit --decorate"
+git config --global alias.lola "log --graph --pretty=oneline --abbrev-commit --decorate --all"
 
 # abbreviations
 abbr -a g='git'
 abbr -a gp='git push'
 abbr -a gpa='git push --all'
-abbr -a gu='git pull'
+abbr -a gu='git up'
 abbr -a gl='git log'
 abbr -a gs='git status'
-abbr -a gd='git diff'
-abbr -a gdc='git diff --cached'
+abbr -a gdt='git diff'
+abbr -a gdtd='git diff'
+abbr -a gdtc='git dtc' 
 abbr -a gm='git commit -m'
 abbr -a gma='git commit -am'
 abbr -a gb='git branch'
