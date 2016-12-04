@@ -103,14 +103,18 @@ set terse	" no news is good news.
 
 " where to put temporary files. good for most systems
 "set directory=/tmp
-"
 " Tell vim to remember certain things when we exit
+if !has('nvim')
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
 "  :20  :  up to 20 lines of command-line history will be remembered
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo
+  set viminfo='10,\"100,:20,%,n~/.viminfo
+else
+  " neovim ist not compatible with the viminfo-File-Format defined above
+  " Do nothing here to use the neovim default (set viminfo=~/.local/share/nvim/shada/main.shada)
+endif
 
 " Have Vim jump to the last position when reopening a file
 if has("autocmd")
@@ -128,14 +132,6 @@ if has("autocmd")
 	" xml
 	augroup xml
 		au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-	augroup END
-
-	" puppet
-	augroup puppet
-		au FileType puppet setlocal equalprg=~/.dev/puppet-tidy
-		au FileType puppet nmap <F4> :w:!puppet-lint %
-		au FileType puppet nmap <F5> :w:!ruby -c %
-		au FileType puppet nmap <F6> :w:!rvm all do bundle exec rake
 	augroup END
 
 	" ruby
