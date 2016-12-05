@@ -2,8 +2,9 @@
 set -gx PATH $PATH ~/.dotfiles/bin
 
 # locale
-set -g LANG en_US.UTF-8
-set -g LC_ALL en_US.UTF-8
+set -g LANG de_CH.utf8
+set -x LC_ALL de_CH.utf8
+set -x LC_CTYPE de_CH.utf8
 
 # no greeting
 set fish_greeting ""
@@ -55,9 +56,11 @@ abbr -a glol='git lol'
 abbr -a glola='git lola'
 abbr -a gua="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
 abbr -a gsa="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
-
+abbr -a gua="git add -u :/"
+abbr -a ga="git add "
+#
 # Add all files by default
-function ga
+function gaa
   set arg $argv .
   git add "$argv"
 end
