@@ -67,6 +67,9 @@ function gaa
   git add "$argv"
 end
 
+# Ruby enVironment Manager
+rvm default
+
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
