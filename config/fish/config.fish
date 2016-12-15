@@ -58,7 +58,7 @@ abbr -a glol='git lol'
 abbr -a glola='git lola'
 abbr -a gua="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
 abbr -a gsa="find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
-abbr -a gua="git add -u :/"
+abbr -a gau="git add -u :/"
 abbr -a ga="git add "
 #
 # Add all files by default
