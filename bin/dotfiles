@@ -218,6 +218,15 @@ function link_do() {
   e_success "Linking ~/$1."
   ln -sf ${2#$HOME/} ~/
 }
+# Create ~/.config directory if does not already exists
+function create_config_dir_if_not_exists() {
+ if [[ ! -d ~/.config ]]; then
+  e_header "Creating ~/.config"
+  mkdir ~/.config
+  e_success "~/.config has been created."
+ fi
+}
+
 
 # Link files to .config
 function config_header() { e_header "Linking files into ~/.config directory"; }
@@ -324,6 +333,9 @@ mkdir -p "$DOTFILES/caches/init"
 # If backups are needed, this is where they'll go.
 export backup_dir="$DOTFILES/backups/$(date "+%Y_%m_%d-%H_%M_%S")/"
 backup=
+
+# Create ~/.config dir, if it doesn't already exists
+create_config_dir_if_not_exists
 
 # Execute code for each file in these subdirectories.
 do_stuff "copy"
