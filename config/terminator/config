@@ -1,0 +1,51 @@
+[global_config]
+  focus = system
+  suppress_multiple_term_dialog = True
+[keybindings]
+  next_profile = <Primary><Shift><Alt>Page_Down
+  previous_profile = <Primary><Shift><Alt>Page_Up
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_darkness = 0.92
+    background_image = None
+    foreground_color = "#ffffff"
+    scroll_on_output = False
+    scrollback_infinite = True
+    show_titlebar = False
+  [[Ext]]
+    background_color = "#697bea"
+    background_image = None
+    foreground_color = "#ffffff"
+    scroll_on_output = False
+    scrollback_infinite = True
+  [[Int]]
+    background_color = "#502a00"
+    background_image = None
+    foreground_color = "#d8d1d1"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scroll_on_output = False
+    scrollback_infinite = True
+  [[Raspberry]]
+    background_color = "#002b36"
+    background_darkness = 0.82
+    background_image = None
+    foreground_color = "#839496"
+    scroll_background = False
+    scrollback_infinite = True
+  [[presentator]]
+    background_color = "#fdf6e3"
+    background_image = None
+    font = Monospace 24
+    foreground_color = "#657b83"
+    scrollback_infinite = True
+    use_system_font = False
