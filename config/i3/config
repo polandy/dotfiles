@@ -168,6 +168,13 @@ exec --no-startup-id firefox
 #    mixer_idx = 0
 # }
 
+#  Volume control
+## Increase/Decrease using pulse audio
+bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume    exec pactl set-sink-volume 1 -5%
+
+## Toggle sound
+bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
 
 # display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
