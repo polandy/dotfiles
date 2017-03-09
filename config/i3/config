@@ -119,6 +119,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # move to previous / next workspace
 bindsym $mod+Prior workspace prev
 bindsym $mod+Next  workspace next
+bindsym $mod+Shift+Prior move container to workspace prev
+bindsym $mod+Shift+Next move container to workspace next
 
 # less eye pain
 exec --no-startup-id redshift-gtk
