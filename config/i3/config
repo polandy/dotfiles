@@ -116,10 +116,18 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# move to previous / next workspace
+bindsym $mod+Prior workspace prev
+bindsym $mod+Next  workspace next
+
 # less eye pain
 exec --no-startup-id redshift-gtk
 exec --no-startup-id compton -cCGbD 10
 
+# Program-Workspace Default Mapping
+assign [class="Pidgin"] 1
+assign [class="Thunderbird"] 2
+assign [class="Firefox"] 2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,7 +178,7 @@ bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
-bindsym XF86MonBrightnessDown   exec "xbacklight -10
+bindsym XF86MonBrightnessDown   exec "xbacklight -10"
 
 # LockScreen, copied from https://wiki.archlinux.org/index.php/i3#Shutdown.2C_reboot.2C_lock_screen
 set $Locker i3lock -i /home/apollari/Pictures/wallpapers/3-screens.png && sleep 1
