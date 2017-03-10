@@ -132,6 +132,8 @@ exec --no-startup-id compton -cCGbD 10
 assign [class="Pidgin"] 1
 assign [class="Thunderbird"] 2
 assign [class="Firefox"] 2
+assign [class="Eclipse"] 3
+assign [class="jetbrains-idea"] 3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
