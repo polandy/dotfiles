@@ -173,6 +173,7 @@ exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id firefox
+exec --no-startup-id dropbox start
 
 #  Volume control
 ## Increase/Decrease using pulse audio
