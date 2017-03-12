@@ -9,24 +9,21 @@
 #         General configurations            #
 #############################################
 set $mod Mod4
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 8
-
+#
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+set $font "pango:Droid Sans Mono 10"
+font $font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # window border
-new_window pixel 2
+new_window pixel 3
 
 # less eye pain
 exec --no-startup-id redshift-gtk
-exec --no-startup-id compton -cCGbD 10
 
 #############################################
 #                  Keymaps                  #
@@ -92,7 +89,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -150,15 +147,15 @@ bindsym $mod+Shift+b          move container to workspace back_and_forth
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Pidgin"] $workspace1
-assign [class="Thunderbird"] $workspace2
-assign [class="Firefox"] $workspace4_browser
-assign [class="Eclipse"] $workspace3
+assign [class="Pidgin"]         $workspace1
+assign [class="Thunderbird"]    $workspace2
+assign [class="Firefox"]        $workspace4_browser
+assign [class="Eclipse"]        $workspace3
 assign [class="jetbrains-idea"] $workspace3
 
-for_window [instance="keepassx"] floating enable
+for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
-for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
+
 #############################################
 #                 Modes                     #
 #############################################
@@ -185,7 +182,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -196,14 +193,12 @@ bindsym $mod+Pause mode "$mode_system"
 #############################################
 #                Autostart                  #
 #############################################
-
 exec --no-startup-id dropbox start
 exec --no-startup-id pidgin
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id firefox
-
 
 #############################################
 #                 i3-bar                    #
@@ -215,7 +210,7 @@ bar {
     tray_output DP1-1
     tray_output eDP1        # internal display 
     status_command i3status -c ~/.config/i3/i3status.conf
-    font pango:DejaVu Sans Mono, Icons 8
+    font $font
   colors {
     separator #dc322f
     background #002b36
