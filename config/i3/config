@@ -215,7 +215,7 @@ bar {
     tray_output DP1-1
     tray_output eDP1        # internal display 
     status_command i3status -c ~/.config/i3/i3status.conf
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    font pango:DejaVu Sans Mono, Icons 8
   colors {
     separator #dc322f
     background #002b36
