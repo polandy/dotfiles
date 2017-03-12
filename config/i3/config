@@ -49,6 +49,9 @@ bindsym XF86AudioLowerVolume    exec pactl set-sink-volume 1 -5%
 # Toggle sound
 bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
 
+# Open volume control for the pulse audio sound server
+bindsym $mod+XF86AudioMute      exec pavucontrol
+
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
 bindsym XF86MonBrightnessDown   exec "xbacklight -10"
@@ -104,12 +107,16 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #############################################
 #                  Workspaces               #
 #############################################
+set $workspace1 "1 Chat"
+set $workspace2 "2 Mail"
+set $workspace3 "3 IDE"
+set $workspace4_browser "4 Browser"
 
 # switch to workspace
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4_browser
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
@@ -118,10 +125,10 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+1 move container to $workspace1
+bindsym $mod+Shift+2 move container to $workspace2
+bindsym $mod+Shift+3 move container to $workspace3
+bindsym $mod+Shift+4 move container to $workspace4_browser
 bindsym $mod+Shift+5 move container to workspace number 5
 bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
@@ -143,13 +150,14 @@ bindsym $mod+Shift+b          move container to workspace back_and_forth
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Pidgin"] 1
-assign [class="Thunderbird"] 2
-assign [class="Firefox"] 2
-assign [class="Eclipse"] 3
-assign [class="jetbrains-idea"] 3
+assign [class="Pidgin"] $workspace1
+assign [class="Thunderbird"] $workspace2
+assign [class="Firefox"] $workspace4_browser
+assign [class="Eclipse"] $workspace3
+assign [class="jetbrains-idea"] $workspace3
 
 for_window [instance="keepassx"] floating enable
+for_window [instance="pavucontrol"] floating enable
 for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 #############################################
 #                 Modes                     #
