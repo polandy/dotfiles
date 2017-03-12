@@ -16,6 +16,9 @@ set $mod Mod4
 set $font "pango:Droid Sans Mono 10"
 font $font
 
+# Define Locker
+set $Locker i3lock -i '/home/apollari/Pictures/wallpapers/3-screens.png' && sleep 1
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -174,7 +177,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # LockScreen, copied from https://wiki.archlinux.org/index.php/i3#Shutdown.2C_reboot.2C_lock_screen
-set $Locker i3lock -i /home/apollari/Pictures/wallpapers/3-screens.png && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -199,6 +201,8 @@ exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id thunderbird
 exec --no-startup-id firefox
+exec --no-startup-id xautolock -time 3 -locker "$Locker"
+
 
 #############################################
 #                 i3-bar                    #

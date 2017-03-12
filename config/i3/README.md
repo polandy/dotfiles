@@ -3,3 +3,4 @@
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/), volume control
 * xbacklight, adjust backlight brightness using RandR extension
 * [i3lock](https://github.com/i3/i3lock), screen locker
+*  xautolock, lock screen if there is no activity
