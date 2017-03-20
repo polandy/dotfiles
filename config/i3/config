@@ -28,6 +28,8 @@ new_window pixel 3
 # less eye pain
 exec --no-startup-id redshift-gtk
 
+focus_follows_mouse no
+
 #############################################
 #                  Keymaps                  #
 #############################################
