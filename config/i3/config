@@ -145,10 +145,14 @@ bindsym $mod+Shift+BackSpace  workspace back_and_forth
 bindsym $mod+Shift+b          move container to workspace back_and_forth 
 
 # workspaces on specific screens
-workspace $workspace1 output eDP1
-workspace $workspace2 output DP1-1
-workspace $workspace3 output DP1-2
-workspace $workspace4_browser output DP1-1
+set $screen_internal "eDP1"
+set $screen_external_1 "DP1-1"
+set $screen_external_2 "DP1-2"
+
+workspace $workspace1         output $screen_internal
+workspace $workspace2         output $screen_external_1
+workspace $workspace3         output $screen_external_2
+workspace $workspace4_browser output $screen_external_1
 
 #############################################
 #               Windows-specific            #
