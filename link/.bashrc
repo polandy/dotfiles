@@ -50,6 +50,8 @@ fi
 
 src
 
+exec fish
+
 unset INIT_DIR
 export HOME=$HOME_DIR
 cd $HOME_DIR
