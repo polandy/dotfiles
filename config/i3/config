@@ -13,7 +13,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-set $font "pango:Droid Sans Mono 10"
+set $font "pango:Droid Sans Mono 10, FontAwesome 10"
 font $font
 
 # Define Locker
@@ -109,10 +109,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #############################################
 #                  Workspaces               #
 #############################################
-set $workspace1 "1 Chat"
-set $workspace2 "2 Mail"
-set $workspace3 "3 IDE"
-set $workspace4_browser "4 Browser"
+# Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4_browser "4 "
+set $workspace10_terminal "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -124,7 +126,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
+bindsym $mod+0 workspace $workspace10_terminal
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -213,6 +215,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
 #############################################
 #                 i3-bar                    #
