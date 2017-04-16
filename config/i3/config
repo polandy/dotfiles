@@ -54,7 +54,7 @@ bindsym $mod+XF86AudioMute      exec pavucontrol
 
 # Open arandr/nvidia settings
 bindsym $mod+XF86Display        exec arandr
-bindsym XF86Display             exec nvidia-settings
+bindsym $mod+Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
