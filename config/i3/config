@@ -70,8 +70,12 @@ bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
 # Open volume control for the pulse audio sound server
 bindsym $mod+XF86AudioMute      exec pavucontrol
 
-# Open arandr
-bindsym XF86Display             exec arandr
+# Open arandr/nvidia settings
+bindsym $mod+XF86Display        exec arandr
+bindsym XF86Display             exec nvidia-settings
+
+# change displaymode
+bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -190,6 +194,7 @@ assign [class="jetbrains-idea"] $workspace3
 
 for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
+for_window [class="Nvidia-settings"] floating enable
 
 #############################################
 #                 Modes                     #
