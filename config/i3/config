@@ -229,11 +229,11 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 #                 i3-bar                    #
 #############################################
 bar {
-  status_command    i3status
+  status_command      i3status
     position          top
     workspace_buttons yes
-    tray_output DP1-1
-    tray_output eDP1        # internal display 
+    tray_output DP-3
+    tray_output DP-4
     status_command i3status -c ~/.config/i3/i3status.conf
     font pango:$font, $icon_font
   colors {
