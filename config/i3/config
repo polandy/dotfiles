@@ -70,6 +70,9 @@ bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
 # Open volume control for the pulse audio sound server
 bindsym $mod+XF86AudioMute      exec pavucontrol
 
+# Open arandr
+bindsym XF86Display             exec arandr
+
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
 bindsym XF86MonBrightnessDown   exec "xbacklight -10"
