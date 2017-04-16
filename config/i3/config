@@ -11,7 +11,7 @@
 set $mod Mod4
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-set $font System San Francisco Display 12
+set $font System San Francisco Display 10
 set $icon_font FontAwesome 11
 font pango:$font
 
