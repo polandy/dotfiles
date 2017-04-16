@@ -11,8 +11,9 @@
 set $mod Mod4
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-set $font "pango:System San Francisco Display 12" 
-font $font
+set $font System San Francisco Display 12
+set $icon_font FontAwesome 11
+font pango:$font
 
 # Define Locker
 set $Locker i3lock -i '/home/apollari/Pictures/wallpapers/3-screens.png' && sleep 1
@@ -57,7 +58,7 @@ set $base0F #fcc09e
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 400 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "System San Francisco Display 18" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 450 -opacity "90" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -columns 2 -font "$font" -hlfg "#9575cd"
 
 #  Volume control, using pulse audio
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
@@ -243,7 +244,7 @@ bar {
     tray_output DP1-1
     tray_output eDP1        # internal display 
     status_command i3status -c ~/.config/i3/i3status.conf
-    font "pango:System San Francisco Display 11, FontAwesome 11"
+    font pango:$font, $icon_font
   colors {
     separator #dc322f
     background #002b36
