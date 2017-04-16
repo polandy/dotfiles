@@ -7,11 +7,21 @@ MONITOR=DP-4
 function ActivateDisplayPort {
     echo "Switching to DisplayPort"
     /bin/bash ~/.screenlayout/1x32inch.sh
+    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
+    rm ~/.Xresources
+    cp ~/.screenlayout/Xresources-external-display ~/.Xresources
+    # set the dpi using xrandr (used by i3)
+    xrandr --dpi 110
     MONITOR=DISPLAYPORT
 }
 function DeactivateDisplayPort {
     echo "Switching to internal screen"
     /bin/bash ~/.screenlayout/1xinternalScreen.sh
+    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
+    rm ~/.Xresources
+    cp ~/.screenlayout/Xresources-internal-display ~/.Xresources
+    # set the dpi using xrandr (used by i3)
+    xrandr --dpi 180
     MONITOR=INTERNAL
 }
 
@@ -27,13 +37,15 @@ DeactivateDisplayPort
 # ActivateDisplayPort
 
 
- if ! displayport_active && displayport_connected
- then
-   ActivateDisplayPort
- else
-   DeactivateDisplayPort
- fi
- 
+if ! displayport_active && displayport_connected
+then
+  ActivateDisplayPort
+else
+  DeactivateDisplayPort
+fi
+
+i3-msg reload
+i3-msg restart 
 # 
 # if displayport_active && ! displayport_connected
 # then
