@@ -237,20 +237,20 @@ bar {
     status_command i3status -c ~/.config/i3/i3status.conf
     font pango:$font, $icon_font
   colors {
-    separator #dc322f
-    background #002b36
-    statusline #268bd2
-    focused_workspace #fdf6e3 #859900 #fdf6e3
-    active_workspace #fdf6e3 #6c71c4 #fdf6e3
-    inactive_workspace #586e75 #93a1a1 #002b36
-    urgent_workspace #d33682 #d33682 #fdf6e3
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
   }
 }
 
-client.focused #859900 #859900 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
-
 
 exec xrandr --dpi 180
+
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
