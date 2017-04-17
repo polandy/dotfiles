@@ -2,9 +2,9 @@
 set -gx PATH $PATH ~/.dotfiles/bin
 
 # locale
-set -g LANG de_CH.utf8
-set -x LC_ALL de_CH.utf8
-set -x LC_CTYPE de_CH.utf8
+set -g LANG en_US.utf8
+set -x LC_ALL en_US.utf8
+set -x LC_CTYPE en_US.utf8
 
 # no greeting
 set fish_greeting ""
