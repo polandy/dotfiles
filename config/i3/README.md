@@ -9,6 +9,7 @@
 # Required / Suggestions for look & feel
 * [Font Awesome](http://fontawesome.io/), vector font, used for icons in i3status bar
 * [Yosemite San Francisco Font](https://github.com/supermarin/YosemiteSanFranciscoFont), install this font to ~/.fonts
+* [feh](https://github.com/derf/feh), an image viewer. in the config feh is used to set the wallpaper (default: ~/Pictures/wallpaper.jpg)
 * [Arc Firefox Theme](https://github.com/horst3180/arc-firefox-theme)
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
 * [Moka Icon Theme](https://snwh.org/moka)
