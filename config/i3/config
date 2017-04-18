@@ -22,10 +22,7 @@ set $Locker i3lock -i '/home/apollari/Pictures/wallpapers/3-screens.png' && slee
 floating_modifier $mod
 
 # window border
-new_window pixel 3
-
-# less eye pain
-exec --no-startup-id redshift-gtk
+new_window pixel 2
 
 focus_follows_mouse no
 
@@ -126,16 +123,16 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #                  Workspaces               #
 #############################################
 # Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
+set $workspace1_chat "1 "
+set $workspace2_mail "2 "
+set $workspace3_code "3 "
 set $workspace4_browser "4 "
 set $workspace10_terminal "10 "
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
+bindsym $mod+1 workspace $workspace1_chat
+bindsym $mod+2 workspace $workspace2_mail
+bindsym $mod+3 workspace $workspace3_code
 bindsym $mod+4 workspace $workspace4_browser
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
@@ -145,45 +142,47 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace $workspace10_terminal
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace $workspace1_chat
+bindsym $mod+Shift+2 move container to workspace $workspace2_mail
+bindsym $mod+Shift+3 move container to workspace $workspace3_code
+bindsym $mod+Shift+4 move container to workspace $workspace4_browser
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # move to previous / next workspace
 bindsym $mod+Prior            workspace prev
+bindsym $mod+Control+Left     workspace prev
 bindsym $mod+Next             workspace next
+bindsym $mod+Control+Right    workspace next
 bindsym $mod+Shift+Prior      move container to workspace prev
 bindsym $mod+Shift+Next       move container to workspace next
 bindsym $mod+Shift+BackSpace  workspace back_and_forth
-bindsym $mod+Shift+b          move container to workspace back_and_forth 
+bindsym $mod+Shift+b          move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen_internal "eDP1"
+set $screen_internal   "eDP1"
 set $screen_external_1 "DP1-1"
 set $screen_external_2 "DP1-2"
 
-workspace $workspace1         output $screen_internal
-workspace $workspace2         output $screen_external_1
-workspace $workspace3         output $screen_external_2
-workspace $workspace4_browser output $screen_external_1
+workspace $workspace1_chat         output $screen_internal
+workspace $workspace2_mail         output $screen_external_1
+workspace $workspace3_code         output $screen_external_2
+workspace $workspace4_browser      output $screen_external_1
 
 #############################################
 #               Windows-specific            #
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Pidgin"]         $workspace1
-assign [class="Thunderbird"]    $workspace2
+assign [class="Pidgin"]         $workspace1_chat
+assign [class="Thunderbird"]    $workspace2_mail
 assign [class="Firefox"]        $workspace4_browser
-assign [class="Eclipse"]        $workspace3
-assign [class="jetbrains-idea"] $workspace3
+assign [class="Eclipse"]        $workspace3_code
+assign [class="jetbrains-idea"] $workspace3_code
 
 for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
@@ -230,6 +229,7 @@ exec --no-startup-id volwheel
 exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
+exec --no-startup-id redshift-gtk
 
 exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
@@ -238,26 +238,26 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 #                 i3-bar                    #
 #############################################
 bar {
-  status_command    i3status
-    position          top
-    workspace_buttons yes
-    tray_output DP1-1
-    tray_output eDP1        # internal display 
-    status_command i3status -c ~/.config/i3/i3status.conf
-    font pango:$font, $icon_font
+  status_command       i3status
+    position           top
+    workspace_buttons  yes
+    tray_output        DP1-1
+    tray_output        eDP1        # internal display 
+    status_command     i3status -c ~/.config/i3/i3status.conf
+    font               pango:$font, $icon_font
   colors {
-    separator #666666
-    background #222222
-    statusline #dddddd
-    focused_workspace #0088CC #0088CC #ffffff
-    active_workspace #333333 #333333 #ffffff
+    separator          #666666
+    background         #222222
+    statusline         #dddddd
+    focused_workspace  #0088CC #0088CC #ffffff
+    active_workspace   #333333 #333333 #ffffff
     inactive_workspace #333333 #333333 #888888
-    urgent_workspace #2f343a #900000 #ffffff
+    urgent_workspace   #2f343a #900000 #ffffff
   }
 }
 
 
-exec xrandr --dpi 180
+# exec xrandr --dpi 180
 
 client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
