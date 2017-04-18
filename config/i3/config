@@ -158,11 +158,13 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # move to previous / next workspace
 bindsym $mod+Prior            workspace prev
+bindsym $mod+Control+Left     workspace prev
 bindsym $mod+Next             workspace next
+bindsym $mod+Control+Right    workspace next
 bindsym $mod+Shift+Prior      move container to workspace prev
 bindsym $mod+Shift+Next       move container to workspace next
 bindsym $mod+Shift+BackSpace  workspace back_and_forth
-bindsym $mod+Shift+b          move container to workspace back_and_forth 
+bindsym $mod+Shift+b          move container to workspace back_and_forth
 
 # workspaces on specific screens
 set $screen_internal "eDP1"
