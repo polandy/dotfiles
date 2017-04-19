@@ -152,15 +152,10 @@ bindsym $mod+Shift+Next       move container to workspace next
 bindsym $mod+Shift+BackSpace  workspace back_and_forth
 bindsym $mod+Shift+b          move container to workspace back_and_forth
 
-# workspaces on specific screens
-set $screen_internal   "eDP1"
-set $screen_external_1 "DP1-1"
-set $screen_external_2 "DP1-2"
+# screens
+set $screen_internal   "DP-4"
+set $screen_external_1 "DP-3"
 
-workspace $workspace1_chat         output $screen_internal
-workspace $workspace2_mail         output $screen_external_1
-workspace $workspace3_code         output $screen_external_2
-workspace $workspace4_browser      output $screen_external_1
 
 #############################################
 #               Windows-specific            #
@@ -217,7 +212,6 @@ exec --no-startup-id dropbox start
 exec --no-startup-id clipit
 exec --no-startup-id volwheel
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
-exec --no-startup-id compton --config ~/.config/i3/compton.conf
 exec --no-startup-id redshift-gtk
 exec --no-startup-id compton --config ~/.config/i3/compton.conf
 # exec --no-startup-id firefox
@@ -232,8 +226,8 @@ bar {
   status_command       i3status
     position           top
     workspace_buttons  yes
-    tray_output        DP1-1
-    tray_output        eDP1        # internal display 
+    tray_output        $screen_external_1
+    tray_output        $screen_internal
     status_command     i3status -c ~/.config/i3/i3status.conf
     font               pango:$font, $icon_font
   colors {
