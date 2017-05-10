@@ -36,10 +36,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d   exec rofi -show run
-bindsym $mod+Tab exec rofi -show
+# use rofi as dmenu replacement
+bindsym $mod+d         exec "rofi -show run"
+bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
+bindsym $mod+Tab       exec "rofi -show"
 
 #  Volume control, using pulse audio
 bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
