@@ -46,6 +46,7 @@ function displayport_connected {
 if ! displayport_active && displayport_connected
 then
   ActivateDisplayPort
+  ~/.dotfiles/util/set-mouse-acceleration.sh
 else
   DeactivateDisplayPort
 fi
