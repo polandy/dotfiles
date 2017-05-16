@@ -112,6 +112,8 @@ set $workspace2_mail "2 "
 set $workspace3_code "3 "
 set $workspace4_browser "4 "
 set $workspace5_filebrowser "5 "
+set $workspace6_misc "6 "
+set $workspace7_imgprocessing "7 "
 set $workspace10_terminal "10 "
 
 # switch to workspace
@@ -120,7 +122,7 @@ bindsym $mod+2 workspace $workspace2_mail
 bindsym $mod+3 workspace $workspace3_code
 bindsym $mod+4 workspace $workspace4_browser
 bindsym $mod+5 workspace $workspace5_filebrowser
-bindsym $mod+6 workspace number 6
+bindsym $mod+6 workspace $workspace6_misc
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
