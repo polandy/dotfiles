@@ -6,13 +6,14 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 
 ## Tools
 
-- neovim (and python-neovim   - python3!!)
-- terminator-gtk
-- fish (fish-git    -> build from sources!!)
+- [neovim](https://github.com/neovim/neovim)
+- [terminator](https://gnometerminator.blogspot.ch/)
+- [fish-shell](https://github.com/fish-shell/fish-shell)
+- [nvm](https://github.com/creationix/nvm)
 
 ## Enable deoplete
 
-1. Install neovim!!
+1. Install [neovim](https://github.com/neovim/neovim)
 2. open vim
 3. run ':UpdateRemotePlugins'
 
