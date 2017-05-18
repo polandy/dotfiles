@@ -9,6 +9,7 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 - [neovim](https://github.com/neovim/neovim)
 - [terminator](https://gnometerminator.blogspot.ch/)
 - [fish-shell](https://github.com/fish-shell/fish-shell)
+- [nvm](https://github.com/creationix/nvm)
 
 ## Enable deoplete
 
