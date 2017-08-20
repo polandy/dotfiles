@@ -1,8 +1,36 @@
 #!/bin/bash
 
-# Default monitor is the internal monitor
-MONITOR=DP-4
+set -e 
 
+# This variables are used as keys in the associative arrays below
+MONITOR_INTERNAL=INTERNAL
+MONITOR_HDMI=HDMI
+MONITOR_DP=DP
+# Screen names (use xrandr to find them out)
+SCREEN_DP=DP-3
+SCREEN_HDMI=DP-1
+SCREEN_INTERNAL=DP-4
+
+# Default monitor is the internal monitor
+MONITOR=$SCREEN_INTERNAL
+
+# The configs for the displays are stores in the following associative arrays
+declare -A monitor_screens
+monitor_screens=([$MONITOR_INTERNAL]="DP-4" [$MONITOR_DP]="DP-3" [$MONITOR_HDMI]="DP-1")
+
+declare -A monitor_scripts
+monitor_scripts=([$MONITOR_INTERNAL]="1xinternalScreen.sh" [$MONITOR_DP]="1x32inch-dp.sh" [$MONITOR_HDMI]="1x32inch-hdmi.sh")
+
+declare -A xresources_files
+xresources_files=([$MONITOR_INTERNAL]="Xresources-internal-display" [$MONITOR_DP]="Xresources-external-display" [$MONITOR_HDMI]="Xresources-external-display")
+
+declare -A xrandr_dpis
+xrandr_dpis=([$MONITOR_INTERNAL]="180" [$MONITOR_DP]="110" [$MONITOR_HDMI]="110")
+
+declare -A firefox_dpis
+firefox_dpis=([$MONITOR_INTERNAL]="2.0" [$MONITOR_DP]="1.3" [$MONITOR_HDMI]="1.3")
+
+# Functions
 function set_dpi_for_firefox {
    # set the 'layout.css.devPixelsPerPx' property in about:config
    # replaces the value in prefs.js
@@ -10,55 +38,48 @@ function set_dpi_for_firefox {
    sed -i "/layout.css.devPixelsPerPx/c\user_pref('layout.css.devPixelsPerPx', '$1');" $(find ~/.mozilla/firefox/ -maxdepth 2 -name "prefs.js" )
 }
 
-# functions to switch from LVDS1 to VGA and vice versa
-function ActivateDisplayPort {
-    echo "Switching to DisplayPort"
-    /bin/bash ~/.screenlayout/1x32inch.sh
-    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
-    rm ~/.Xresources
-    cp ~/.screenlayout/Xresources-external-display ~/.Xresources
-    # set the dpi using xrandr (used by i3)
-    xrandr --dpi 110
-    set_dpi_for_firefox 1.3
-    MONITOR=DISPLAYPORT
-}
-function DeactivateDisplayPort {
-    echo "Switching to internal screen"
-    /bin/bash ~/.screenlayout/1xinternalScreen.sh
-    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
-    rm ~/.Xresources
-    cp ~/.screenlayout/Xresources-internal-display ~/.Xresources
-    # set the dpi using xrandr (used by i3)
-    xrandr --dpi 180
-    set_dpi_for_firefox 2.0
-    MONITOR=INTERNAL
+function do_activate_monitor {
+    monitor_to_activate=$1
+    xrandr_script="$HOME/.screenlayout/${monitor_scripts[$1]}"
+    xresources_file="$HOME/.screenlayout/${xresources_files[$1]}"
+    xrandr_dpi=${xrandr_dpis[$1]}
+    firefox_dpi=${firefox_dpis[$1]}
+
+    echo "Switching to $monitor_to_activate"
+    echo "execute $xrandr_script"
+    /bin/bash $xrandr_script
+    echo "copy $xresources_file to $HOME/.Xresources for the Xft.dpi variable (used for xrvt etc...)"
+    cp $xresources_file $HOME/.Xresources
+    echo "set xrandr --dpi $xrandr_dpi, used by i3" 
+    xrandr --dpi $xrandr_dpi
+    echo "set firefox dpi to $firefox_dpi"
+    set_dpi_for_firefox $firefox_dpi
+    MONITOR=$monitor_to_activate
 }
 
-# functions to check if VGA is connected and in use
-function displayport_active {
-    [ $MONITOR == "DISPLAYPORT" ]
-}
-function displayport_connected {
-    ! xrandr | grep "DP-3" | grep disconnected
+function is_monitor_active {
+    [ $MONITOR == "$1" ]
 }
 
+function is_screen_connected {
+    ! xrandr | grep "$1" | grep disconnected
+}
 
-if ! displayport_active && displayport_connected
-then
-  ActivateDisplayPort
-  ~/.dotfiles/util/set-mouse-acceleration.sh
-else
-  DeactivateDisplayPort
-fi
+# Iterate over all keys [HDMI, DP, INTERNAL]
+for monitor in "${!monitor_screens[@]}"; do
+  echo "checking configured monitor $monitor (${monitor_screens[$monitor]})"
+  if ! is_monitor_active $monitor && is_screen_connected "${monitor_screens[$monitor]}"
+  then
+    echo "$monitor (${monitor_screens[$monitor]}) is connected"
+    do_activate_monitor $monitor
+#   ~/.dotfiles/util/set-mouse-acceleration.sh
+    break
+  else
+    printf "$monitor (${monitor_screens[$monitor]}) is not connected\n"
+  fi
+done
 
 i3-msg reload
 i3-msg restart
-
-# 
-# if displayport_active && ! displayport_connected
-# then
-#   DeactivateDisplayPort
-# fi
-
 
 # xrdb -merge ~/.Xresources
