@@ -35,17 +35,6 @@ function ActivateExternalMonitor {
     MONITOR=$monitor_to_activate
 }
 
-function ActivateDisplayPort {
-    echo "Switching to DisplayPort"
-    /bin/bash ~/.screenlayout/1x32inch-dp.sh
-    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
-    cp ~/.screenlayout/Xresources-external-display ~/.Xresources
-    # set the dpi using xrandr (used by i3)
-    xrandr --dpi 110
-    set_dpi_for_firefox 1.3
-    MONITOR=DISPLAYPORT
-}
-
 function DeactivateDisplayPort {
     echo "Switching to internal screen"
     /bin/bash ~/.screenlayout/1xinternalScreen.sh
@@ -58,15 +47,6 @@ function DeactivateDisplayPort {
     MONITOR=INTERNAL
 }
 
-# functions to check if HDMI is connected and in use
-function hdmi_active {
-    [ $MONITOR == "HDMI" ]
-}
-
-function hdmi_connected {
-    ! xrandr | grep "DP-1" | grep disconnected
-}
-
 function is_monitor_active {
     [ $MONITOR == "$1" ]
 }
@@ -74,17 +54,6 @@ function is_monitor_active {
 function is_screen_connected {
     ! xrandr | grep "$1" | grep disconnected
 }
-
-# functions to check if DISPLAYPORT is connected and in use
-function displayport_active {
-    [ $MONITOR == "DISPLAYPORT" ]
-}
-
-function displayport_connected {
-    ! xrandr | grep "DP-3" | grep disconnected
-}
-
-# echo "${monitor_sceeen[MONITOR_HDMI]}"
 
 if is_screen_connected $SCREEN_DP || is_screen_connected $SCREEN_HDMI
 then
