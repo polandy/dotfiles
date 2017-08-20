@@ -42,12 +42,8 @@ bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
 # Volume control, using pulse audio
-bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume    exec pactl set-sink-volume 1 -5%
-
-# External monitor
-bindsym Control+XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym Control+XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume    exec "pactl set-sink-volume 1 +5%; pactl set-sink-volume 2 +5%"
+bindsym XF86AudioLowerVolume    exec "pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%"
 
 # Toggle sound
 bindsym XF86AudioMute           exec pactl set-sink-mute  1 toggle
@@ -234,6 +230,7 @@ exec --no-startup-id numlockx on
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
 
 #############################################
 #                 i3-bar                    #
