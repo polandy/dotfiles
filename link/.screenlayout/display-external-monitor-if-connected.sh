@@ -10,10 +10,10 @@ SCREEN_DP=DP-3
 SCREEN_HDMI=DP-1
 SCREEN_INTERNAL=DP-4
 # Default monitor is the internal monitor
-MONITOR=DP-4
+MONITOR=$SCREEN_INTERNAL
 
-declare -A monitor_sceeen
-monitor_sceeen=([$MONITOR_INTERNAL]="DP-4" [$MONITOR_DP]="DP-3" [$MONITOR_HDMI]="DP-1")
+declare -A monitor_screen
+monitor_screen=([$MONITOR_INTERNAL]="DP-4" [$MONITOR_DP]="DP-3" [$MONITOR_HDMI]="DP-1")
 
 declare -A monitor_script
 monitor_script=([$MONITOR_INTERNAL]="1xinternalScreen.sh" [$MONITOR_DP]="1x32inch-dp.sh" [$MONITOR_HDMI]="1x32inch-hdmi.sh")
@@ -53,17 +53,6 @@ function ActivateExternalMonitor {
     MONITOR=$monitor_to_activate
 }
 
-function DeactivateDisplayPort {
-    echo "Switching to internal screen"
-    /bin/bash ~/.screenlayout/1xinternalScreen.sh
-    # set correct .Xresources for the Xft.dpi variable (used for xrvt etc...)
-    rm ~/.Xresources
-    cp ~/.screenlayout/Xresources-internal-display ~/.Xresources
-    # set the dpi using xrandr (used by i3)
-    xrandr --dpi 180
-    set_dpi_for_firefox 2.0
-    MONITOR=INTERNAL
-}
 
 function is_monitor_active {
     [ $MONITOR == "$1" ]
@@ -73,13 +62,18 @@ function is_screen_connected {
     ! xrandr | grep "$1" | grep disconnected
 }
 
-if ! is_monitor_active $MONITOR_HDMI && is_screen_connected $SCREEN_HDMI
-then
-  ActivateExternalMonitor $MONITOR_HDMI
-elif ! is_monitor_active $MONITOR_DP && is_screen_connected $SCREEN_DP
-then
-  ActivateExternalMonitor $MONITOR_DP
-fi
+#Iterate over all keys [HDMI, DP, INTERNAL]
+for monitor in "${!monitor_screen[@]}"; do
+  echo "checking configured monitor $monitor (${monitor_screen[$monitor]})"
+  if ! is_monitor_active $monitor && is_screen_connected "${monitor_screen[$monitor]}"
+  then
+    echo "$monitor (${monitor_screen[$monitor]}) is connected"
+    ActivateExternalMonitor $monitor
+    break
+  else
+    printf "$monitor (${monitor_screen[$monitor]}) is not connected\n"
+  fi
+done
 
 # if ! displayport_active && displayport_connected
 # then
