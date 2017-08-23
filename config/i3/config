@@ -42,8 +42,8 @@ bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
 # Volume control, using pulse audio
-bindsym XF86AudioRaiseVolume    exec "pactl set-sink-volume 1 +5%; pactl set-sink-volume 2 +5%"
-bindsym XF86AudioLowerVolume    exec "pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%"
+bindsym XF86AudioRaiseVolume    exec $HOME/.dotfiles/util/audio/raise-volume.sh
+bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
 
 # Toggle sound
 bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
