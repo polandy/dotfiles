@@ -46,7 +46,7 @@ bindsym XF86AudioRaiseVolume    exec pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume    exec pactl set-sink-volume 1 -5%
 
 # Toggle sound
-bindsym XF86AudioMute           exec amixer -D pulse set Master 1+ toggle
+bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 
 # Open volume control for the pulse audio sound server
 bindsym $mod+XF86AudioMute      exec pavucontrol
@@ -215,12 +215,12 @@ bindsym $mod+Pause mode "$mode_system"
 exec --no-startup-id dropbox start
 exec --no-startup-id clipit
 exec --no-startup-id volwheel
-exec --no-startup-id nm-applet
 exec --no-startup-id firefox
 exec --no-startup-id xautolock -time 3 -locker "$Locker"
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
 # exec --no-startup-id compton --config ~/.config/i3/compton.conf
+# exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
