@@ -27,7 +27,7 @@ Icon Show Size=false
 Icon Show Tags=true
 Icon Show Title=true
 IconView Font=Sans Serif,9,-1,5,50,0,0,0,0,0
-Image Group Mode=2
+Image Group Mode=1
 Image Group Sort Order=0
 Image Sort Order=2
 Image Sorting=0
@@ -82,10 +82,10 @@ ToolTips Show Video Frame Rate=true
 TreeView Font=Sans Serif,9,-1,5,50,0,0,0,0,0
 
 [AlbumFolderView Sidebar]
-CurrentIndex=1344
-Expansion=0,1088,1089,1086,1087,1082,1084,1083,1040,1041,1046,1081,1080,1079,1078,1077,1076,1075,1074,1073,1072,1071,1070,1069,1068,1067,1066,1065,1064,1063,1062,1061,1060,1059,1058,1057,1056,1055,1052,1051,1050,1049,1048,1047,1045,1022,941,1020,942,997,972,968,963,959,902,906,933,923,917,921,898,901,900,899,897,894,896,895,893,891,892,887,888,889,886,884,885,93,1,1341,1342,1340,4,1336,1343,1344,89,87,88
+CurrentIndex=1354
+Expansion=0,90,1085,1705,1736,1706,1587,1350,1354,1622,1088,1089,1086,1087,1737,1621,1745,1620,1746,1082,1084,1083,1040,1041,1046,1081,1080,1079,1078,1077,1076,1075,1074,1073,1072,1071,1070,1069,1068,1067,1066,1065,1064,1063,1062,1061,1060,1059,1058,1057,1056,1055,1052,1051,1050,1049,1048,1047,1045,1022,941,1020,942,997,972,968,963,959,902,906,933,923,917,921,898,901,900,899,897,894,896,895,893,891,892,887,888,889,886,884,885,93
 RestoreChecked=false
-Selection=1344
+Selection=1354
 SortColumn=0
 SortOrder=1
 
@@ -94,7 +94,7 @@ CaseSensitive=0
 
 [AlbumSelectWidget]
 AlbumTreeViewCurrentIndex=
-AlbumTreeViewExpansion=1
+AlbumTreeViewExpansion=1530,1637,90
 AlbumTreeViewRestoreChecked=false
 AlbumTreeViewSelection=
 AlbumTreeViewSortColumn=0
@@ -225,7 +225,7 @@ RenderingIntent=0
 WorkProfileFile[$e]=/usr/share/digikam/profiles/srgb-d65.icm
 
 [CoreDB Settings]
-Recently Used Tags=25,207,32,206,201,200,199,194,198,196
+Recently Used Tags=30,235,234,233,231,230,232,229,228,227
 
 [DMetadata Settings][readCommentNamespaces][Exif.Image.ImageDescription]
 alternativeName=Exif.Photo.UserComment
@@ -801,7 +801,7 @@ Minimized=false
 RestoreSize=-1
 
 [Digikam Right Sidebar]
-ActiveTab=0
+ActiveTab=4
 DigikamProperties Expanded=true
 FileProperties Expanded=true
 ItemProperties Expanded=true
@@ -812,10 +812,10 @@ VideoProperties Expanded=true
 
 [Digikam Right Sidebar][Captions Tags Properties Tab]
 Contact Expanded=true
-ImageDescEdit Tab=0
+ImageDescEdit Tab=1
 ImageDescEditTab CaptionsLang=x-default
 ImageDescEditTab SearchBarCaseSensitive=0
-ImageDescEditTab TagCheckViewCurrentIndex=
+ImageDescEditTab TagCheckViewCurrentIndex=0
 ImageDescEditTab TagCheckViewExpansion=0
 ImageDescEditTab TagCheckViewRestoreChecked=false
 ImageDescEditTab TagCheckViewSelection=
@@ -891,7 +891,7 @@ CaseSensitive=0
 
 [DigikamViewTagFilterView]
 CurrentIndex=
-Expansion=
+Expansion=90
 RestoreChecked=false
 Selection=
 SortColumn=0
@@ -930,7 +930,7 @@ Detection Accuracy=0.8
 [Find Duplicates View]
 AlbumComboBox-Checked=
 AlbumComboBox-CurrentIndex=
-AlbumComboBox-Expansion=
+AlbumComboBox-Expansion=1530,1637,90
 AlbumComboBox-RestoreChecked=true
 AlbumComboBox-Selection=
 AlbumComboBox-SortColumn=0
@@ -938,17 +938,20 @@ AlbumComboBox-SortOrder=0
 AlbumTypeEntry=0
 Last maximum similarity=100
 Last minimum similarity=90
+Last search album tag relation=0
 Last search results restriction=0
 Lower bound for minimum similarity=40
 TagComboBox-Checked=
 TagComboBox-CurrentIndex=
-TagComboBox-Expansion=
+TagComboBox-Expansion=90
 TagComboBox-RestoreChecked=true
 TagComboBox-Selection=
 TagComboBox-SortColumn=0
 TagComboBox-SortOrder=0
+UseWholeAlbumsEntry=true
 UseWholePAlbumsEntry=true
 UseWholeTAlbumsEntry=true
+UseWholeTagsEntry=true
 
 [Fuzzy Search Sidebar]
 CurrentIndex=1
@@ -965,6 +968,16 @@ Similars Maximum Threshold=100
 Similars Threshold=90
 SortColumn=0
 SortOrder=0
+
+[Fuzzy Search View]
+AlbumComboBox-Checked=
+AlbumComboBox-CurrentIndex=
+AlbumComboBox-Expansion=1530,1637,90
+AlbumComboBox-RestoreChecked=true
+AlbumComboBox-Selection=
+AlbumComboBox-SortColumn=0
+AlbumComboBox-SortOrder=0
+UseWholeAlbumsEntry=true
 
 [FuzzySearchViewSearchFuzzyBar Search Text Tool]
 CaseSensitive=0
@@ -1007,7 +1020,7 @@ CaseSensitive=0
 
 [General Settings]
 Application Style=fusion
-Apply Sidebar Changes Directly=false
+Apply Sidebar Changes Directly=true
 Clean core DB At Start=false
 Face Scanner First Run=true
 Finger Prints Generator First Run=true
@@ -1026,9 +1039,18 @@ State=AAAA/wAAAAD9AAAAAAAADvwAAAfiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG
 String Comparison Type=0
 ToolBarsMovable=Disabled
 Use Large Thumbs=false
-Use Trash=true
+Use Trash=false
 Version=5.5.0
 Width 3840=3836
+
+[Grouping Behaviour]
+Do BQM operations on all=2
+Do Kipi operations on all=2
+Do light table operations on all=2
+Do metadata operations on all=1
+Do slideshow operations on all=2
+Operate tools on all=2
+Rename all=2
 
 [Image Properties SideBar]
 EXIF Tags Filter=
@@ -1113,7 +1135,7 @@ SlideShowPrintTags=false
 SlideShowPrintTitle=false
 SlideShowProgressIndicator=true
 SlideShowStartCurrent=false
-SplitterState=AAAA/wAAAAEAAAACAAAGFwAAAT8B/////wAAAAABAQ==
+SplitterState=AAAA/wAAAAEAAAACAAANWAAAAT8B/////wAAAAABAQ==
 State=AAAA/wAAAAD9AAAAAAAADvwAAAfiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 TIFFCompression=false
 ToolBarsMovable=Disabled
@@ -1138,7 +1160,7 @@ whitebalance Expanded=true
 ActiveTab=6
 DigikamProperties Expanded=true
 FileProperties Expanded=true
-ItemProperties Expanded=true
+ItemProperties Expanded=false
 Minimized=false
 PhotographProperties Expanded=true
 RestoreSize=-1
@@ -1218,7 +1240,7 @@ ToolBarsMovable=Disabled
 Width 3840=3487
 
 [Import Filters]
-CurrentFilter=0
+CurrentFilter[$d]
 Filter0=All Files|false|||
 Filter1=Only New Files|true|||
 Filter2=Raw Files|false|||image/x-nikon-nef;image/x-fuji-raf;image/x-adobe-dng;image/x-panasonic-raw;image/x-olympus-orf;image/x-kodak-dcr;image/x-kodak-k25;image/x-sony-arw;image/x-minolta-mrw;image/x-kodak-kdc;image/x-sigma-x3f;image/x-sony-srf;image/x-pentax-pef;image/x-panasonic-raw2;image/x-canon-crw;image/x-sony-sr2;image/x-canon-cr2
@@ -1448,14 +1470,15 @@ ToolBarsMovable=Disabled
 Width 3840=3138
 
 [MainWindow]
-InitialAlbumID=1344
+InitialAlbumID=1354
 SplitterState=AAAA/wAAAAEAAAADAAABuQAAC8wAAAE/Af////8AAAAAAQE=
-ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAATzAAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAABPMAAABhAP///wAABPMAAAf4AAAABAAAAAQAAAAIAAAACPwAAAAA
+ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAAvIAAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAAC8gAAABhAP///wAAC8gAAAfiAAAABAAAAAQAAAAIAAAACPwAAAAA
 
 [Metadata Settings]
+Custom Sidecar Extensions=
 EXIF Rotate=true
 EXIF Set Orientation=true
-Metadata Writing Mode=0
+Metadata Writing Mode=3
 Rescan File If Modified=true
 Rotate By Internal Flag=true
 Rotate By Metadata Flag=true
@@ -1559,7 +1582,7 @@ Expo Correction Shift=0.9939999999999998
 FixColorsHighlights=false
 Four Color RGB=false
 Gamma=1
-Histogram Channel=0
+Histogram Channel=1
 Histogram Scale=1
 MainExposure=0
 Median Filter Passes=0
@@ -1672,11 +1695,11 @@ White Balance=1
 White Point=0
 caBlueMultiplier=0
 caRedMultiplier=0
-colormanagement Expanded=false
-corrections Expanded=false
+colormanagement Expanded=true
+corrections Expanded=true
 demosaicing Expanded=true
 exposure Expanded=true
-luminositycurve Expanded=false
+luminositycurve Expanded=true
 whitebalance Expanded=true
 
 [Search Sidebar]
@@ -1692,9 +1715,19 @@ CaseSensitive=0
 
 [Setup Dialog]
 Height 2160=907
-Setup Page=2
+Setup Page=4
 Template Tab=0
 Width 3840=1814
+
+[Sketch Search View]
+AlbumComboBox-Checked=
+AlbumComboBox-CurrentIndex=
+AlbumComboBox-Expansion=1530,1637,90
+AlbumComboBox-RestoreChecked=true
+AlbumComboBox-Selection=
+AlbumComboBox-SortColumn=0
+AlbumComboBox-SortOrder=0
+UseWholeAlbumsEntry=true
 
 [TagEditDlgTitleEdit Search Text Tool]
 CaseSensitive=0
@@ -1717,6 +1750,14 @@ Selection=25
 SortColumn=0
 SortOrder=0
 TagsSource=false
+
+[Tags Manager]
+CurrentIndex=43
+Expansion=0,90
+RestoreChecked=false
+Selection=43
+SortColumn=0
+SortOrder=0
 
 [TimeLine Sidebar]
 CurrentIndex=
