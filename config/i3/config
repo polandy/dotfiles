@@ -176,7 +176,7 @@ assign [class="Firefox"]        $workspace4_browser
 assign [class="Eclipse"]        $workspace3_code
 assign [class="jetbrains-idea"] $workspace3_code
 
-for_window [instance="keepassx"]    floating enable
+# for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
 
 #############################################
