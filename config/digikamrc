@@ -10,7 +10,7 @@ Options are expanded=true
 [Album Settings]
 Album Collections=,Category,Friends,Holidays,Miscellaneous,Nature,Party,Todo,Travel
 Album Sort Role=0
-Default Icon Size=256
+Default Icon Size=232
 Default Tree Icon Size=22
 Icon Show Aspect Ratio=false
 Icon Show Comments=true
@@ -29,7 +29,7 @@ Icon Show Title=true
 IconView Font=Sans Serif,9,-1,5,50,0,0,0,0,0
 Image Group Mode=1
 Image Group Sort Order=0
-Image Sort Order=2
+Image Sort Order=1
 Image Sorting=0
 Item Left Click Action=0
 Preview Convert To Eight Bit=true
@@ -39,14 +39,14 @@ Preview Raw Use Half Size Data=true
 Preview Show Icons=true
 Preview Zoom Use Original Size=true
 Rating Filter Condition=0
-Recursive Albums=false
-Recursive Tags=true
+Recursive Albums=true
+Recursive Tags=false
 Show Album ToolTips=true
 Show Folder Tree View Items Count=false
 Show Thumbbar=true
 Show ToolTips=true
 Sidebar Title Style=2
-Theme=GrayCard
+Theme=Black Body
 ToolTips Font=Sans Serif,9,-1,5,50,0,0,0,0,0
 ToolTips Show Album Caption=true
 ToolTips Show Album Category=true
@@ -82,10 +82,10 @@ ToolTips Show Video Frame Rate=true
 TreeView Font=Sans Serif,9,-1,5,50,0,0,0,0,0
 
 [AlbumFolderView Sidebar]
-CurrentIndex=1354
-Expansion=0,90,1085,1705,1736,1706,1587,1350,1354,1622,1088,1089,1086,1087,1737,1621,1745,1620,1746,1082,1084,1083,1040,1041,1046,1081,1080,1079,1078,1077,1076,1075,1074,1073,1072,1071,1070,1069,1068,1067,1066,1065,1064,1063,1062,1061,1060,1059,1058,1057,1056,1055,1052,1051,1050,1049,1048,1047,1045,1022,941,1020,942,997,972,968,963,959,902,906,933,923,917,921,898,901,900,899,897,894,896,895,893,891,892,887,888,889,886,884,885,93
+CurrentIndex=1768
+Expansion=0,1530,1826,1819,1816,1757,1793,1792,1791,1790,1788,1787,1785,1784,1783,1782,1781,1780,1779,1778,1776,1775,1774,1773,1772,1771,1770,1769,1768,1767,1766,1765,1764,1763,1762,1761,1760,1759,1758,-2
 RestoreChecked=false
-Selection=1354
+Selection=1768
 SortColumn=0
 SortOrder=1
 
@@ -94,7 +94,7 @@ CaseSensitive=0
 
 [AlbumSelectWidget]
 AlbumTreeViewCurrentIndex=
-AlbumTreeViewExpansion=1530,1637,90
+AlbumTreeViewExpansion=1530
 AlbumTreeViewRestoreChecked=false
 AlbumTreeViewSelection=
 AlbumTreeViewSortColumn=0
@@ -108,11 +108,11 @@ Sync Digikam to Baloo=false
 [Batch Queue Manager Settings]
 BqmBottomSplitter=AAAA/wAAAAEAAAACAAAA0gAAALsB/////wEAAAABAA==
 BqmTopSplitter=AAAA/wAAAAEAAAADAAAAoQAAAM0AAAC3Af////8BAAAAAQA=
-BqmVerticalSplitter=AAAA/wAAAAEAAAACAAAA7AAAANsB/////wEAAAACAA==
-Height 2160=2110
-State=AAAA/wAAAAD9AAAAAAAADvwAAAfoAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+BqmVerticalSplitter=AAAA/wAAAAEAAAACAAAA8AAAAN0B/////wEAAAACAA==
+Height 2160=2132
+State=AAAA/wAAAAD9AAAAAAAAB3wAAAf+AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 3840=3836
+Width 3840=1916
 
 [Camera Settings]
 AlbumBox Expanded=false
@@ -135,7 +135,7 @@ FullScreen Hide SideBars=false
 FullScreen Hide ThumbBar=true
 FullScreen Hide ToolBars=false
 Height 2160=2132
-LastTargetAlbum=1344
+LastTargetAlbum=1756
 LossLessFormat=0
 Manual Rename String=
 OnFlyBox Expanded=true
@@ -225,7 +225,7 @@ RenderingIntent=0
 WorkProfileFile[$e]=/usr/share/digikam/profiles/srgb-d65.icm
 
 [CoreDB Settings]
-Recently Used Tags=30,235,234,233,231,230,232,229,228,227
+Recently Used Tags=25,32,301,265,254,31,27,215,57,28
 
 [DMetadata Settings][readCommentNamespaces][Exif.Image.ImageDescription]
 alternativeName=Exif.Photo.UserComment
@@ -789,9 +789,9 @@ Internal Database Server Mysql Server Command=
 Internal Database Server Path=
 
 [DateFolderView Sidebar]
-CurrentIndex=1
-Expansion=5
-Selection=1,7
+CurrentIndex=
+Expansion=
+Selection=
 SortColumn=0
 SortOrder=0
 
@@ -801,7 +801,7 @@ Minimized=false
 RestoreSize=-1
 
 [Digikam Right Sidebar]
-ActiveTab=4
+ActiveTab=6
 DigikamProperties Expanded=true
 FileProperties Expanded=true
 ItemProperties Expanded=true
@@ -818,9 +818,9 @@ ImageDescEditTab SearchBarCaseSensitive=0
 ImageDescEditTab TagCheckViewCurrentIndex=0
 ImageDescEditTab TagCheckViewExpansion=0
 ImageDescEditTab TagCheckViewRestoreChecked=false
-ImageDescEditTab TagCheckViewSelection=
+ImageDescEditTab TagCheckViewSelection=0
 ImageDescEditTab TagCheckViewSortColumn=0
-ImageDescEditTab TagCheckViewSortOrder=0
+ImageDescEditTab TagCheckViewSortOrder=1
 ImageDescEditTab TagCheckViewToggle Auto Tags=0
 ImageDescEditTab TitleLang=x-default
 Location Expanded=true
@@ -890,10 +890,10 @@ CaseSensitive=0
 CaseSensitive=0
 
 [DigikamViewTagFilterView]
-CurrentIndex=
+CurrentIndex=31
 Expansion=90
 RestoreChecked=false
-Selection=
+Selection=31
 SortColumn=0
 SortOrder=0
 Toggle Auto Tags=0
@@ -901,36 +901,57 @@ Toggle Auto Tags=0
 [DigikamViewTagSearchBar Search Text Tool]
 CaseSensitive=0
 
+[ExpoBlending Dialog]
+Height 2160=750
+Width 3840=800
+
+[ExpoBlending Settings]
+Auto Alignment=true
+Auto Levels=false
+CIECAM02=false
+Conflict=0
+Contrast Value=0
+Exposure Value=0.1
+Hard Mask=false
+Levels Value=29
+Output Format=1
+Saturation Value=0.9
+Template File Name=enfuse
+align_image_stackBinary[$e]=
+enfuseBinary[$e]=
+
 [Face Detection Dialog]
-AlbumComboBox-Checked=
-AlbumComboBox-CurrentIndex=
-AlbumComboBox-Expansion=1
+AlbumComboBox-Checked=1757
+AlbumComboBox-CurrentIndex=1530
+AlbumComboBox-Expansion=1530
 AlbumComboBox-RestoreChecked=true
-AlbumComboBox-Selection=
+AlbumComboBox-Selection=1530
 AlbumComboBox-SortColumn=0
 AlbumComboBox-SortOrder=0
 AlbumTypeEntry=0
-Already Scanned Handling=Skip
-Face Scan Main Task=Recognize Marked Faces
+Already Scanned Handling=Rescan
+Face Scan Main Task=Detect
 Settings Widget Visible=false
 TagComboBox-Checked=
 TagComboBox-CurrentIndex=
-TagComboBox-Expansion=
+TagComboBox-Expansion=90
 TagComboBox-RestoreChecked=true
 TagComboBox-Selection=
 TagComboBox-SortColumn=0
 TagComboBox-SortOrder=0
-Use Full CPU=false
+Use Full CPU=true
+UseWholeAlbumsEntry=false
 UseWholePAlbumsEntry=true
 UseWholeTAlbumsEntry=true
+UseWholeTagsEntry=true
 
 [Face Detection Settings]
-Detection Accuracy=0.8
+Detection Accuracy=1
 
 [Find Duplicates View]
 AlbumComboBox-Checked=
 AlbumComboBox-CurrentIndex=
-AlbumComboBox-Expansion=1530,1637,90
+AlbumComboBox-Expansion=1530
 AlbumComboBox-RestoreChecked=true
 AlbumComboBox-Selection=
 AlbumComboBox-SortColumn=0
@@ -972,7 +993,7 @@ SortOrder=0
 [Fuzzy Search View]
 AlbumComboBox-Checked=
 AlbumComboBox-CurrentIndex=
-AlbumComboBox-Expansion=1530,1637,90
+AlbumComboBox-Expansion=1530
 AlbumComboBox-RestoreChecked=true
 AlbumComboBox-Selection=
 AlbumComboBox-SortColumn=0
@@ -990,7 +1011,7 @@ Selection=
 Sort Order=0
 SortColumn=0
 SortOrder=0
-SplitterState=AAAA/wAAAAEAAAACAAABwgAAAN4B/////wEAAAACAA==
+SplitterState=AAAA/wAAAAEAAAACAAABxAAAAN4B/////wEAAAACAA==
 
 [GPS Search Sidebar][GPSSearch Map Widget]
 Backend=marble
@@ -1022,12 +1043,13 @@ CaseSensitive=0
 Application Style=fusion
 Apply Sidebar Changes Directly=true
 Clean core DB At Start=false
+Draw Frames To Grouped Items=true
 Face Scanner First Run=true
 Finger Prints Generator First Run=true
 FullScreen Hide SideBars=false
 FullScreen Hide ThumbBar=true
 FullScreen Hide ToolBars=false
-Height 2160=2110
+Height 2160=2132
 Icon Theme=breeze-dark
 Scan At Start=true
 Scroll Current Item To Center=false
@@ -1035,13 +1057,73 @@ Show Only Face Tags For Assigning Name=true
 Show Permanent Delete Dialog=true
 Show Splash=true
 Show Trash Delete Dialog=false
-State=AAAA/wAAAAD9AAAAAAAADvwAAAfiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAADvwAAAf4AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 String Comparison Type=0
 ToolBarsMovable=Disabled
 Use Large Thumbs=false
 Use Trash=false
 Version=5.5.0
 Width 3840=3836
+
+[Geolocation Edit Settings]
+Bookmarks visible=false
+Current Tab=0
+Map Layout=0
+Show oldest images first=false
+Splitter H1 CollapsedSize=0
+SplitterState H1=AAAA/wAAAAEAAAACAAAKRQAABFIB/////wEAAAABAA==
+SplitterState V1=AAAA/wAAAAEAAAACAAAEeAAAA00B/////wEAAAACAA==
+
+[Geolocation Edit Settings][Correlator Widget]
+GPX File Open Last Directory=/home/andy/Photos/2017/route-final/gpx
+Interpolate=true
+Max Gap Time=00:00:30
+Max Inter Dist Time=08:00:00
+Offset Sign=1
+Offset Time=06:15:00
+ShowTracksOnMap=true
+
+[Geolocation Edit Settings][Dialog]
+Height 2160=2088
+Width 3840=3832
+
+[Geolocation Edit Settings][Map Widget]
+Backend=marble
+Center=geo:4.04249444444,114.812125
+GoogleMaps Map Type=ROADMAP
+GoogleMaps Show Map Type Control=true
+GoogleMaps Show Navigation Control=true
+GoogleMaps Show Scale Control=true
+Marble Map Theme=openstreetmap
+Marble Projection=spherical
+Marble Show Compass=false
+Marble Show Navigation=false
+Marble Show Overview Map=false
+Marble Show Scale Bar=false
+Marker Grouping Radius=1
+Mouse Mode=16
+Preview Grouped Items=true
+Preview Single Items=true
+Show Thumbnails=false
+Show numbers on items=true
+Thumbnail Grouping Radius=30
+Thumbnail Size=60
+Zoom=marble:900
+
+[Geolocation Edit Settings][Reverse Geocoding Widget]
+Hide options=false
+Language=21
+RG Backend=0
+Spacers count=0
+XMP location=true
+
+[Geolocation Edit Settings][Search Widget]
+Keep old results=false
+Search backend=osm
+
+[Geolocation Edit Settings][Tree View]
+Header State=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x02\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\r\x00\x0e\x00\x00\x00\x03\x00\x00\x00\x0b\x00\x00\x00ª\x00\x00\x00\n\x00\x00\x00ª\x00\x00\x00\t\x00\x00\x00ª\x00\x00\n)\x00\x00\x00\r\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00ªˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\r\x00\x00\x00<\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x02Ë\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00ª\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01Ë\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00ª
+Image List Thumbnail Size=60
 
 [Grouping Behaviour]
 Do BQM operations on all=2
@@ -1102,7 +1184,7 @@ FullScreen Hide ToolBars=false
 Height 2160=2110
 JPEG2000Compression=75
 JPEG2000LossLess=true
-JPEGCompression=75
+JPEGCompression=100
 JPEGSubSampling=1
 LastSavedImageExtension=jpg
 Median Filter Passes=0
@@ -1135,7 +1217,7 @@ SlideShowPrintTags=false
 SlideShowPrintTitle=false
 SlideShowProgressIndicator=true
 SlideShowStartCurrent=false
-SplitterState=AAAA/wAAAAEAAAACAAANWAAAAT8B/////wAAAAABAQ==
+SplitterState=AAAA/wAAAAEAAAACAAANWAAAAewB/////wAAAAABAQ==
 State=AAAA/wAAAAD9AAAAAAAADvwAAAfiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 TIFFCompression=false
 ToolBarsMovable=Disabled
@@ -1289,6 +1371,23 @@ ToolTips Show Photo Make=true
 ToolTips Show Photo WB=false
 ToolTips Show Tags=true
 
+[KMLExport Settings]
+Altitude Mode=0
+GPX Altitude Mode=0
+GPXFile=
+KMLFileName=kmldocument
+Line Width=4
+Time Zone=12
+Track Color=#17eeee
+Track Opacity=64
+UrlDestDir=http://www.example.com/
+UseGPXTracks=false
+baseDestDir=/tmp/
+iconSize=33
+localTarget=true
+optimize_googlemap=false
+size=320
+
 [Labels Sidebar]
 ColorSelection=
 Expansion=
@@ -1301,13 +1400,13 @@ Auto Sync Preview=true
 Clear On Close=false
 FullScreen Hide SideBars=false
 FullScreen Hide ToolBars=false
-Height 2160=2110
-Horizontal Splitter State=AAAA/wAAAAEAAAADAAABPwAADYUAAAE/Af////8AAAAAAQE=
+Height 2160=2132
+Horizontal Splitter State=AAAA/wAAAAEAAAADAAAB7AAADYUAAAHsAf////8AAAAAAQE=
 Navigate By Pair=true
 Show Thumbbar=true
-State=AAAA/wAAAAD9AAAAAAAADvwAAAfiAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB3wAAAf4AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 3840=3836
+Width 3840=1916
 
 [LightTable Settings][Left Sidebar]
 ActiveTab=2
@@ -1464,15 +1563,15 @@ Version Properties Tab=versions
 Version Properties View Mode=2
 
 [LightTable Thumbbar]
-Height 2160=2018
-State=AAAA/wAAAAD9AAAAAQAAAAIAAAxCAAABBvwBAAAAAfsAAAAmAGwAaQBnAGgAdAB0AGEAYgBsAGUAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAADEIAAABhAP///wAADEIAAAbWAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 2160=2040
+State=AAAA/wAAAAD9AAAAAQAAAAIAAATCAAABBvwBAAAAAfsAAAAmAGwAaQBnAGgAdAB0AGEAYgBsAGUAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAABMIAAABhAP///wAABMIAAAbsAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 3840=3138
+Width 3840=1218
 
 [MainWindow]
-InitialAlbumID=1354
-SplitterState=AAAA/wAAAAEAAAADAAABuQAAC8wAAAE/Af////8AAAAAAQE=
-ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAAvIAAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAAC8gAAABhAP///wAAC8gAAAfiAAAABAAAAAQAAAAIAAAACPwAAAAA
+InitialAlbumID=1768
+SplitterState=AAAA/wAAAAEAAAADAAABqwAAC/EAAALTAf////8AAAAAAQE=
+ThumbbarState=AAAA/wAAAAD9AAAAAQAAAAIAAAp5AAAAwPwBAAAAAfsAAAAmAG0AYQBpAG4AdwBpAG4AZABvAHcAXwB0AGgAdQBtAGIAYgBhAHIAAAAAAAAACnkAAACcAP///wAACnkAAAfMAAAABAAAAAQAAAAIAAAACPwAAAAA
 
 [Metadata Settings]
 Custom Sidecar Extensions=
@@ -1505,22 +1604,29 @@ CompletionMode=5
 History=darktable,geeqie
 
 [Panorama Dialog]
-Height 2160=750
-Width 3840=800
+Height 2160=817
+Width 3840=1218
 
 [Panorama Settings]
-Celeste=false
-File Type=0
+Celeste=true
+File Type=1
 GPano=false
 Horizon=true
 Save PTO=false
+autooptimiserBinary[$e]=
+cpcleanBinary[$e]=
+cpfindBinary[$e]=
+enblendBinary[$e]=
+hugin_executorBinary[$e]=
 makeBinary[$e]=
+nonaBinary[$e]=
+pano_modifyBinary[$e]=
 
 [People Sidebar]
-CurrentIndex=25
-Expansion=25,28,23,24
+CurrentIndex=23
+Expansion=139,25,65,28,23,26,24
 RestoreChecked=false
-Selection=25
+Selection=23
 SortColumn=0
 SortOrder=0
 
@@ -1702,6 +1808,9 @@ exposure Expanded=true
 luminositycurve Expanded=true
 whitebalance Expanded=true
 
+[RawCameraDlgSearchBar Search Text Tool]
+CaseSensitive=0
+
 [Search Sidebar]
 CurrentIndex=2
 Expansion=
@@ -1715,14 +1824,17 @@ CaseSensitive=0
 
 [Setup Dialog]
 Height 2160=907
-Setup Page=4
+Setup Page=1
 Template Tab=0
 Width 3840=1814
+
+[Shortcut Schemes]
+Current Scheme=Default
 
 [Sketch Search View]
 AlbumComboBox-Checked=
 AlbumComboBox-CurrentIndex=
-AlbumComboBox-Expansion=1530,1637,90
+AlbumComboBox-Expansion=1530
 AlbumComboBox-RestoreChecked=true
 AlbumComboBox-Selection=
 AlbumComboBox-SortColumn=0
@@ -1737,16 +1849,16 @@ LabelsFilter Expanded=true
 Matching Condition=0
 Search Text Filter Fields=127
 Show Untagged=false
-TagsFilter Expanded=true
+TagsFilter Expanded=false
 TextFilter Expanded=true
 TypeGeolocationFilter Expanded=true
 TypeMimeFilter Expanded=true
 
 [TagView Sidebar]
-CurrentIndex=25
-Expansion=0,39,25,194,29,30,40,28,37,41,23,42,44
+CurrentIndex=216
+Expansion=0,216,39,25,194,29,30,40,28,37,41,23,42,44
 RestoreChecked=false
-Selection=25
+Selection=216
 SortColumn=0
 SortOrder=0
 TagsSource=false
@@ -1761,7 +1873,7 @@ SortOrder=0
 
 [TimeLine Sidebar]
 CurrentIndex=
-Cursor Position=2016,10,3,0,0,0
+Cursor Position=2016,10,31,0,0,0
 Expansion=
 Histogram Scale=1
 Histogram TimeUnit=1
@@ -1836,11 +1948,11 @@ Thumbnail Size=60
 Zoom=marble:900
 
 [mainwindow_tableview]
-Grouping mode=2
+Grouping mode=1
 
 [mainwindow_tableview][Current Profile]
-Column Count=5
-Header State=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x05\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\ra\x00\x00\x00\x05\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00rˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x0bô\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00r
+Column Count=6
+Header State=\x00\x00\x00ˇ\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x03\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\n=\x00\x00\x00\x06\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00ªˇˇˇˇ\x00\x00\x00Å\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x02\x08\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00r\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x06m\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03Ë\x00\x00\x00\x00ª
 Profile Name=
 
 [mainwindow_tableview][Current Profile][Column 0]
@@ -1861,4 +1973,8 @@ NSettings=0
 
 [mainwindow_tableview][Current Profile][Column 4]
 Column Id=digikam-title
+NSettings=0
+
+[mainwindow_tableview][Current Profile][Column 5]
+Column Id=geohascoordinates
 NSettings=0
