@@ -180,7 +180,7 @@ assign [class="Firefox"]        $workspace4_browser
 assign [class="Eclipse"]        $workspace3_code
 assign [class="jetbrains-idea"] $workspace3_code
 
-for_window [instance="keepassx"]    floating enable
+# for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Nvidia-settings"] floating enable
 
@@ -231,7 +231,7 @@ exec --no-startup-id numlockx on
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
+# exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
 
 #############################################
 #                 i3-bar                    #
