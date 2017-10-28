@@ -42,11 +42,11 @@ bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
 # Volume control, using pulse audio
-bindsym XF86AudioRaiseVolume    exec "pactl set-sink-volume 1 +5%; pactl set-sink-volume 2 +5%"
-bindsym XF86AudioLowerVolume    exec "pactl set-sink-volume 1 -5%; pactl set-sink-volume 2 -5%"
+bindsym XF86AudioRaiseVolume    exec $HOME/.dotfiles/util/audio/raise-volume.sh
+bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
 
 # Toggle sound
-bindsym XF86AudioMute           exec "pactl set-sink-mute 1 toggle; pactl set-sink-mute 2 toggle"
+bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 
 # Open volume control for the pulse audio sound server
 bindsym $mod+XF86AudioMute      exec pavucontrol
@@ -180,7 +180,7 @@ assign [class="Firefox"]        $workspace4_browser
 assign [class="Eclipse"]        $workspace3_code
 assign [class="jetbrains-idea"] $workspace3_code
 
-for_window [instance="keepassx"]    floating enable
+# for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Nvidia-settings"] floating enable
 
@@ -231,7 +231,7 @@ exec --no-startup-id numlockx on
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
+# exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
 
 #############################################
 #                 i3-bar                    #
