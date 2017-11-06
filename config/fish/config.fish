@@ -70,16 +70,6 @@ abbr -a stash="git stash "
 abbr -a pop="git stash pop"
 
 
-# Add all files by default
-function gaa
-  set arg $argv .
-  git add "$argv"
-end
-
-# Ruby enVironment Manager
-# rvm default
-# rvm use 2.2
-
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
 
