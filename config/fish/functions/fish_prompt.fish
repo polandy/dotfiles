@@ -1,5 +1,7 @@
 set -g fish_prompt_pwd_dir_length 0
 set -g fish_color_user yellow
+set -g fish_color_at brblack
+set -g fish_color_hostname cyan
 set -g fish_color_cwd \#00ffff
 set -g fish_color_command \#ffff87
 set -g fish_color_autosuggestion \#949494
@@ -36,7 +38,17 @@ function fish_prompt --description 'Write out the prompt'
 
   # USER
   set_color $fish_color_user
-  printf "$USER "
+  printf "$USER"
+  set_color normal
+
+  # HOSTNAME
+  if not set -q __fish_prompt_hostname
+     set -g __fish_prompt_hostname (hostname)
+  end
+  set_color $fish_color_at
+  printf "@"
+  set_color $fish_color_hostname
+  printf "$__fish_prompt_hostname"
   set_color normal
 
   # PWD
@@ -44,15 +56,14 @@ function fish_prompt --description 'Write out the prompt'
   echo -n (prompt_pwd)
   set_color normal
 
+  # GIT PROMPT
   printf '%s ' (__fish_git_prompt)
 
   if not test $last_status -eq 0
     set_color -o $fish_color_error
   else
-    set_color -o \#00ff00
+    set_color -o green
   end
-
-  # printf '\u25B6 '
   printf '$ '
 
   set_color normal
