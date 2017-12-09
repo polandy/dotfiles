@@ -158,14 +158,16 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
 
 # move to previous / next workspace
-bindsym $mod+Prior            workspace prev
-bindsym $mod+Control+Left     workspace prev
-bindsym $mod+Next             workspace next
-bindsym $mod+Control+Right    workspace next
-bindsym $mod+Shift+Prior      move container to workspace prev
-bindsym $mod+Shift+Next       move container to workspace next
-bindsym $mod+Shift+BackSpace  workspace back_and_forth
-bindsym $mod+Shift+b          move container to workspace back_and_forth
+bindsym $mod+Prior              workspace prev
+bindsym $mod+Control+Left       workspace prev
+bindsym $mod+Control+j          workspace prev
+bindsym $mod+Next               workspace next
+bindsym $mod+Control+Right      workspace next
+bindsym $mod+Control+odiaeresis workspace next
+bindsym $mod+Shift+Prior        move container to workspace prev
+bindsym $mod+Shift+Next         move container to workspace next
+bindsym $mod+Shift+BackSpace    workspace back_and_forth
+bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # screens
 set $screen_internal      "DP-4"
