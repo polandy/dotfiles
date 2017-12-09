@@ -63,20 +63,20 @@ bindsym $mod+Left  focus left
 bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
-bindsym $mod+j     focus left
-bindsym $mod+k     focus down
-bindsym $mod+l     focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+h     focus left
+bindsym $mod+j     focus down
+bindsym $mod+k     focus up
+bindsym $mod+l focus right
 
 # move focused window
 bindsym $mod+Shift+Left       move left
 bindsym $mod+Shift+Down       move down
 bindsym $mod+Shift+Up         move up
 bindsym $mod+Shift+Right      move right
-bindsym $mod+Shift+j          move left
-bindsym $mod+Shift+k          move down
-bindsym $mod+Shift+l          move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+h          move left
+bindsym $mod+Shift+j          move down
+bindsym $mod+Shift+k          move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -156,10 +156,10 @@ bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
 # move to previous / next workspace
 bindsym $mod+Prior              workspace prev
 bindsym $mod+Control+Left       workspace prev
-bindsym $mod+Control+j          workspace prev
+bindsym $mod+Control+h          workspace prev
 bindsym $mod+Next               workspace next
 bindsym $mod+Control+Right      workspace next
-bindsym $mod+Control+odiaeresis workspace next
+bindsym $mod+Control+l workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
