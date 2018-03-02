@@ -52,8 +52,8 @@ bindsym XF86AudioMute           exec $HOME/.dotfiles/util/audio/toggle-audio.sh
 bindsym $mod+XF86AudioMute      exec pavucontrol
 
 # Open arandr/nvidia settings
-bindsym $mod+XF86Display        exec arandr
-bindsym $mod+Shift+XF86Display  exec nvidia-settings
+bindsym XF86Display        exec arandr
+bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
 bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
@@ -67,23 +67,23 @@ bindsym $mod+Left  focus left
 bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
-bindsym $mod+j     focus left
-bindsym $mod+k     focus down
-bindsym $mod+l     focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+h     focus left
+bindsym $mod+j     focus down
+bindsym $mod+k     focus up
+bindsym $mod+l     focus right
 
 # move focused window
 bindsym $mod+Shift+Left       move left
 bindsym $mod+Shift+Down       move down
 bindsym $mod+Shift+Up         move up
 bindsym $mod+Shift+Right      move right
-bindsym $mod+Shift+j          move left
-bindsym $mod+Shift+k          move down
-bindsym $mod+Shift+l          move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+h          move left
+bindsym $mod+Shift+j          move down
+bindsym $mod+Shift+k          move up
+bindsym $mod+Shift+l          move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -160,24 +160,24 @@ bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
 # move to previous / next workspace
 bindsym $mod+Prior              workspace prev
 bindsym $mod+Control+Left       workspace prev
-bindsym $mod+Control+j          workspace prev
+bindsym $mod+Control+h          workspace prev
 bindsym $mod+Next               workspace next
 bindsym $mod+Control+Right      workspace next
-bindsym $mod+Control+odiaeresis workspace next
+bindsym $mod+Control+l          workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
-# screens
-set $screen_internal      "DP-4"
-set $screen_external_dp   "DP-3"
-set $screen_external_hdmi "DP-1"
+# workspaces on specific screens
+set $screen_internal   "eDP1"
+set $screen_external_1 "DP1-1"
+set $screen_external_2 "DP1-2"
 
 workspace $workspace1_chat         output $screen_internal
-workspace $workspace2_mail         output $screen_external_dp
+workspace $workspace2_mail         output $screen_external_1
 workspace $workspace3_code         output $screen_external_2
-workspace $workspace4_browser      output $screen_external_hdmi
+workspace $workspace4_browser      output $screen_external_1
 
 #############################################
 #               Windows-specific            #
@@ -192,7 +192,6 @@ assign [class="jetbrains-idea"] $workspace3_code
 
 # for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
-for_window [class="Nvidia-settings"] floating enable
 
 #############################################
 #                 Modes                     #
@@ -241,7 +240,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #                Autostart                  #
 #############################################
 exec --no-startup-id dropbox start
-exec --no-startup-id dropbox nextcloud
+exec --no-startup-id nextcloud
 exec --no-startup-id clipit
 exec --no-startup-id volwheel
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
@@ -252,7 +251,6 @@ exec --no-startup-id numlockx on
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-# exec_always --no-startup-id "pactl set-sink-volume 1 50%; pactl set-sink-volume 2 50%"
 
 #############################################
 #                 i3-bar                    #
