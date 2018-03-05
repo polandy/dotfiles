@@ -3,7 +3,7 @@
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Source Code Pro for Powerline Regular 10
+font = Source Code Pro for Powerline Regular 12
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal

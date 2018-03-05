@@ -163,7 +163,7 @@ bindsym $mod+Control+Left       workspace prev
 bindsym $mod+Control+h          workspace prev
 bindsym $mod+Next               workspace next
 bindsym $mod+Control+Right      workspace next
-bindsym $mod+Control+l          workspace next
+#bindsym $mod+Control+l          workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
@@ -171,8 +171,7 @@ bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
 set $screen_internal   "DP-4"
-set $screen_external_1 "DP"
-set $screen_external_2 "DP1-2"
+set $screen_external_1 "DP-3"
 
 workspace $workspace1_chat         output $screen_internal
 workspace $workspace2_mail         output $screen_external_1
@@ -196,6 +195,16 @@ for_window [instance="pavucontrol"] floating enable
 #############################################
 #                 Modes                     #
 #############################################
+# Screenshot menu
+set $mode_screenshot (f)ullscreen in cliboard and ~/Pictures/, (s)election 
+mode "$mode_screenshot" {
+    bindsym f exec --no-startup-id flameshot full -c -p ~/Pictures, mode "default"
+    bindsym s exec --no-startup-id flameshot gui -p ~/Pictures, mode "default"
+   
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Print mode "$mode_screenshot"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -259,8 +268,7 @@ bar {
   status_command       i3status
     position           top
     workspace_buttons  yes
-    tray_output        DP-3
-    tray_output        $screen_external_hdmi
+    tray_output        $screen_external_1
     tray_output        $screen_internal
     status_command     i3status -c ~/.config/i3/i3status.conf
     font               pango:$font, $icon_font
