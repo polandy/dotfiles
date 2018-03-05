@@ -16,6 +16,9 @@
 * [Moka Icon Theme](https://snwh.org/moka)
 * [Compton](https://github.com/chjj/compton), provides compositing functionality
 
+# Utilities
+* [flameshot](https://github.com/lupoDharkael/flameshot) for screenshots
+
 # Nautilus 
 To disable the nautilus desktop window, use:
 `gsettings set org.gnome.desktop.background show-desktop-icons false`
