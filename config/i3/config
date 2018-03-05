@@ -53,10 +53,6 @@ bindsym $mod+XF86AudioMute      exec pavucontrol
 
 # Open arandr/nvidia settings
 bindsym XF86Display        exec arandr
-bindsym Shift+XF86Display  exec nvidia-settings
-
-# change displaymode
-bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -170,8 +166,8 @@ bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen_internal   "DP-4"
-set $screen_external_1 "DP"
+set $screen_internal   "eDP1"
+set $screen_external_1 "DP1-1"
 set $screen_external_2 "DP1-2"
 
 workspace $workspace1_chat         output $screen_internal
@@ -196,6 +192,16 @@ for_window [instance="pavucontrol"] floating enable
 #############################################
 #                 Modes                     #
 #############################################
+# Screenshot menu
+set $mode_screenshot (f)ullscreen in cliboard and ~/Pictures/, (s)election 
+mode "$mode_screenshot" {
+    bindsym f exec --no-startup-id flameshot full -c -p ~/Pictures, mode "default"
+    bindsym s exec --no-startup-id flameshot gui -p ~/Pictures, mode "default"
+   
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Print mode "$mode_screenshot"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -240,15 +246,9 @@ bindsym $mod+T mode "$mode_thinkpad"
 #                Autostart                  #
 #############################################
 exec --no-startup-id dropbox start
-exec --no-startup-id nextcloud
 exec --no-startup-id clipit
-exec --no-startup-id volwheel
-exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-# exec --no-startup-id compton --config ~/.config/i3/compton.conf
-# exec --no-startup-id firefox
-# exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
@@ -259,9 +259,8 @@ bar {
   status_command       i3status
     position           top
     workspace_buttons  yes
-    tray_output        DP-3
-    tray_output        $screen_external_hdmi
-    tray_output        $screen_internal
+    tray_output        DP1-1
+    tray_output        eDP1        # internal display 
     status_command     i3status -c ~/.config/i3/i3status.conf
     font               pango:$font, $icon_font
   colors {
