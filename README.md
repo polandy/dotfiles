@@ -7,7 +7,7 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 ## Tools
 
 - [neovim](https://github.com/neovim/neovim)
-- [terminator](https://gnometerminator.blogspot.ch/)
+- [termite](https://github.com/thestinger/termite)
 - [fish-shell](https://github.com/fish-shell/fish-shell)
 - [nvm](https://github.com/creationix/nvm)
 
@@ -18,4 +18,4 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 3. run ':UpdateRemotePlugins'
 
 ## Install powerline fonts for airline
-powerline-fonts-git
+- [powerline-fonts](https://github.com/powerline/fonts)
