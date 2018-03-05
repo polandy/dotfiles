@@ -14,7 +14,6 @@
 * [Arc Firefox Theme](https://github.com/horst3180/arc-firefox-theme)
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
 * [Moka Icon Theme](https://snwh.org/moka)
-* [Compton](https://github.com/chjj/compton), provides compositing functionality
 
 # Utilities
 * [flameshot](https://github.com/lupoDharkael/flameshot) for screenshots
