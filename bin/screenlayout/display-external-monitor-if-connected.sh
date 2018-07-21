@@ -5,32 +5,28 @@ set -e
 # This variables are used as keys in the associative arrays below
 MONITOR_INTERNAL=INTERNAL
 MONITOR_HDMI=HDMI
-MONITOR_THUNDERBOLT=TB
-MONITOR_DP=DP
 # Screen names (use xrandr to find them out)
-SCREEN_DP=DP-3
-SCREEN_HDMI=DP-1
-SCREEN_TB=DP-5
-SCREEN_INTERNAL=DP-4
+SCREEN_HDMI=HDMI1
+SCREEN_INTERNAL=eDP1
 
 # Default monitor is the internal monitor
 MONITOR=$SCREEN_INTERNAL
 
 # The configs for the displays are stores in the following associative arrays
 declare -A monitor_screens
-monitor_screens=([$MONITOR_INTERNAL]=$SCREEN_INTERNAL [$MONITOR_DP]=$SCREEN_DP [$MONITOR_HDMI]=$SCREEN_HDMI [$MONITOR_THUNDERBOLT]=$SCREEN_TB)
+monitor_screens=([$MONITOR_INTERNAL]=$SCREEN_INTERNAL [$MONITOR_HDMI]=$SCREEN_HDMI)
 
 declare -A monitor_scripts
-monitor_scripts=([$MONITOR_INTERNAL]="1xinternalScreen.sh" [$MONITOR_DP]="1x32inch-dp.sh" [$MONITOR_HDMI]="1x32inch-hdmi.sh" [$MONITOR_THUNDERBOLT]="1x32inch-hdmi-tb.sh")
+monitor_scripts=([$MONITOR_INTERNAL]="1xinternalScreen.sh" [$MONITOR_HDMI]="1x32inch-hdmi.sh")
 
 declare -A xresources_files
-xresources_files=([$MONITOR_INTERNAL]="Xresources-internal-display" [$MONITOR_DP]="Xresources-external-display" [$MONITOR_HDMI]="Xresources-external-display" [$MONITOR_THUNDERBOLT]="Xresources-external-display")
+xresources_files=([$MONITOR_INTERNAL]="Xresources-internal-display" [$MONITOR_HDMI]="Xresources-external-display")
 
 declare -A xrandr_dpis
-xrandr_dpis=([$MONITOR_INTERNAL]="180" [$MONITOR_DP]="110" [$MONITOR_HDMI]="110" [$MONITOR_THUNDERBOLT]="110")
+xrandr_dpis=([$MONITOR_INTERNAL]="180" [$MONITOR_HDMI]="110")
 
 declare -A firefox_dpis
-firefox_dpis=([$MONITOR_INTERNAL]="2.0" [$MONITOR_DP]="1.3" [$MONITOR_HDMI]="1.3" [$MONITOR_THUNDERBOLT]="1.3")
+firefox_dpis=([$MONITOR_INTERNAL]="2.0" [$MONITOR_HDMI]="1.3")
 
 # Functions
 function set_dpi_for_firefox {
@@ -42,8 +38,8 @@ function set_dpi_for_firefox {
 
 function do_activate_monitor {
     monitor_to_activate=$1
-    xrandr_script="$HOME/.screenlayout/${monitor_scripts[$1]}"
-    xresources_file="$HOME/.screenlayout/${xresources_files[$1]}"
+    xrandr_script="$HOME/.dotfiles/bin/screenlayout/${monitor_scripts[$1]}"
+    xresources_file="$HOME/.dotfiles/bin/screenlayout/${xresources_files[$1]}"
     xrandr_dpi=${xrandr_dpis[$1]}
     firefox_dpi=${firefox_dpis[$1]}
 
