@@ -82,3 +82,10 @@ set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
 end
+
+# Start X at login
+if status is-login
+    if test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx -- -keeptty
+    end
+end
