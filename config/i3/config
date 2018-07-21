@@ -246,6 +246,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #                Autostart                  #
 #############################################
 exec --no-startup-id dropbox start
+exec --no-startup-id nextcloud
 exec --no-startup-id clipit
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
