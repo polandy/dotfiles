@@ -16,7 +16,9 @@ set $icon_font FontAwesome 11
 font pango:$font
 
 # Define Locker
-set $Locker i3lock -i '/home/apollari/Pictures/wallpapers/3-screens.png' && sleep 1
+# Random Background image example
+#set $Locker i3lock -i $(find $HOME/Pictures/wallpapers -name "*2560x1440.png" | shuf -n1) && sleep 1
+set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -255,7 +257,9 @@ exec --no-startup-id clipit
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id xautolock -time 1 -locker "$Locker"
+
+exec_always --no-startup-id feh --bg-scale $(find $HOME/Pictures/wallpapers -name "*.png" | shuf -n1)
 
 #############################################
 #                 i3-bar                    #
