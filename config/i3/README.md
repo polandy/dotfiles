@@ -4,10 +4,10 @@
 * xbacklight, adjust backlight brightness using RandR extension
 * [i3lock](https://github.com/i3/i3lock), screen locker
 * xautolock, lock screen if there is no activity
-* [maim](https://github.com/naelstrof/maim) takes screenshots of your desktop. Used for [screen lock script](bin/lock.sh)
+* [maim](https://github.com/naelstrof/maim), takes screenshots of your desktop. Used for [screen lock script](bin/lock.sh)
 * [rofi](https://github.com/DaveDavenport/rofi), Application launcher and dmenu replacement
 * numlockx, turn numlock on at login
-
+* [blueman](https://github.com/blueman-project/blueman), a GTK+ Bluetooth Manager
 
 # Required / Suggestions for look & feel
 * [Font Awesome](http://fontawesome.io/), vector font, used for icons in i3status bar
