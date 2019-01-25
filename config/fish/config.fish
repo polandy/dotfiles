@@ -3,12 +3,13 @@ set -gx PATH $PATH ~/.dotfiles/bin
 set -gx PATH $PATH ~/bin
 
 # ruby setup
-set -x GEM_HOME ~/.gem
-set -gx PATH $PATH (ruby -e 'print Gem.user_dir')/bin
-
-# rvm setup (arch package aur/chruby-fish)
-source /usr/share/chruby/chruby.fish
-source /usr/share/chruby/auto.fish
+if type -q ruby
+  set -x GEM_HOME ~/.gem
+  set -gx PATH $PATH (ruby -e 'print Gem.user_dir')/bin
+  # rvm setup (arch package aur/chruby-fish)
+  source /usr/share/chruby/chruby.fish
+  source /usr/share/chruby/auto.fish
+end
 
 # locale
 set -g LANG en_US.utf8
