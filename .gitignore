@@ -17,6 +17,10 @@ vimrc_local
 # ignore deoplete stuff
 *-rplugin*
 
+# Beets
+/config/beets/library.db
+/config/beets/state.pickle
+
 # Darktable
 /config/darktable/library.db*
 /config/darktable/data.db*

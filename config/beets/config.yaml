@@ -1,0 +1,28 @@
+replace:
+  '[\\/]': _
+  '^\.': _
+  '[\x00-\x1f]': _
+  '[<>:"\?\*\|]': _
+  '\.$': _
+  '\s+$': ''
+  '^\s+': ''
+  '^-': _
+  '\ ': _
+
+format_item: $artist - $year - $album - $title
+format_album: $albumartist - $year - $album
+paths:
+  default: $albumartist/$year-$album%aunique{}/$track $title
+
+plugins: [fetchart, embedart, ftintitle, lyrics, types]
+fetchart:
+  auto: yes
+embedart:
+  auto: yes
+  remove_art_file: yes
+ftintitle:
+  auto: yes
+lyrics:
+  auto: yes
+types:
+  ripped: bool
