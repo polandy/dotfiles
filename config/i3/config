@@ -190,10 +190,8 @@ bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Pidgin"]         $workspace1_chat
 assign [class="Thunderbird"]    $workspace2_mail
-assign [class="Firefox"]        $workspace4_browser
-assign [class="Eclipse"]        $workspace3_code
+assign [class="firefox"]        $workspace4_browser
 assign [class="jetbrains-idea"] $workspace3_code
 
 # for_window [instance="keepassx"]    floating enable
