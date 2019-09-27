@@ -20,6 +20,7 @@ vimrc_local
 # Beets
 /config/beets/library.db
 /config/beets/state.pickle
+/config/beets/gmusicapi.yaml
 
 # Darktable
 /config/darktable/library.db*

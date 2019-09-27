@@ -9,12 +9,20 @@ replace:
   '^-': _
   '\ ': _
 
+include: [gmusicapi.yaml]
+
+
+import:
+  write: yes
+  copy: no
+  move: yes
+
 format_item: $artist - $year - $album - $title
 format_album: $albumartist - $year - $album
 paths:
-  default: $albumartist/$year-$album%aunique{}/$track $title
+  default: %the{$albumartist}/$year-$album%aunique{}/$track $title
 
-plugins: [fetchart, embedart, ftintitle, lyrics, types]
+plugins: [fetchart, embedart, ftintitle, lyrics, types, lastgenre, badfiles, replaygain, the, missing,rewrite]
 fetchart:
   auto: yes
 embedart:
@@ -26,3 +34,9 @@ lyrics:
   auto: yes
 types:
   ripped: bool
+  radioplay: bool
+replaygain:
+  auto: no
+  backend: gstreamer
+rewrite:
+  artist JAY-Z.*Linkin Park: Linkin Park
