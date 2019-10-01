@@ -172,10 +172,15 @@ set $screen_internal   "eDP1"
 set $screen_external_1 "DP1-1"
 set $screen_external_2 "DP1-2"
 
+bindsym $mod+m exec xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
+
 workspace $workspace1_chat         output $screen_internal
 workspace $workspace2_mail         output $screen_external_1
 workspace $workspace3_code         output $screen_external_2
 workspace $workspace4_browser      output $screen_external_1
+
+# Create empty workspace
+bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh
 
 #############################################
 #               Windows-specific            #
@@ -199,7 +204,7 @@ set $mode_screenshot (f)ullscreen in cliboard and ~/Pictures/, (s)election
 mode "$mode_screenshot" {
     bindsym f exec --no-startup-id flameshot full -c -p ~/Pictures, mode "default"
     bindsym s exec --no-startup-id flameshot gui -p ~/Pictures, mode "default"
-   
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
