@@ -175,8 +175,6 @@ bindsym $mod+Shift+b            move container to workspace back_and_forth
 set $screen_internal   "DP-4"
 set $screen_external_1 "DP-3"
 
-bindsym $mod+m exec xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off
-
 workspace $workspace1_chat         output $screen_internal
 workspace $workspace2_mail         output $screen_external_1
 workspace $workspace3_code         output $screen_external_2
@@ -293,9 +291,6 @@ bar {
     urgent_workspace   #2f343a #900000 #ffffff
   }
 }
-
-
-# exec xrandr --dpi 180
 
 client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
