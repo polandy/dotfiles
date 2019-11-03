@@ -16,10 +16,7 @@
 * [Arc Firefox Theme](https://github.com/horst3180/arc-firefox-theme)
 * [Arc GTK Theme](https://github.com/horst3180/Arc-theme) 
 * [Moka Icon Theme](https://snwh.org/moka)
+* [compton](https://github.com/yshui/picom) A lightweight compositor for X11 (fixes screen tearing issues)
 
 # Utilities
 * [flameshot](https://github.com/lupoDharkael/flameshot) for screenshots
-
-# Nautilus 
-To disable the nautilus desktop window, use:
-`gsettings set org.gnome.desktop.background show-desktop-icons false`
