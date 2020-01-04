@@ -71,6 +71,7 @@ abbr -a grv 'git remote -v'
 abbr -a gcd 'git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 abbr -a glol 'git lol'
 abbr -a glola 'git lola'
+
 abbr -a gstash 'git stash'
 abbr -a gua "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
 abbr -a gsa "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
@@ -91,11 +92,4 @@ set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
-end
-
-# Start X at login
-if status is-login
-    if test -z "$DISPLAY" -a $XDG_VTNR = 1
-        exec startx -- -keeptty
-    end
 end

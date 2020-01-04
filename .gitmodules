@@ -52,3 +52,6 @@
 [submodule "config/vim/bundle/vim-rake"]
 	path = config/vim/bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
+[submodule "config/i3/i3blocks-contrib"]
+	path = config/i3/i3blocks-contrib
+	url = git@github.com:vivien/i3blocks-contrib.git
