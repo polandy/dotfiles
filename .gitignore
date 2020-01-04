@@ -17,9 +17,18 @@ vimrc_local
 # ignore deoplete stuff
 *-rplugin*
 
+# Beets
+/config/beets/library.db
+/config/beets/state.pickle
+/config/beets/gmusicapi.yaml
+
 # Darktable
 /config/darktable/library.db*
 /config/darktable/data.db*
+
+# digikam
+/config/digikamrc
+/config/gconf/apps/rapid-photo-downloader/
 
 # geeqie
 /config/geeqie/history
