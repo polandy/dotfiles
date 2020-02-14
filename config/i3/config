@@ -58,7 +58,7 @@ bindsym XF86Display        exec arandr
 bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
-bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
+#bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -260,11 +260,11 @@ bindsym $mod+T mode "$mode_thinkpad"
 exec --no-startup-id dropbox start
 exec --no-startup-id nextcloud
 exec --no-startup-id clipit
-exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
+#exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
 exec --no-startup-id compton
-# exec --no-startup-id firefox
+exec --no-startup-id firefox
 # exec --no-startup-id xautolock -time 3 -locker "$Locker"
 
 exec --no-startup-id xautolock -time 1 -locker "$Locker"
