@@ -43,6 +43,13 @@ bindsym $mod+d         exec "rofi -show run"
 bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
+# scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+s move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+s scratchpad show
+
 # Volume control, using pulse audio
 bindsym XF86AudioRaiseVolume    exec $HOME/.dotfiles/util/audio/raise-volume.sh
 bindsym XF86AudioLowerVolume    exec $HOME/.dotfiles/util/audio/lower-volume.sh
@@ -94,7 +101,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
