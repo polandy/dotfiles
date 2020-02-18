@@ -124,40 +124,40 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #                  Workspaces               #
 #############################################
 # Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
-set $workspace1_chat "1 "
-set $workspace2_mail "2 "
-set $workspace3_code "3 "
-set $workspace4_browser "4 "
-set $workspace5_filebrowser "5 "
-set $workspace6_misc "6 "
-set $workspace7_imgprocessing "7 "
+set $workspace_chat "1 "
+set $workspace_mail "2 "
+set $workspace_misc "3 "
+set $workspace_browser "4 "
+set $workspace_terminal "5 "
+set $workspace_code "6 "
+set $workspace_imgprocessing "7 "
 set $workspace8 "8 "
 set $workspace9 "9 "
-set $workspace10_terminal "10 "
+set $workspace_filebrowser "10 "
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1_chat
-bindsym $mod+2 workspace $workspace2_mail
-bindsym $mod+3 workspace $workspace3_code
-bindsym $mod+4 workspace $workspace4_browser
-bindsym $mod+5 workspace $workspace5_filebrowser
-bindsym $mod+6 workspace $workspace6_misc
-bindsym $mod+7 workspace $workspace7_imgprocessing
+bindsym $mod+1 workspace $workspace_chat
+bindsym $mod+2 workspace $workspace_mail
+bindsym $mod+3 workspace $workspace_misc
+bindsym $mod+4 workspace $workspace_browser
+bindsym $mod+5 workspace $workspace_terminal
+bindsym $mod+6 workspace $workspace_code
+bindsym $mod+7 workspace $workspace_imgprocessing
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10_terminal
+bindsym $mod+0 workspace $workspace_filebrowser
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1_chat
-bindsym $mod+Shift+2 move container to workspace $workspace2_mail
-bindsym $mod+Shift+3 move container to workspace $workspace3_code
-bindsym $mod+Shift+4 move container to workspace $workspace4_browser
-bindsym $mod+Shift+5 move container to workspace $workspace5_filebrowser
-bindsym $mod+Shift+6 move container to workspace $workspace6_misc
-bindsym $mod+Shift+7 move container to workspace $workspace7_imgprocessing
+bindsym $mod+Shift+1 move container to workspace $workspace_chat
+bindsym $mod+Shift+2 move container to workspace $workspace_mail
+bindsym $mod+Shift+3 move container to workspace $workspace_misc
+bindsym $mod+Shift+4 move container to workspace $workspace_browser
+bindsym $mod+Shift+5 move container to workspace $workspace_terminal
+bindsym $mod+Shift+6 move container to workspace $workspace_code
+bindsym $mod+Shift+7 move container to workspace $workspace_imgprocessing
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
+bindsym $mod+Shift+0 move container to workspace $workspace_filebrowser
 
 # move to previous / next workspace
 bindsym $mod+Prior              workspace prev
@@ -172,13 +172,18 @@ bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen_internal   "DP-4"
-set $screen_external_1 "DP-3"
-
-workspace $workspace1_chat         output $screen_internal
-workspace $workspace2_mail         output $screen_external_1
-workspace $workspace3_code         output $screen_external_2
-workspace $workspace4_browser      output $screen_external_1
+set $screen1  "Virtual1"
+set $screen2  "Virtual2"
+workspace $workspace_chat          output $screen1
+workspace $workspace_mail          output $screen1
+workspace $workspace_misc          output $screen1
+workspace $workspace_browser       output $screen1
+workspace $workspace_terminal      output $screen1
+workspace $workspace_code          output $screen2
+workspace $workspace_imgprocessing output $screen2
+workspace $workspace8              output $screen2
+workspace $workspace9              output $screen2
+workspace $workspace_filebrowser   output $screen2
 
 # Create empty workspace
 bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh
@@ -188,9 +193,9 @@ bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Thunderbird"]    $workspace2_mail
-assign [class="firefox"]        $workspace4_browser
-assign [class="jetbrains-idea"] $workspace3_code
+assign [class="Thunderbird"]    $workspace_mail
+assign [class="firefox"]        $workspace_browser
+assign [class="jetbrains-idea"] $workspace_code
 
 # for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
@@ -279,8 +284,8 @@ bar {
     position           top
     workspace_buttons  yes
     tray_output        primary
-#    status_command     i3status -c ~/.config/i3/i3status.conf
-    status_command     i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command     i3status -c ~/.config/i3/i3status.conf
+#    status_command     i3blocks -c ~/.config/i3/i3blocks.conf
     font               pango:$font, $icon_font
   colors {
     separator          #666666
