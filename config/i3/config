@@ -264,7 +264,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 #                Autostart                  #
 #############################################
-exec --no-startup-id dropbox start
+exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id clipit
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
