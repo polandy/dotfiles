@@ -21,7 +21,6 @@ git config --global alias.subup "submodule update --init --recursive"
 git config --global alias.subst "submodule status --recursive"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-
 # abbreviations
 abbr -a g 'git'
 abbr -a gp 'git push'
@@ -68,3 +67,6 @@ set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
 end
+
+# golang
+set -g GOPATH ~/go
