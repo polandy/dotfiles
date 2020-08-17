@@ -208,6 +208,7 @@ assign [class="jetbrains-idea"] $workspace_code
 # for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="copyq"] floating enable
 
 #############################################
 #                 Modes                     #
@@ -272,7 +273,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
-exec --no-startup-id clipit
+exec --no-startup-id copyq
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on

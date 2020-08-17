@@ -20,3 +20,4 @@
 
 # Utilities
 * [flameshot](https://github.com/lupoDharkael/flameshot) for screenshots
+* [copyq](https://github.com/hluk/CopyQ) is an advanced clipboard manager with editing and scripting features.
