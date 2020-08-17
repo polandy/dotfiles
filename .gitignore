@@ -33,5 +33,12 @@ vimrc_local
 # geeqie
 /config/geeqie/history
 
+#copyq
+/config/copyq/*
+!/config/copyq/*.conf
+!/config/copyq/*.ini
+/config/copyq/copyq-bak.conf
+/config/copyq/copyq_tabs.ini
+
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
