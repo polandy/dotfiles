@@ -8,17 +8,44 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
+set $font System San Francisco Display 10
+
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
-set $term termite
+set $term alacritty
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# dmenu alternative:
+set $menu alacritty --class=launcher --command bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'
+for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 30 ppt, move position 600 px 300 px
+
+# Workspaces
+# Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
+set $workspace1_chat "1 "
+set $workspace2_mail "2 "
+set $workspace3_code "3 "
+set $workspace4_browser "4 "
+set $workspace5_filebrowser "5 "
+set $workspace6_misc "6 "
+set $workspace7_imgprocessing "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10_terminal "10 "
+
+set $notify-send-brightness notify-send "brightness: $(brightnessctl get) / $(brightnessctl max)" -t 1000
+
+set $screenshots-dir ~/Pictures/screenshots/
+set $notify-send-screenshot "Screenshot created in $screenshots-dir"
 
 ### Output configuration
 #
@@ -47,16 +74,11 @@ output eDP-1 scale 1.5
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
+    input * {
+        xkb_layout "ch"
+        xkb_variant "colemak,,typewriter"
+        xkb_options "grp:win_space_toggle"
+    }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
@@ -113,29 +135,28 @@ output eDP-1 scale 1.5
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+1 workspace $workspace1_chat
+    bindsym $mod+2 workspace $workspace2_mail
+    bindsym $mod+3 workspace $workspace3_code
+    bindsym $mod+4 workspace $workspace4_browser
+    bindsym $mod+5 workspace $workspace5_filebrowser
+    bindsym $mod+6 workspace $workspace6_misc
+    bindsym $mod+7 workspace $workspace7_imgprocessing
+    bindsym $mod+8 workspace $workspace8
+    bindsym $mod+9 workspace $workspace9
+    bindsym $mod+0 workspace $workspace10_terminal
+
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+    bindsym $mod+Shift+1 move container to workspace $workspace1_chat
+    bindsym $mod+Shift+2 move container to workspace $workspace2_mail
+    bindsym $mod+Shift+3 move container to workspace $workspace3_code
+    bindsym $mod+Shift+4 move container to workspace $workspace4_browser
+    bindsym $mod+Shift+5 move container to workspace $workspace5_filebrowser
+    bindsym $mod+Shift+6 move container to workspace $workspace6_misc
+    bindsym $mod+Shift+7 move container to workspace $workspace7_imgprocessing
+    bindsym $mod+Shift+8 move container to workspace $workspace8
+    bindsym $mod+Shift+9 move container to workspace $workspace9
+    bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
 
     bindsym $mod+Prior              workspace prev
     bindsym $mod+Control+Left       workspace prev
@@ -147,6 +168,10 @@ output eDP-1 scale 1.5
     bindsym $mod+Shift+Next         move container to workspace next
     bindsym $mod+Shift+BackSpace    workspace back_and_forth
     bindsym $mod+Shift+b            move container to workspace back_and_forth
+
+    # Create empty workspace TODO migrate to sway
+    # bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh
+
 #
 # Layout stuff:
 #
@@ -157,7 +182,7 @@ output eDP-1 scale 1.5
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    #bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -172,6 +197,12 @@ output eDP-1 scale 1.5
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # window border
+    default_border pixel 2
+
+    focus_follows_mouse no
+
 #
 # Scratchpad:
 #
@@ -210,21 +241,113 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
+# Touch pad
+#
+set $mode_thinkpad Thinkpad (t) toggle touchpad
+mode "$mode_thinkpad" {
+    bindsym t exec --no-startup-id $HOME/.dotfiles/util/misc/toggle-touchpad.sh, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+T mode "$mode_thinkpad"
+
+#
+# Menu for shutdown, suspend, hibernate
+#
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+
+#
+# Volume Controls:
+#
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+#
+# Brightness:
+# Requires https://github.com/Hummer12007/brightnessctl, pacman -S brightnessctl
+#
+bindsym --locked XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 10%+ && $notify-send-brightness
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $notify-send-brightness
+
+#
+# Screenshot:
+# requires wl-copy grim slurp swappy
+#
+set $mode_screenshot (f)ullscreen, (w)indow, (s)election, selection to (c)lipboard, (d)rawing
+mode "$mode_screenshot" {
+    bindsym f exec --no-startup-id exec grim $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
+    bindsym w exec --no-startup-id exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
+    bindsym s exec --no-startup-id exec grim -g "$(slurp)" $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
+    bindsym c exec --no-startup-id exec grim -g "$(slurp)" - | wl-copy, mode "default"
+    bindsym d exec --no-startup-id exec grim -g "$(slurp)" - | swappy -f -, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Print mode "$mode_screenshot"
+
+#
+# Autostart:
+#
+    exec --no-startup-id nm-applet
+    exec --no-startup-id nextcloud
+    exec --no-startup-id redshift
+    exec --no-startup-id waybar
+
+#
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
+    tray_output *
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    #TODO remove i3status dependency
+    status_command     i3status -c ~/.config/i3/i3status.conf
+    font               pango:$font, $icon_font
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        separator          #666666
+        background         #222222
+        statusline         #dddddd
+        focused_workspace  #0088CC #0088CC #ffffff
+        active_workspace   #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
     }
 }
+
+
+### Floating Windows
+    # Program-Workspace Default Mapping
+    assign [class="Thunderbird"]    $workspace2_mail
+    assign [class="firefox"]        $workspace4_browser
+    assign [class="jetbrains-idea"] $workspace3_code
+
+for_window [instance="pavucontrol"] floating enable
+
+### Clipboard Manager TODO Styling
+exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
+
+
 
 include /etc/sway/config.d/*
