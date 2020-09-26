@@ -24,7 +24,7 @@ set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
 floating_modifier $mod
 
 # window border
-new_window pixel 2
+default_border pixel 2
 
 focus_follows_mouse no
 
