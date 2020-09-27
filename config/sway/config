@@ -329,12 +329,10 @@ bar {
     assign [class="firefox"]        $workspace4_browser
     assign [class="jetbrains-idea"] $workspace3_code
 
-    for_window [instance="pavucontrol"] floating enable
+    for_window [app_id="pavucontrol"] floating enable
 
 ### Clipboard Manager
 exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
-
-
 
 include /etc/sway/config.d/*
