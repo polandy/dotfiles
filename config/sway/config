@@ -305,34 +305,17 @@ bindsym $mod+Print mode "$mode_screenshot"
 #
 # Autostart:
 #
-    exec --no-startup-id nm-applet
+    exec --no-startup-id nm-applet --indicator
     exec --no-startup-id nextcloud
     exec --no-startup-id redshift
-    exec --no-startup-id waybar
 
 #
 # Status Bar:
+# requires https://github.com/Alexays/Waybar
 #
-# Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
     tray_output *
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #TODO remove i3status dependency
-    status_command     i3status -c ~/.config/i3/i3status.conf
-    font               pango:$font, $icon_font
-
-    colors {
-        separator          #666666
-        background         #222222
-        statusline         #dddddd
-        focused_workspace  #0088CC #0088CC #ffffff
-        active_workspace   #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-    }
+    swaybar_command waybar
 }
 
 
