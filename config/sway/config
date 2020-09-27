@@ -9,8 +9,8 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
+# Font
 set $font System San Francisco Display 10
-
 
 # Home row direction keys, like vim
 set $left h
@@ -22,13 +22,17 @@ set $right l
 set $term alacritty
 
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
+# Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# dmenu alternative:
 set $menu alacritty --class=launcher --command bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'
 for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 30 ppt, move position 600 px 300 px
 
+# show open windows, requires jq,rofi
+bindsym $mod+Tab exec swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.nodes | .[] | .nodes | . [] | select(.nodes != null) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"' | wofi -dmenu -p "open windows" -i | awk '{print $1}')] focus
+for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
+
+# Wallpaper directory
+set $wallpaper_dir ~/Pictures/wallpapers
 # Workspaces
 # Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
 set $workspace1_chat "1 "
@@ -280,7 +284,7 @@ bindsym $mod+Pause mode "$mode_system"
 
 #
 # Brightness:
-# Requires https://github.com/Hummer12007/brightnessctl, pacman -S brightnessctl
+# requires https://github.com/Hummer12007/brightnessctl, pacman -S brightnessctl
 #
 bindsym --locked XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 10%+ && $notify-send-brightness
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $notify-send-brightness
@@ -308,6 +312,7 @@ bindsym $mod+Print mode "$mode_screenshot"
     exec --no-startup-id nm-applet --indicator
     exec --no-startup-id nextcloud
     exec --no-startup-id redshift
+    exec --no-startup-id setrandom $wallpaper_dir
 
 #
 # Status Bar:
@@ -318,14 +323,13 @@ bar {
     swaybar_command waybar
 }
 
-
 ### Floating Windows
     # Program-Workspace Default Mapping
     assign [class="Thunderbird"]    $workspace2_mail
     assign [class="firefox"]        $workspace4_browser
     assign [class="jetbrains-idea"] $workspace3_code
 
-for_window [instance="pavucontrol"] floating enable
+    for_window [instance="pavucontrol"] floating enable
 
 ### Clipboard Manager TODO Styling
 exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
