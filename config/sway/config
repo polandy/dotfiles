@@ -173,8 +173,8 @@ output eDP-1 scale 1.5
     bindsym $mod+Shift+BackSpace    workspace back_and_forth
     bindsym $mod+Shift+b            move container to workspace back_and_forth
 
-    # Create empty workspace TODO migrate to sway
-    # bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh
+    # Create empty workspace
+    bindsym   $mod+n                   exec   $HOME/.dotfiles/config/sway/bin/empty_workspace.sh
 
 #
 # Layout stuff:
@@ -331,7 +331,7 @@ bar {
 
     for_window [instance="pavucontrol"] floating enable
 
-### Clipboard Manager TODO Styling
+### Clipboard Manager
 exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
 bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
 
