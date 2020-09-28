@@ -204,6 +204,8 @@ output eDP-1 scale 1.5
 
     # window border
     default_border pixel 2
+    titlebar_border_thickness 1
+    titlebar_padding 1 1
 
     focus_follows_mouse no
 
