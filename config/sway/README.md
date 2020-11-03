@@ -11,6 +11,7 @@
 * [slurp](https://github.com/emersion/slurp): Select a region in a Wayland compositor and print it to the standard output.
 * [swappy](https://github.com/jtheoof/swappy): A Wayland native snapshot and editor tool.
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/), for volume control.
+* [wdisplays](https://github.com/cyclopsian/wdisplays), arandr alternative.
 
 # Required / Suggestions for look & feel
 * [Font Awesome](http://fontawesome.io/), vector font, used for icons in i3status bar
@@ -29,5 +30,6 @@
 $ yay redshift-wayland-git
 $ yay clipman
 $ yay swappy
+$ yay wdisplays
 ```
 
