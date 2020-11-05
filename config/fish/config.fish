@@ -1,6 +1,7 @@
 # dotfiles related stuff
 set -gx PATH $PATH ~/.dotfiles/bin
 set -gx PATH $PATH ~/bin
+set -gx PATH $PATH /usr/bin/python
 
 # locale
 set -g LANG en_US.utf8
