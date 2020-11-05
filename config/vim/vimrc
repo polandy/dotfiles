@@ -45,6 +45,9 @@ nmap <F12> :NERDTreeFocusToggle
 " load pathogen modules
 execute pathogen#infect()
 
+" vimtex
+let g:tex_flavor = 'latex'
+
 " deoplete config
 let g:deoplete#enable_at_startup = 1
 " deoplete tab-complete
