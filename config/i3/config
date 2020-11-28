@@ -33,7 +33,7 @@ focus_follows_mouse no
 #############################################
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -269,15 +269,12 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 #                Autostart                  #
 #############################################
-exec --no-startup-id dropbox start
 exec --no-startup-id nextcloud
 exec --no-startup-id clipit
-#exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-exec --no-startup-id compton
 exec --no-startup-id firefox
-# exec --no-startup-id xautolock -time 3 -locker "$Locker"
+exec --no-startup-id VBoxClient-all
 
 exec --no-startup-id xautolock -time 1 -locker "$Locker"
 
