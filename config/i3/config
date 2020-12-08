@@ -101,7 +101,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -172,7 +172,7 @@ bindsym $mod+Control+Left       workspace prev
 bindsym $mod+Control+h          workspace prev
 bindsym $mod+Next               workspace next
 bindsym $mod+Control+Right      workspace next
-#bindsym $mod+Control+l          workspace next
+bindsym $mod+Control+l          workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
@@ -191,7 +191,6 @@ workspace $workspace_imgprocessing output $screen2
 workspace $workspace8              output $screen2
 workspace $workspace9              output $screen2
 workspace $workspace_filebrowser   output $screen2
-
 
 # Create empty workspace
 bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh

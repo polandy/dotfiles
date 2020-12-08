@@ -3,6 +3,15 @@ set -gx PATH $PATH ~/.dotfiles/bin
 set -gx PATH $PATH ~/bin
 set -gx PATH $PATH /usr/bin/python
 
+# ruby setup
+if type -q ruby
+  set -x GEM_HOME ~/.gem
+  set -gx PATH $PATH (ruby -e 'print Gem.user_dir')/bin
+  # rvm setup (arch package aur/chruby-fish)
+  source /usr/share/chruby/chruby.fish
+  source /usr/share/chruby/auto.fish
+end
+
 # locale
 set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
@@ -47,6 +56,7 @@ abbr -a grv 'git remote -v'
 abbr -a gcd 'git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 abbr -a glol 'git lol'
 abbr -a glola 'git lola'
+
 abbr -a gstash 'git stash'
 abbr -a gua "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
 abbr -a gsa "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
