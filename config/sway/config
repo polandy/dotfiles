@@ -4,13 +4,13 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
 # Font
 set $font System San Francisco Display 10
+
+# terminal
+set $term alacritty
 
 # Home row direction keys, like vim
 set $left h
@@ -18,14 +18,9 @@ set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
-set $term alacritty
 
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu alacritty --class=launcher --command bash -c 'compgen -c | grep -v fzf | sort -u | fzf --layout=reverse | xargs -r swaymsg -t command exec'
-for_window [app_id="^launcher$"] floating enable, border none, resize set width 25 ppt height 30 ppt, move position 600 px 300 px
+set $menu wofi --show run
 
 # show open windows, requires jq,rofi
 bindsym $mod+Tab exec swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.nodes | .[] | .nodes | . [] | select(.nodes != null) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"' | wofi -dmenu -p "open windows" -i | awk '{print $1}')] focus
