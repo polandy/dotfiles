@@ -7,12 +7,6 @@
 [submodule "config/vim/bundle/ctrl-p"]
 	path = config/vim/bundle/ctrl-p
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "config/vim/bundle/latex"]
-	path = config/vim/bundle/latex
-	url = https://github.com/lervag/vim-latex
-[submodule "git-extras"]
-	path = vendor/git-extras
-	url = https://github.com/visionmedia/git-extras.git
 [submodule "config/vim/bundle/vim-better-whitespace"]
 	path = config/vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
@@ -25,33 +19,12 @@
 [submodule "config/vim/bundle/deoplete.nvim"]
 	path = config/vim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "config/vim/bundle/vim-endwise"]
-	path = config/vim/bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
-[submodule "config/vim/bundle/ultisnips"]
-	path = config/vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "config/vim/bundle/vim-snippets"]
-	path = config/vim/bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "config/vim/bundle/vim-commentary"]
 	path = config/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "config/vim/bundle/vim-fish"]
-	path = config/vim/bundle/vim-fish
-	url = https://github.com/dag/vim-fish.git
 [submodule "config/vim/bundle/vim-airline"]
 	path = config/vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "config/vim/bundle/vim-fugitive"]
-	path = config/vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "config/vim/bundle/fugitive-gitlab.vim"]
-	path = config/vim/bundle/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
-[submodule "config/vim/bundle/vim-rake"]
-	path = config/vim/bundle/vim-rake
-	url = https://github.com/tpope/vim-rake.git
 [submodule "config/i3/i3blocks-contrib"]
 	path = config/i3/i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib.git
