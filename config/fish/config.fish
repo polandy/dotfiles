@@ -1,12 +1,11 @@
 # dotfiles related stuff
-set -gx PATH $PATH ~/.dotfiles/bin
-set -gx PATH $PATH ~/bin
-set -gx PATH $PATH /usr/bin/python
+set -a PATH ~/.dotfiles/bin
+set -a PATH ~/bin
 
 # ruby setup
 if type -q ruby
   set -x GEM_HOME ~/.gem
-  set -gx PATH $PATH (ruby -e 'print Gem.user_dir')/bin
+  set -a PATH (ruby -e 'print Gem.user_dir')/bin
   # rvm setup (arch package aur/chruby-fish)
   source /usr/share/chruby/chruby.fish
   source /usr/share/chruby/auto.fish
@@ -42,7 +41,7 @@ abbr -a gs 'git status'
 abbr -a gdt 'git difftool -y'
 abbr -a gdtd 'git difftool -d'
 abbr -a gd 'git diff'
-abbr -a gdtc 'git difftool --cached -y' 
+abbr -a gdtc 'git difftool --cached -y'
 abbr -a gm 'git commit -m'
 abbr -a gcamend 'git commit --amend'
 abbr -a gma 'git commit -am'
@@ -65,6 +64,11 @@ abbr -a ga "git add "
 abbr -a stash "git stash "
 abbr -a pop "git stash pop"
 
+abbr -a dc 'docker-compose'
+abbr -a dcu 'docker-compose up'
+abbr -a dcud 'docker-compose up -d'
+abbr -a dclf 'docker-compose logs -f'
+abbr -a dce 'docker-compose exec app'
 
 # Current branch or SHA if detached.
 alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
