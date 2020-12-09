@@ -2,6 +2,11 @@
 
 set -e
 
+if [ "$(hostname)" != "p50" ]; then
+  echo "Script not executed on p50. Hostname: '$(hostname)'. Nothing to do."
+  exit 0
+fi
+
 # This variables are used as keys in the associative arrays below
 MONITOR_INTERNAL=INTERNAL
 MONITOR_HDMI=HDMI
