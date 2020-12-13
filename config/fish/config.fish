@@ -64,20 +64,21 @@ abbr -a ga "git add "
 abbr -a stash "git stash "
 abbr -a pop "git stash pop"
 
+# docker stuff
 abbr -a dc 'docker-compose'
 abbr -a dcu 'docker-compose up'
 abbr -a dcud 'docker-compose up -d'
 abbr -a dclf 'docker-compose logs -f'
 abbr -a dce 'docker-compose exec app'
 
-# Current branch or SHA if detached.
-alias gbs='git branch | perl -ne '"'"'/^\* (?:\(detached from (.*)\)|(.*))/ && print "$1$2"'"'"''
-
 # vim related stuff
 alias vi="vim"
 alias vim="nvim -p"
 set -x EDITOR vi
 set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
+
+# misc aliases
+alias ssh="env TERM=xterm ssh"
 
 if test -e ~/.config/fish/config_local.fish
   . ~/.config/fish/config_local.fish
