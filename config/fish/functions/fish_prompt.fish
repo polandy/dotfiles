@@ -1,6 +1,4 @@
 set -g fish_prompt_pwd_dir_length 0
-set -g fish_color_user yellow
-set -g fish_color_at brblack
 set -g fish_color_hostname cyan
 set -g fish_color_cwd \#00ffff
 set -g fish_color_command \#ffff87
@@ -36,19 +34,12 @@ function fish_prompt --description 'Write out the prompt'
     set -g __fish_prompt_normal (set_color normal)
   end
 
-  # USER
-  set_color $fish_color_user
-  printf "$USER"
-  set_color normal
-
   # HOSTNAME
   if not set -q __fish_prompt_hostname
-     set -g __fish_prompt_hostname (hostname)
+     set -g __fish_prompt_hostname (hostname -s)
   end
-  set_color $fish_color_at
-  printf "@"
   set_color $fish_color_hostname
-  printf "$__fish_prompt_hostname"
+  printf "$__fish_prompt_hostname "
   set_color normal
 
   # PWD
