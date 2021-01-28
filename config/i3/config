@@ -212,6 +212,18 @@ for_window [class="copyq"] floating enable
 #############################################
 #                 Modes                     #
 #############################################
+# Keyboard layout
+set $mode_kblayout (C)H, (U)S
+mode "$mode_kblayout" {
+    bindsym u exec --no-startup-id setxkbmap en_US, mode "default"
+    bindsym c exec --no-startup-id setxkbmap ch, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Insert mode "$mode_kblayout"
+
 # Screenshot menu
 set $mode_screenshot (f)ullscreen in cliboard and ~/Pictures/, (s)election 
 mode "$mode_screenshot" {
