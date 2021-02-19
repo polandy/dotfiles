@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
@@ -12,7 +12,7 @@ MONITOR_INTERNAL=INTERNAL
 MONITOR_HDMI=HDMI
 MONITOR_THUNDERBOLT=TB
 MONITOR_DP=DP
-# Screen names (use xrandr to find them out)
+# Screen names (use xrandr to get them)
 SCREEN_DP=DP-3
 SCREEN_HDMI=DP-1
 SCREEN_TB=DP-5
@@ -21,7 +21,7 @@ SCREEN_INTERNAL=DP-4
 # Default monitor is the internal monitor
 MONITOR=$SCREEN_INTERNAL
 
-# The configs for the displays are stores in the following associative arrays
+# The configs for the displays are stored in the following associative arrays
 declare -A monitor_screens
 monitor_screens=([$MONITOR_INTERNAL]=$SCREEN_INTERNAL [$MONITOR_DP]=$SCREEN_DP [$MONITOR_HDMI]=$SCREEN_HDMI [$MONITOR_THUNDERBOLT]=$SCREEN_TB)
 
