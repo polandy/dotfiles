@@ -4,50 +4,42 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-set $mod Mod4
+#
+# general config
+#
+    set {
+        $mod Mod4
 
-# Font
-set $font System San Francisco Display 10
+        # Font
+        $font System San Francisco Display 10
 
-# terminal
-set $term alacritty
+        # terminal
+        $term alacritty
 
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+        # Home row direction keys, like vim
+        $left h
+        $down j
+        $up k
+        $right l
 
+        # Wallpaper directory
+        $wallpaper_dir ~/Pictures/wallpapers
 
-# set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show run
+        $notify-send-brightness notify-send "brightness: $(brightnessctl get) / $(brightnessctl max)" -t 1000
 
-# show open windows, requires jq,rofi
-bindsym $mod+Tab exec swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.nodes | .[] | .nodes | . [] | select(.nodes != null) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"' | wofi -dmenu -p "open windows" -i | awk '{print $1}')] focus
-for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
+        $screenshots-dir ~/Pictures/screenshots/
+        $notify-send-screenshot "Screenshot created in $screenshots-dir"
+    }
 
-# reload sway config
-bindsym $mod+Shift+r exec swaymsg reload
+    # reload sway config
+    bindsym $mod+Shift+r exec swaymsg reload
 
-# Wallpaper directory
-set $wallpaper_dir ~/Pictures/wallpapers
-# Workspaces
-# Install FontAwesome for the icons, Cheatsheet: http://fontawesome.io/cheatsheet/
-set $workspace1_chat "1 "
-set $workspace2_mail "2 "
-set $workspace3_code "3 "
-set $workspace4_browser "4 "
-set $workspace5_filebrowser "5 "
-set $workspace6_misc "6 "
-set $workspace7_imgprocessing "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10_terminal "10 "
+    # window border
+    default_border pixel 2
+    titlebar_border_thickness 1
+    titlebar_padding 1 1
 
-set $notify-send-brightness notify-send "brightness: $(brightnessctl get) / $(brightnessctl max)" -t 1000
-
-set $screenshots-dir ~/Pictures/screenshots/
-set $notify-send-screenshot "Screenshot created in $screenshots-dir"
+    focus_follows_mouse no
 
 ### Output configuration
 #
@@ -84,203 +76,150 @@ output eDP-1 scale 1.5
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod normal
+
 ### Key bindings
-#
-# Basics:
-#
+bindsym {
+
     # Start a terminal
-    bindsym $mod+Return exec $term
+    $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    $mod+Shift+q kill
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+    # use wofi as launcher
+    $mod+d exec "wofi --show drun"
+    $mod+Shift+d exec "wofi --show run"
+    # show open windows, requires jq,rofi
+    $mod+Tab exec swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.nodes | .[] | .nodes | . [] | select(.nodes != null) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"' | wofi -dmenu -p "open windows" -i | awk '{print $1}')] focus
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+    # mako
+    $mod+Delete    exec makoctl dismiss
+    $mod+backslash exec makoctl invoke
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+}
+
+for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
+
 #
 # Moving around:
 #
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    bindsym {
+        # Move your focus around
+        $mod+$left focus left
+        $mod+$down focus down
+        $mod+$up focus up
+        $mod+$right focus right
+        # Or use $mod+[up|down|left|right]
+        $mod+Left focus left
+        $mod+Down focus down
+        $mod+Up focus up
+        $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+        # Move the focused window with the same, but add Shift
+        $mod+Shift+$left move left
+        $mod+Shift+$down move down
+        $mod+Shift+$up move up
+        $mod+Shift+$right move right
+        # Ditto, with arrow keys
+        $mod+Shift+Left move left
+        $mod+Shift+Down move down
+        $mod+Shift+Up move up
+        $mod+Shift+Right move right
+    }
 #
 # Workspaces:
 #
-    # Switch to workspace
-    bindsym $mod+1 workspace $workspace1_chat
-    bindsym $mod+2 workspace $workspace2_mail
-    bindsym $mod+3 workspace $workspace3_code
-    bindsym $mod+4 workspace $workspace4_browser
-    bindsym $mod+5 workspace $workspace5_filebrowser
-    bindsym $mod+6 workspace $workspace6_misc
-    bindsym $mod+7 workspace $workspace7_imgprocessing
-    bindsym $mod+8 workspace $workspace8
-    bindsym $mod+9 workspace $workspace9
-    bindsym $mod+0 workspace $workspace10_terminal
+    set {
+        $workspace1_chat "1 "
+        $workspace2_mail "2 "
+        $workspace3_code "3 "
+        $workspace4_browser "4 "
+        $workspace5_filebrowser "5 "
+        $workspace6_misc "6 "
+        $workspace7_imgprocessing "7 "
+        $workspace8 "8 "
+        $workspace9 "9 "
+        $workspace10_terminal "10 "
+    }
 
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace $workspace1_chat
-    bindsym $mod+Shift+2 move container to workspace $workspace2_mail
-    bindsym $mod+Shift+3 move container to workspace $workspace3_code
-    bindsym $mod+Shift+4 move container to workspace $workspace4_browser
-    bindsym $mod+Shift+5 move container to workspace $workspace5_filebrowser
-    bindsym $mod+Shift+6 move container to workspace $workspace6_misc
-    bindsym $mod+Shift+7 move container to workspace $workspace7_imgprocessing
-    bindsym $mod+Shift+8 move container to workspace $workspace8
-    bindsym $mod+Shift+9 move container to workspace $workspace9
-    bindsym $mod+Shift+0 move container to workspace $workspace10_terminal
+    bindsym {
+          $mod+1 workspace $workspace1_chat
+          $mod+2 workspace $workspace2_mail
+          $mod+3 workspace $workspace3_code
+          $mod+4 workspace $workspace4_browser
+          $mod+5 workspace $workspace5_filebrowser
+          $mod+6 workspace $workspace6_misc
+          $mod+7 workspace $workspace7_imgprocessing
+          $mod+8 workspace $workspace8
+          $mod+9 workspace $workspace9
+          $mod+0 workspace $workspace10_terminal
 
-    bindsym $mod+Prior              workspace prev
-    bindsym $mod+Control+Left       workspace prev
-    bindsym $mod+Control+h          workspace prev
-    bindsym $mod+Next               workspace next
-    bindsym $mod+Control+Right      workspace next
-    bindsym $mod+Control+l          workspace next
-    bindsym $mod+Shift+Prior        move container to workspace prev
-    bindsym $mod+Shift+Next         move container to workspace next
-    bindsym $mod+Shift+BackSpace    workspace back_and_forth
-    bindsym $mod+Shift+b            move container to workspace back_and_forth
+          # Move focused container to workspace
+          $mod+Shift+1 move container to workspace $workspace1_chat
+          $mod+Shift+2 move container to workspace $workspace2_mail
+          $mod+Shift+3 move container to workspace $workspace3_code
+          $mod+Shift+4 move container to workspace $workspace4_browser
+          $mod+Shift+5 move container to workspace $workspace5_filebrowser
+          $mod+Shift+6 move container to workspace $workspace6_misc
+          $mod+Shift+7 move container to workspace $workspace7_imgprocessing
+          $mod+Shift+8 move container to workspace $workspace8
+          $mod+Shift+9 move container to workspace $workspace9
+          $mod+Shift+0 move container to workspace $workspace10_terminal
+
+          $mod+Prior              workspace prev
+          $mod+Control+Left       workspace prev
+          $mod+Control+h          workspace prev
+          $mod+Next               workspace next
+          $mod+Control+Right      workspace next
+          $mod+Control+l          workspace next
+          $mod+Shift+Prior        move container to workspace prev
+          $mod+Shift+Next         move container to workspace next
+          $mod+Shift+BackSpace    workspace back_and_forth
+          $mod+Shift+b            move container to workspace back_and_forth
+    }
 
     # Create empty workspace
-    bindsym   $mod+n                   exec   $HOME/.dotfiles/config/sway/bin/empty_workspace.sh
+   bindsym $mod+n                   exec   $HOME/.dotfiles/config/sway/bin/empty_workspace.sh
 
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym {
+        $mod+b splith
+        $mod+v splitv
 
-    # Switch the current container between different layout styles
-    #bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+        $mod+w layout tabbed
+        $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+        $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+        $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+        # Swap focus between the tiling area and the floating area
+        $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-
-    # window border
-    default_border pixel 2
-    titlebar_border_thickness 1
-    titlebar_padding 1 1
-
-    focus_follows_mouse no
+        # Move focus to the parent container
+        $mod+a focus parent
+    }
 
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+    bindsym {
+        # Move the currently focused window to the scratchpad
+        $mod+Shift+minus move scratchpad
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
-mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
-    # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
-#
-# Touch pad
-#
-set $mode_thinkpad Thinkpad (t) toggle touchpad
-mode "$mode_thinkpad" {
-    bindsym t exec --no-startup-id $HOME/.dotfiles/util/misc/toggle-touchpad.sh, mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+T mode "$mode_thinkpad"
-
-#
-# Menu for shutdown, suspend, hibernate
-#
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+Pause mode "$mode_system"
-
-#
-# Volume Controls:
-#
-    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        # Show the next scratchpad window or hide the focused scratchpad window.
+        # If there are multiple scratchpad windows, this command cycles through them.
+        $mod+minus scratchpad show
+    }
 
 #
 # Brightness:
@@ -288,6 +227,71 @@ bindsym $mod+Pause mode "$mode_system"
 #
     bindsym --locked XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 10%+ && $notify-send-brightness
     bindsym --locked XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && $notify-send-brightness
+
+#
+# Resizing containers:
+#
+    mode "resize" {
+        # left will shrink the containers width
+        # right will grow the containers width
+        # up will shrink the containers height
+        # down will grow the containers height
+        bindsym $left resize shrink width 10px
+        bindsym $down resize grow height 10px
+        bindsym $up resize shrink height 10px
+        bindsym $right resize grow width 10px
+
+        # Ditto, with arrow keys
+        bindsym Left resize shrink width 10px
+        bindsym Down resize grow height 10px
+        bindsym Up resize shrink height 10px
+        bindsym Right resize grow width 10px
+
+        # Return to default mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+r mode "resize"
+
+#
+# Touch pad
+#
+    set $mode_thinkpad Thinkpad (t) toggle touchpad
+    mode "$mode_thinkpad" {
+        bindsym t exec --no-startup-id $HOME/.dotfiles/util/misc/toggle-touchpad.sh, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+T mode "$mode_thinkpad"
+
+#
+# Menu for shutdown, suspend, hibernate
+#
+    set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+    mode "$mode_system" {
+        bindsym l exec --no-startup-id $Locker, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit, mode "default"
+        bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+        bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+Pause mode "$mode_system"
+
+#
+# Volume Controls:
+#
+    bindsym {
+        XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+        XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+        XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+        XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    }
 
 #
 # Screenshot:
@@ -328,8 +332,9 @@ bindsym $mod+Pause mode "$mode_system"
     bindsym $mod+p exec wdisplays
 
 #
-# Autostart:
+# Autostart
 #
+    exec mako
     exec --no-startup-id nm-applet --indicator
     exec --no-startup-id nextcloud
     exec --no-startup-id redshift
@@ -344,7 +349,9 @@ bindsym $mod+Pause mode "$mode_system"
         swaybar_command waybar
     }
 
-### Floating Windows
+#
+# Floating Windows
+#
     # Program-Workspace Default Mapping
     assign [class="Thunderbird"]    $workspace2_mail
     assign [class="firefox"]        $workspace4_browser
@@ -352,8 +359,10 @@ bindsym $mod+Pause mode "$mode_system"
 
     for_window [app_id="pavucontrol"] floating enable
 
-### Clipboard Manager
-exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
-bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
+#
+# Clipboard Manager
+#
+    exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
+    bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
 
 include /etc/sway/config.d/*
