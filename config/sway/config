@@ -69,8 +69,7 @@ output eDP-1 scale 1.5
 
 ### Input configuration
     input * {
-        xkb_layout "ch"
-        xkb_variant "colemak,,typewriter"
+        xkb_layout ch,us
         xkb_options "grp:win_space_toggle"
     }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
