@@ -7,8 +7,8 @@ if type -q ruby
   set -x GEM_HOME ~/.gem
   set -a PATH (ruby -e 'print Gem.user_dir')/bin
   # rvm setup (arch package aur/chruby-fish)
-  source /usr/share/chruby/chruby.fish
-  source /usr/share/chruby/auto.fish
+  #  source /usr/share/chruby/chruby.fish
+  #  source /usr/share/chruby/auto.fish
 end
 
 # locale
@@ -18,6 +18,9 @@ set -x LC_CTYPE en_US.utf8
 
 # no greeting
 set fish_greeting ""
+
+# sway: ix blank windows and menus that are drawn at a wrong offset to the selected menu item
+set -a _JAVA_AWT_WM_NONREPARENTING 1
 
 # git alias
 git config --global alias.co checkout
