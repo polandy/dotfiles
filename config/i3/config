@@ -67,10 +67,6 @@ bindsym Shift+XF86Display  exec nvidia-settings
 # change displaymode
 bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
 
-## display brightness management
-bindsym XF86MonBrightnessUp     exec "xbacklight +10"
-bindsym XF86MonBrightnessDown   exec "xbacklight -10"
-
 # change focus
 bindsym $mod+Left  focus left
 bindsym $mod+Down  focus down
