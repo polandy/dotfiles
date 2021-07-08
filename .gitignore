@@ -39,6 +39,7 @@ vimrc_local
 !/config/copyq/*.ini
 /config/copyq/copyq-bak.conf
 /config/copyq/copyq_tabs.ini
+/config/copyq/copyq_geometry.ini
 
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
