@@ -7,7 +7,7 @@
 * [maim](https://github.com/naelstrof/maim) takes screenshots of your desktop. Used for [screen lock script](bin/lock.sh)
 * [rofi](https://github.com/DaveDavenport/rofi), Application launcher and dmenu replacement
 * numlockx, turn numlock on at login
-* [blueman](https://github.com/blueman-project/blueman), a GTK+ Bluetooth Manager
+
 
 # Required / Suggestions for look & feel
 * [Font Awesome](http://fontawesome.io/), vector font, used for icons in i3status bar
@@ -18,6 +18,10 @@
 * [Moka Icon Theme](https://snwh.org/moka)
 * [compton](https://github.com/yshui/picom) A lightweight compositor for X11 (fixes screen tearing issues)
 
+# i3blocks dependencies
+* yad, xdotool for [calendar](https://github.com/vivien/i3blocks-contrib/tree/master/calendar)
+
+
 # Utilities
 * [flameshot](https://github.com/lupoDharkael/flameshot) for screenshots
-* [copyq](https://github.com/hluk/CopyQ) is an advanced clipboard manager with editing and scripting features.
+* [qalculate-gtk](https://github.com/Qalculate/qalculate-gtk)
