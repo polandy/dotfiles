@@ -9,9 +9,6 @@ replace:
   '^-': _
   '\ ': _
 
-include: [gmusicapi.yaml]
-
-
 import:
   write: yes
   copy: no
@@ -22,7 +19,7 @@ format_album: $albumartist - $year - $album
 paths:
   default: %the{$albumartist}/$year-$album%aunique{}/$track $title
 
-plugins: [fetchart, embedart, ftintitle, lyrics, types, lastgenre, badfiles, replaygain, the, missing,rewrite]
+plugins: [fetchart, embedart, ftintitle, lyrics, types, lastgenre, badfiles, replaygain, the, missing, rewrite]
 fetchart:
   auto: yes
 embedart:
