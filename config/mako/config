@@ -1,0 +1,19 @@
+font=Roboto 12
+height=200
+width=800
+padding=20
+margin=20
+border-radius=5
+background-color=#285577f0
+border-color=#4C7899f0
+width=300
+default-timeout=5000
+
+[urgency=high]
+background-color=#af1607f0
+border-color=#c21808f0
+
+# Always show default for Chrome notifications
+[app-name="Google Chrome"]
+background-color=#285577f0
+border-color=#4C7899f0
