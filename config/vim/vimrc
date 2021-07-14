@@ -1,108 +1,62 @@
-set nocompatible       " use Vim defaults (much better!)
-if $SHELL =~ 'bin/fish'
-  set shell=/bin/sh
-endif
+call plug#begin('~/.local/share/nvim/plugged')
 
-" allow portable .vim and .vimrc location
-" set default 'runtimepath' (without ~/.vim folders)
-let &runtimepath = printf('%s/vimfiles,%s,%s/vimfiles/after', $VIM, $VIMRUNTIME, $VIM)
+Plug 'preservim/nerdtree'
+Plug 'kien/ctrlp.vim'
 
-" what is the name of the directory containing this file?
-let s:portable = expand('<sfile>:p:h')
+"Plug 'davidhalter/jedi-vim', { 'on': []}
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" add the directory to 'runtimepath'
-let &runtimepath = printf('%s,%s,%s/after', s:portable, &runtimepath, s:portable)
+" highlights multiple instances of the same word that is under the cursor
+Plug 'RRethy/vim-illuminate'
 
+" input quote and brackets as pairs
+Plug 'jiangmiao/auto-pairs'
 
-" function key mappings
-map OP <F1>
-map OQ <F2>
-map OR <F3>
-map OS <F4>
-map [15~ <F5>
-map [20~ <F9>
-map [23~ <F11>
-map [24~ <F12>
-map [1;5D <C-left>
-map [1;5C <C-right>
+Plug 'scrooloose/nerdcommenter'
 
-" F1: set number
-nmap <F1> :set number
-" F2: set nonumber
-nmap <F2> :set nonumber
-" F3: run rake
-nmap <F3> :w:Rake SPEC=%:p
-" F4: check linting (see file types below)
-" F5: execute current file
-nmap <F5> :w:!./%
-" F9: Paste toggle
-set pastetoggle=[20~
-" F12: NERDTroggle
-nmap <F11> :NERDTreeTabsClose
-" F12: NERDTroggle
-nmap <F12> :NERDTreeFocusToggle
+Plug 'SirVer/ultisnips'
 
-" load pathogen modules
-execute pathogen#infect()
+" status/tabline for vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" vimtex
-let g:tex_flavor = 'latex'
+Plug 'morhetz/gruvbox'
 
-" deoplete config
-let g:deoplete#enable_at_startup = 1
-" deoplete tab-complete
-inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-
-" ultisnips config
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+Plug 'machakann/vim-highlightedyank'
+call plug#end()
 
 
-" syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_highlighting = 1
-" let g:syntastic_auto_jump = 3
-
-map <C-s> :w:SyntasticCheck
-map <C-q> :SyntasticReset
-
-
-" true color for neovim
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
-syntax on	" Highlight syntax
-set background=dark
+set nocompatible        " use Vim defaults (much better!)
 colorscheme gruvbox
+set background=dark
+syntax on
 filetype on
+filetype indent on
 filetype plugin on
-filetype indent on	" auto indent
 set number
 set bs=indent,eol,start	" allow backspacing over everything in insert mode
-set ruler	" show the cursor position all the time
-set hlsearch	 " highlight search patterns
-set path=** 	" find files in subdirectories
-set autoindent	" handy for email and programming
-set remap	" hm. don't recall, but I know I like it.  ;-)
-set report=1	" *always* show me changes that commands make
-set shiftwidth=2	" i like minimal indentation. see tabstops (ts), too.
+set ruler               " show the cursor position all the time
+set hlsearch	          " highlight search patterns
+set path=** 	          " find files in subdirectories
+set autoindent	        " handy for email and programming
+set report=1	          " *always* show me changes that commands make
+set shiftwidth=2        " i like minimal indentation. see tabstops (ts), too.
 set shiftround
 set expandtab
 set autoindent
 set tabstop=2
 set softtabstop=2
-set showmode	" portable method to show the current mode on bottom line
-set tabstop=2	" this should be the same as the next line. not always.
-set ts=2	" only indent 2 spaces. see shiftwidth (sw) above.
-set terse	" no news is good news.
+set showmode	         " portable method to show the current mode on bottom line
+set tabstop=2	         " this should be the same as the next line. not always.
+set ts=2               " only indent 2 spaces. see shiftwidth (sw) above.
+set terse              " no news is good news.
+
+" F1: set number
+nmap <F1> :set number<CR>
+" F2: set nonumber
+nmap <F2> :set nonumber<CR>
+" F12: NERDTroggle<CR>
+nmap <F12> :NERDTreeToggle<CR>
 
 " where to put temporary files. good for most systems
 "set directory=/tmp
@@ -126,30 +80,11 @@ if has("autocmd")
 endif
 
 
-if has("autocmd")
-	" perl
-	augroup perl
-		au FileType perl setlocal equalprg=perltidy\ -bl\ -q\ -l=260\ -pt=2\ -sbt=2\ -bt=2\ -bbt=2\ -nsfs\ -nwls=\".\"\ -nwrs=\".\"\ -ole=unix\ -iob\ -et=4\ -i=2
-	augroup END
-
-	" xml
-	augroup xml
-		au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-	augroup END
-
-	" ruby
-	augroup ruby
-		au FileType ruby nmap <F4> :w:!puppet-lint %
-		au FileType ruby nmap <F5> :w:!ruby -c %
-		au FileType ruby nmap <F6> :w:!rvm all do bundle exec rake
-	augroup END
-
-	" markdown
-	augroup md
-		autocmd FileType mkd setlocal tw=0
-		autocmd FileType mkd setlocal nocursorline
-	augroup END
-endif
+" deoplete config
+let g:deoplete#enable_at_startup = 1
+" deoplete tab-complete
+inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " CTRL-P
 " let g:ctrlp_by_filename = 1
@@ -161,8 +96,9 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " airline
+let g:airline_theme='powerlineish'
+"let g:airline_solarized_bg='light'
 let g:airline_powerline_fonts = 1
-
 
 " insert mode
 map <C-t> <Esc>:tabnew

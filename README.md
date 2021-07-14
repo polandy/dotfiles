@@ -12,11 +12,12 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 - [nvm](https://github.com/creationix/nvm)
 - [gnome-keyring](https://wiki.gnome.org/Projects/GnomeKeyring) and [libsecret](https://wiki.gnome.org/Projects/Libsecret) to store secrets, passwords, keys, certificates and make them available to applications
 
-## Enable deoplete
+## Install vim Plugins using vim-plug
 
 1. Install [neovim](https://github.com/neovim/neovim)
+2. Install [vim-plug](https://github.com/junegunn/vim-plug): `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 2. open vim
-3. run ':UpdateRemotePlugins'
+3. run ':PlugInstall'
 
 ## Install powerline fonts for airline
 - [powerline-fonts](https://github.com/powerline/fonts)
