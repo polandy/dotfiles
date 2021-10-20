@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 
 # use rofi as dmenu replacement
 bindsym $mod+d         exec "rofi -show run"
-bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
+bindsym $mod+Control+d exec "rofi -combi-modi window#run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
 # scratchpad
