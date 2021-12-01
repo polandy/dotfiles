@@ -1,5 +1,6 @@
 configuration {
- theme: "glue_pro_blue";
  font: "San Francisco Display 16";
  combi-modi: "window,drun,ssh";
  }
+
+ @theme "glue_pro_blue"
