@@ -23,6 +23,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'morhetz/gruvbox'
 
 Plug 'machakann/vim-highlightedyank'
+
+Plug 'tpope/vim-markdown'
+
+
 call plug#end()
 
 
@@ -108,3 +112,6 @@ map <C-left> <Esc>:tabprevious
 if filereadable("~/.config/vim/vimrc_local")
   source ~/.config/vim/vimrc_local
 endif
+
+" tpope/vim-markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript', 'js=javascript', 'css', 'java', 'ruby']
