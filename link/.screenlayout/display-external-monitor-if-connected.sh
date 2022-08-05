@@ -35,7 +35,7 @@ declare -A xrandr_dpis
 xrandr_dpis=([$MONITOR_INTERNAL]="180" [$MONITOR_DP]="110" [$MONITOR_HDMI]="110" [$MONITOR_THUNDERBOLT]="110")
 
 declare -A firefox_dpis
-firefox_dpis=([$MONITOR_INTERNAL]="2.0" [$MONITOR_DP]="1.3" [$MONITOR_HDMI]="1.3" [$MONITOR_THUNDERBOLT]="1.3")
+firefox_dpis=([$MONITOR_INTERNAL]="2.0" [$MONITOR_DP]="1.1" [$MONITOR_HDMI]="1.1" [$MONITOR_THUNDERBOLT]="1.1")
 
 # Functions
 function set_dpi_for_firefox {
