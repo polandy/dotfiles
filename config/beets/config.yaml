@@ -17,7 +17,11 @@ import:
 format_item: $artist - $year - $album - $title
 format_album: $albumartist - $year - $album
 paths:
-  default: %the{$albumartist}/$year-$album%aunique{}/$track $title
+  default: Music/%the{$albumartist}/$year-$album%aunique{}/$track $title
+  albumtype:"Audio Drama": Audio_Dramas/%the{$albumartist}/$year-$album%aunique{}/$track $title
+  albumtype:"compilation": Compilations/$year-$album%aunique{}/$track $artist $title
+  albumtype:"soundtrack": soundtrack/$year-$album%aunique{}/$track $artist $title
+
 
 plugins: [fetchart, embedart, ftintitle, lyrics, types, lastgenre, badfiles, replaygain, the, missing, rewrite]
 fetchart:
