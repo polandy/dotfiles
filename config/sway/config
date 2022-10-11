@@ -103,7 +103,7 @@ bindsym {
     $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     # CopyQ
-    Shift+Alt+v exec copyq toggle
+    Shift+Alt+v exec copyq eval 'if (visible()) hide(); else show()'
 }
 
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
@@ -295,21 +295,9 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     }
 
 #
-# Screenshot:
-# requires wl-copy grim slurp swappy
+# Screenshot using flameshot
 #
-    set $mode_screenshot (f)ullscreen, (w)indow, (s)election, selection to (c)lipboard, (d)rawing
-    mode "$mode_screenshot" {
-        bindsym f exec --no-startup-id exec grim $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
-        bindsym w exec --no-startup-id exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
-        bindsym s exec --no-startup-id exec grim -g "$(slurp)" $screenshots-dir/$(date +'screenshot_%Y%m%d_%H%M%S.png'), mode "default"
-        bindsym c exec --no-startup-id exec grim -g "$(slurp)" - | wl-copy, mode "default"
-        bindsym d exec --no-startup-id exec grim -g "$(slurp)" - | swappy -f -, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-    }
-    bindsym $mod+Print mode "$mode_screenshot"
+    bindsym --locked Print exec flameshot gui
 
 #
 # screen menu:
@@ -343,6 +331,12 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     exec --no-startup-id setrandom $wallpaper_dir
     exec --no-startup-id $(gnome-keyring-daemon --start)
     exec export SSH_AUTH_SOCK
+    exec --no-startup-id flameshot
+    # ensure that systemd/dbus is aware of these environment variables. Used for flameshot
+    exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+    exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 
 #
 # Status Bar:

@@ -7,8 +7,6 @@
 * [CopyQ](https://hluk.github.io/CopyQ/): CopyQ is advanced clipboard manager with editing and scripting features.
 * [wofi](https://github.com/mikn/wofi): A launcher/menu program for wlroots based wayland compositors. Used for amongst others in combination with clipman and to show open windows.
 * [grim](https://github.com/emersion/grim): For screenshots grim, slurp and swappy are required. Grim grabs images from a Wayland compositor. 
-* [slurp](https://github.com/emersion/slurp): Select a region in a Wayland compositor and print it to the standard output.
-* [swappy](https://github.com/jtheoof/swappy): A Wayland native snapshot and editor tool.
 * [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/), for volume control.
 * [wdisplays](https://github.com/cyclopsian/wdisplays), arandr alternative.
 
@@ -22,12 +20,11 @@
 # Packages
 * From official repositories:
 ```
-# pacman -S wayland sway waybar swaylock swayidle mako alacritty wofi grim slurp swappy fzf pulseaudio wallutils
+# pacman -S wayland sway waybar swaylock swayidle mako alacritty wofi grim fzf pulseaudio wallutils
 ```
 * from user repository
 ```bash
 $ yay redshift-wayland-git
-$ yay swappy
 $ yay wdisplays
 ```
 
