@@ -32,13 +32,18 @@
         "temperature",
         "battery",
         "tray",
-        "clock#date",
-        "clock#time"
+        "sway/language",
+        "clock#datetime",
     ],
 
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+
+    "sway/language": {
+      "format": "{short}",
+      "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    },
 
     "pulseaudio": {
         //"scroll-step": 1,
@@ -83,16 +88,10 @@
         "tooltip": true
     },
 
-    "clock#time": {
+    "clock#datetime": {
         "interval": 1,
-        "format": "{:%H:%M:%S}",
-        "tooltip": false
-    },
-
-    "clock#date": {
-      "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+        "format": "{:%H:%M:%S %e.%m}",
+        "tooltip-format": "{:%e %B %Y, %H:%M:%S }"
     },
 
     "cpu": {
@@ -106,7 +105,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "  {}%", // Icon: memory
+        "format": " {}%", // Icon: memory
         "states": {
             "warning": 70,
             "critical": 90

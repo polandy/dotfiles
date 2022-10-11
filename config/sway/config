@@ -337,7 +337,10 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     exec --no-startup-id nm-applet --indicator
     exec --no-startup-id nextcloud
     exec --no-startup-id redshift
+    exec --no-startup-id copyq
     exec --no-startup-id setrandom $wallpaper_dir
+    exec --no-startup-id $(gnome-keyring-daemon --start)
+    exec export SSH_AUTH_SOCK
 
 #
 # Status Bar:
