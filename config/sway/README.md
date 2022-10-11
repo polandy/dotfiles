@@ -4,8 +4,7 @@
 * [waybar](https://github.com/Alexays/Waybar): Highly customizable Wayland bar for Sway and Wlroots based compositors.
 * [swayidle](https://github.com/swaywm/swayidle): This is sway's idle management daemon
 * [alacritty](https://github.com/alacritty/alacritty): Fast terminal emulator.
-* [clipman](https://github.com/yory8/clipman):A basic clipboard manager for Wayland. Requires wl-clipboard.
-* [wl-clipboard](https://github.com/bugaevc/wl-clipboard): Implements wl-copy and wl-paste cliboard utilities. Clipman reads and writes from wl-clipboard.
+* [CopyQ](https://hluk.github.io/CopyQ/): CopyQ is advanced clipboard manager with editing and scripting features.
 * [wofi](https://github.com/mikn/wofi): A launcher/menu program for wlroots based wayland compositors. Used for amongst others in combination with clipman and to show open windows.
 * [grim](https://github.com/emersion/grim): For screenshots grim, slurp and swappy are required. Grim grabs images from a Wayland compositor. 
 * [slurp](https://github.com/emersion/slurp): Select a region in a Wayland compositor and print it to the standard output.
@@ -23,12 +22,11 @@
 # Packages
 * From official repositories:
 ```
-# pacman -S wayland sway waybar swaylock swayidle mako alacritty wl-clipboard clipman wofi grim slurp swappy fzf pulseaudio wallutils
+# pacman -S wayland sway waybar swaylock swayidle mako alacritty wofi grim slurp swappy fzf pulseaudio wallutils
 ```
 * from user repository
 ```bash
 $ yay redshift-wayland-git
-$ yay clipman
 $ yay swappy
 $ yay wdisplays
 ```

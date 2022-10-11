@@ -80,7 +80,6 @@ floating_modifier $mod normal
 
 ### Key bindings
 bindsym {
-
     # Start a terminal
     $mod+Return exec $term
 
@@ -102,6 +101,9 @@ bindsym {
 
     # Exit sway (logs you out of your Wayland session)
     $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # CopyQ
+    Shift+Alt+v exec copyq toggle
 }
 
 for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
@@ -360,11 +362,5 @@ for_window [app_id="^launcher$"] floating enable, border none, opacity 0.8
     assign [class="jetbrains-idea"] $workspace3_code
 
     for_window [app_id="pavucontrol"] floating enable
-
-#
-# Clipboard Manager
-#
-    exec wl-paste -t text --watch clipman store --max-items=60 --histpath="~/.local/share/clipman.json"
-    bindsym Alt+Shift+v exec clipman pick --tool="wofi" --max-items=30 --histpath="~/.local/share/clipman.json"
 
 include /etc/sway/config.d/*
