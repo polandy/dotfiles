@@ -2,15 +2,6 @@
 set -a PATH ~/.dotfiles/bin
 set -a PATH ~/bin
 
-# ruby setup
-if type -q ruby
-  set -x GEM_HOME ~/.gem
-  set -a PATH (ruby -e 'print Gem.user_dir')/bin
-  # rvm setup (arch package aur/chruby-fish)
-  source /usr/share/chruby/chruby.fish
-  source /usr/share/chruby/auto.fish
-end
-
 # locale
 set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
