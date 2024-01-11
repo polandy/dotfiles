@@ -26,6 +26,8 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'tpope/vim-markdown'
 
+" A Vim plugin which shows a git diff in the sign column. 
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
