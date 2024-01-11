@@ -286,13 +286,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id copyq
 exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
-exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-#exec --no-startup-id compton
-exec --no-startup-id nm-applet
-
-
-exec --no-startup-id xautolock -time 1 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale $(find $HOME/Pictures/wallpapers -iname "*.jpg" -o -iname "*.png"| shuf -n1)
 
@@ -300,7 +294,7 @@ exec_always --no-startup-id feh --bg-scale $(find $HOME/Pictures/wallpapers -ina
 #                 i3-bar                    #
 #############################################
 bar {
-  status_command       i3status
+#    status_command     i3status
     position           top
     workspace_buttons  yes
     tray_output        primary
