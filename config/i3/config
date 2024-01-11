@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 
 # use rofi as dmenu replacement
 bindsym $mod+d         exec "rofi -show run"
-bindsym $mod+Control+d exec "rofi -combi-modi window,run -show combi"
+bindsym $mod+Control+d exec "rofi -combi-modi window#run -show combi"
 bindsym $mod+Tab       exec "rofi -show"
 
 # scratchpad
@@ -65,7 +65,7 @@ bindsym XF86Display        exec arandr
 bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
-#bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
+bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -101,7 +101,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -172,15 +172,15 @@ bindsym $mod+Control+Left       workspace prev
 bindsym $mod+Control+h          workspace prev
 bindsym $mod+Next               workspace next
 bindsym $mod+Control+Right      workspace next
-#bindsym $mod+Control+l          workspace next
+bindsym $mod+Control+l          workspace next
 bindsym $mod+Shift+Prior        move container to workspace prev
 bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
 # workspaces on specific screens
-set $screen1  "Virtual1"
-set $screen2  "Virtual2"
+set $screen_internal   "DP-4"
+set $screen_external_1 "DP-3"
 workspace $workspace_chat          output $screen1
 workspace $workspace_mail          output $screen1
 workspace $workspace_misc          output $screen1
@@ -202,11 +202,12 @@ bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty
 # Program-Workspace Default Mapping
 assign [class="Thunderbird"]    $workspace_mail
 assign [class="firefox"]        $workspace_browser
-#assign [class="jetbrains-idea"] $workspace_code
+assign [class="jetbrains-idea"] $workspace_code
 
 # for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="copyq"] floating enable
 
 #############################################
 #                 Modes                     #
@@ -257,8 +258,8 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -281,16 +282,12 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 #                Autostart                  #
 #############################################
+exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
-exec --no-startup-id clipit
+exec --no-startup-id copyq
+exec --no-startup-id /usr/bin/bash ~/.screenlayout/display-external-monitor-if-connected.sh
 exec --no-startup-id redshift-gtk
 exec --no-startup-id numlockx on
-exec --no-startup-id firefox
-exec --no-startup-id VBoxClient-all
-exec --no-startup-id "setxkbmap -option compose:rwin"
-exec --no-startup-id "setxkbmap us"
-
-exec --no-startup-id xautolock -time 1 -locker "$Locker"
 
 exec_always --no-startup-id feh --bg-scale $(find $HOME/Pictures/wallpapers -iname "*.jpg" -o -iname "*.png"| shuf -n1)
 
@@ -302,8 +299,6 @@ bar {
     position           top
     workspace_buttons  yes
     tray_output        primary
-    status_command     i3status -c ~/.config/i3/i3status.conf
-#    status_command     i3blocks -c ~/.config/i3/i3blocks.conf
     font               pango:$font, $icon_font
   colors {
     separator          #666666
