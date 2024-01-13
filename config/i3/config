@@ -215,7 +215,7 @@ for_window [class="copyq"] floating enable
 # Keyboard layout
 set $mode_kblayout (C)H, (U)S
 mode "$mode_kblayout" {
-    bindsym u exec --no-startup-id setxkbmap us, mode "default"
+    bindsym u exec --no-startup-id "setxkbmap us && setxkbmap -option compose:menu"", mode "default"
     bindsym c exec --no-startup-id setxkbmap ch, mode "default"
 
     bindsym Return mode "default"
