@@ -6,6 +6,7 @@ set -a PATH ~/bin
 set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
 set -x LC_CTYPE en_US.utf8
+set -gx LS_COLORS (vivid generate molokai)
 
 # no greeting
 set fish_greeting ""
