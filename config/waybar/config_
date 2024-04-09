@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 20,
+    "height": 25,
     "margin-left": 5,
     "margin-right": 5,
     "margin-top": 5,
@@ -10,12 +10,13 @@
     // Choose the order of the modules
 
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [ "hyprland/window"  ],
-    "modules-right": ["piracy", "network", "disk", "cpu",  "memory", "pulseaudio", "tray",  "keyboard-state", "clock"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "temperature", "memory", "backlight", "pulseaudio", "tray"],
 
     // Modules configuration
     "hyprland/workspaces": {
         "on-click": "activate",
+        //"active-only": false,
         "all-outputs": true,
         "persistent-workspaces": {
             "1": [],
@@ -31,16 +32,19 @@
          },
         "format": "{icon}",
         "format-icons": {
-            "1": "1 ",
-            "2": "2 ",
-            "3": "3 ",
-            "4": "4 ",
-            "5": "5 ",
-            "6": "6 ",
-            "7": "7 ",
-            "8": "8 ",
-            "9": "9 ",
+            "1":  "1 ",
+            "2":  "2 ",
+            "3":  "3 ",
+            "4":  "4 ",
+            "5":  "5 ",
+            "6":  "6 ",
+            "7":  "7 ",
+            "8":  "8 ",
+            "9":  "9 ",
             "10": "10 "
+            // "urgent": "",
+            // "active": "",
+            // "default": ""
          },
     },
     "keyboard-state": {
@@ -72,9 +76,9 @@
     },
     "clock": {
         "interval": 60,
-        "format": "  {:%a %d. %b %H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d.%m.%Y %H:%M}"
+        "format": "  {:%a %b %d  %I:%M %p}", // %b %d %Y  --Date formatting
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
     },
    "temperature": {
         // "thermal-zone": 2,
@@ -87,21 +91,42 @@
     },
     "cpu": {
         "interval": 2,
-        "format": "{usage}% " ,
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "interval": 5,
-        "format": "{used:0.1f}G/{total:0.1f}G "
+        "interval": 2,
+        "format": "{}% "
     },
    "disk": {
         "interval": 15,
-        "format": "{percentage_used}% ",
+        "format": "{percentage_used}% 󰋊",
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "interval": 5,
-        "format-wifi": "  {ipaddr} {essid} {signalStrength}%", 
+        "format-wifi": " :{ipaddr}", //({essid} {signalStrength}%)
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -128,27 +153,11 @@
         },
         "on-click": "pavucontrol"
     },
-    "privacy": {
-    	"icon-spacing": 4,
-    	"icon-size": 18,
-    	"transition-duration": 250,
-    	"modules": [
-    		{
-    			"type": "screenshare",
-    			"tooltip": true,
-    			"tooltip-icon-size": 24
-    		},
-    		{
-    			"type": "audio-out",
-    			"tooltip": true,
-    			"tooltip-icon-size": 24
-    		},
-    		{
-    			"type": "audio-in",
-    			"tooltip": true,
-    			"tooltip-icon-size": 24
-    		}
-    	]
+    "custom/power": {
+      "format": "{icon}",
+      "format-icons": "",// 󰣇
+      "exec-on-event": "true",
+      "on-click": "~/scripts/sessionMenu.sh",
     }
 }
 
