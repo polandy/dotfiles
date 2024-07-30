@@ -1,7 +1,7 @@
 # dotfiles related stuff
 set -gx PATH $PATH ~/.dotfiles/bin
 set -gx PATH $PATH ~/bin
-set -gx JAVA_HOME /usr/lib/jvm/java-11-openjdk
+set -gx JAVA_HOME /usr/lib/jvm/default/
 set -gx M2_HOME /opt/maven
 set -gx HOST_NAME (cat /etc/hostname)
 
