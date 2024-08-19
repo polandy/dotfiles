@@ -200,9 +200,7 @@ bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty
 #############################################
 
 # Program-Workspace Default Mapping
-assign [class="Thunderbird"]    $workspace_mail
 assign [class="firefox"]        $workspace_browser
-assign [class="jetbrains-idea"] $workspace_code
 
 # for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
