@@ -1,0 +1,18 @@
+arch = [
+  "brightnessctl",
+
+  "grub",
+  "grub-btrfs",
+
+  # Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet
+  "hplip",
+
+  "intel-media-driver",
+  "intel-ucode",
+
+  "libva-intel-driver",
+  "libva-mesa-driver",
+
+  "vulkan-intel",
+  "wireguard-tools",
+]

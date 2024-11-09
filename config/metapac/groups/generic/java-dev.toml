@@ -1,0 +1,7 @@
+arch = [
+  "maven",
+  "openjdk21-src",
+  "openjdk21-doc",
+  "openjdk21-openjdk",
+  "intellij-idea-ultimate-edition"
+]

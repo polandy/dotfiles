@@ -1,0 +1,17 @@
+arch = [
+  # sway optionally requires foot: Terminal emulator used in the default configuration
+  "foot",
+  "grim",
+  "slurp",
+  "sway",
+  "swaybg",
+  "swayidle",
+  "swaylock",
+  "waybar",
+  "wdisplays",
+  "wl-clipboard",
+  "wofi",
+  "xdg-desktop-portal-wlr",
+  # run X clients under wayland
+  "xorg-xwayland",
+]

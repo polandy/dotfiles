@@ -1,0 +1,4 @@
+arch = [
+  "btrfs-progs",
+  "timeshift-autosnap"
+]

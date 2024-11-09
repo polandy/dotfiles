@@ -1,0 +1,16 @@
+arch = [
+  "amd-ucode",
+
+  "grub",
+  "grub-btrfs",
+
+  "lib32-nvidia-utils",
+
+  "nvidia",
+  "nvidia-settings",
+  "nvtop",
+
+  "opencl-nvidia",
+
+  "steam",
+]
