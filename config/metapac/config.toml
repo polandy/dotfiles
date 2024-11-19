@@ -41,13 +41,15 @@ x1 = [
   "generic/photography",
   "hosts/x1",
 ]
-coolermaser = [
+coolermaster = [
   "generic/base",
   "generic/btrfs",
   "generic/audio",
   "generic/wireless",
+  "generic/xorg",
   "generic/base-ui",
   "generic/photography",
+  "generic/virtualbox",
   "hosts/coolermaster"
 ]
 #server = ["example_group"]

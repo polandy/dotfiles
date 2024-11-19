@@ -1,0 +1,5 @@
+arch = [
+  "virtualbox",
+  "virtualbox-guest-iso",
+  "vagrant"
+]
