@@ -36,9 +36,11 @@ x1 = [
   "generic/btrfs",
   "generic/audio",
   "generic/wireless",
+  "generic/xorg",
   "generic/base-ui",
   "generic/wayland",
   "generic/photography",
+  "generic/java-dev.toml",
   "hosts/x1",
 ]
 coolermaster = [
