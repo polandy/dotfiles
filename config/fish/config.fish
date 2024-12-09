@@ -11,6 +11,9 @@ set -gx LS_COLORS (vivid generate molokai)
 # no greeting
 set fish_greeting ""
 
+# mise
+mise activate fish | source
+
 # git alias
 git config --global alias.co checkout
 git config --global alias.ci commit
