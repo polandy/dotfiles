@@ -2,4 +2,5 @@
 java = "21"
 # install plugin: `mise plugin install maven`
 maven = "3"
+node = "22"
 usage = "latest"
