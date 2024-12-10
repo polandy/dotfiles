@@ -25,7 +25,6 @@ arch = [
   "man-db",
   "mc",
   "metapac",
-  "mlocate",
   "mosh",
   "nfs-utils",
   "nano",
@@ -55,6 +54,5 @@ arch = [
   "wireless-regdb",
   "wireless_tools",
   "yay",
-  "yay-debug",
   "zram-generator",
 ]

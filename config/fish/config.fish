@@ -6,13 +6,16 @@ set -a PATH ~/bin
 set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
 set -x LC_CTYPE en_US.utf8
-set -gx LS_COLORS (vivid generate molokai)
 
 # no greeting
 set fish_greeting ""
 
-# mise
-mise activate fish | source
+if command -v vivid > /dev/null
+    set -gx LS_COLORS (vivid generate molokai)
+end
+if command -v mise > /dev/null
+    mise activate fish | source
+end
 
 # git alias
 git config --global alias.co checkout
