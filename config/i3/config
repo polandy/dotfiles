@@ -19,6 +19,7 @@ font pango:$font
 # Random Background image example
 #set $Locker i3lock -i $(find $HOME/Pictures/wallpapers -name "*2560x1440.png" | shuf -n1) && sleep 1
 set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
+set $MonitorScript $HOME/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -65,7 +66,7 @@ bindsym XF86Display        exec arandr
 bindsym Shift+XF86Display  exec nvidia-settings
 
 # change displaymode
-bindsym $mod+m exec ~/.screenlayout/display-external-monitor-if-connected.sh
+bindsym $mod+m exec $MonitorScript
 
 ## display brightness management
 bindsym XF86MonBrightnessUp     exec "xbacklight +10"
@@ -290,10 +291,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id copyq
 exec --no-startup-id blueman-applet
-exec --no-startup-id /usr/bin/bash /home/andy/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
+exec --no-startup-id $MonitorScript
 exec --no-startup-id numlockx on
 
-exec_always --no-startup-id feh --bg-fill $(find $HOME/Pictures/wallpapers -iname "*.jpg" -o -iname "*.png"| shuf -n1)
+exec_always --no-startup-id feh --bg-fill $(find $HOME/Nextcloud/wallpapers/ -iname "*.jpg" -o -iname "*.png"| shuf -n1)
 
 #############################################
 #                 i3-bar                    #
