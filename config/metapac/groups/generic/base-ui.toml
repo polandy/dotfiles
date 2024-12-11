@@ -54,6 +54,8 @@ arch = [
   "poppler-glib",
   "sddm",
   "system-config-printer",
+  "texstudio",
+  "texlive",
   "thunar",
   "thunar-archive-plugin",
   "thunar-media-tags-plugin",
