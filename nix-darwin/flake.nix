@@ -27,6 +27,11 @@
           "firefox"
           "mongodb-compass"
         ];
+
+        masApps = {
+          "wireguard" = 1451685025;
+        };
+
       };
 
       nixpkgs = {
@@ -52,19 +57,25 @@
         pkgs.htop
         pkgs.jetbrains.idea-ultimate
         pkgs.kitty
+        pkgs.mas
+        pkgs.minio-client
         pkgs.mise
         pkgs.ncdu
         pkgs.neovim
         pkgs.openshift
         pkgs.p7zip
         pkgs.tmux
+        pkgs.utm
         pkgs.vault
-        pkgs.vim
+        pkgs.vivid
         pkgs.vscode
       ];
       # system settings
       system.defaults = {
         controlcenter.BatteryShowPercentage = true;
+        spaces = {
+          spans-displays = true;
+        };
         WindowManager = {
           EnableStandardClickToShowDesktop = false;
           StandardHideDesktopIcons = true;
