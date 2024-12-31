@@ -14,7 +14,7 @@ exec-on-workspace-change = ['/run/current-system/sw/bin/bash', '-c',
 ]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Disable Normalizations for i3-like behaviour which i am used to. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = false
@@ -99,9 +99,6 @@ outer.right =      0
 alt-enter = 'exec-and-forget open -na kitty'
 alt-shift-q = 'close'
 
-#alt-b = 'split horizontal'
-#alt-v = 'split vertical'
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
@@ -144,10 +141,13 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 alt-shift-minus = 'move-node-to-workspace 11'
 
+cmd-h = [] # Disable "hide application"
+cmd-alt-h = [] # Disable "hide others"
+
 # i3-like configuration
 alt-f = 'fullscreen'
-alt-w = 'layout h_accordion' # 'layout tabbed' in i3
-alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+#alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+#alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-b = 'split horizontal'
 alt-v = 'split vertical'
@@ -165,6 +165,16 @@ shift-alt-backspace =  'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+
+# modes
+alt-r = 'mode resize'
+
+[mode.resize.binding]
+h = 'resize smart -50'
+left = 'resize smart -50'
+l = 'resize smart +50'
+right = 'resize smart +50'
+esc = ['mode main']
 
 [workspace-to-monitor-force-assignment]
 1  = 1
