@@ -20,6 +20,7 @@ font pango:$font
 #set $Locker i3lock -i $(find $HOME/Pictures/wallpapers -name "*2560x1440.png" | shuf -n1) && sleep 1
 set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
 set $MonitorScript $HOME/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
+set $SetxkbmapUs "setxkbmap us && setxkbmap -option compose:ralt"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -220,7 +221,7 @@ for_window [class="^steam$" title="^Steam$"] floating disable
 # Keyboard layout
 set $mode_kblayout (C)H, (U)S
 mode "$mode_kblayout" {
-    bindsym u exec --no-startup-id "setxkbmap us && setxkbmap -option compose:rwin", mode "default"
+    bindsym u exec --no-startup-id $SetxkbmapUs, mode "default"
     bindsym c exec --no-startup-id setxkbmap ch, mode "default"
 
     bindsym Return mode "default"
@@ -287,6 +288,7 @@ bindsym $mod+T mode "$mode_thinkpad"
 #############################################
 #                Autostart                  #
 #############################################
+exec --no-startup-id $SetxkbmapUs
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id copyq
