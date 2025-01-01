@@ -206,11 +206,10 @@ assign [class="Thunderbird"]    $workspace_mail
 assign [class="firefox"]        $workspace_browser
 assign [class="jetbrains-idea"] $workspace_code
 
-# for_window [instance="keepassx"]    floating enable
 for_window [instance="pavucontrol"] floating enable
-for_window [class="Yad"] floating enable
-for_window [class="copyq"] floating enable
+for_window [instance="blueman-manager"] floating enable
 
+for_window [class="copyq"] floating enable
 for_window [class="^steam$"] floating enable
 for_window [class="^Steam$"] floating enable
 for_window [class="^steam$" title="^Steam$"] floating disable
