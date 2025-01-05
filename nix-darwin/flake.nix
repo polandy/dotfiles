@@ -16,6 +16,30 @@
       # Enable alternative shell support in nix-darwin.
       programs.fish.enable = true;
 
+      homebrew = {
+        # Note that enabling this option does not install Homebrew, see the Homebrew website for installation instructions.
+        enable = true;
+        taps = [
+          "FelixKratz/formulae" # used for borders and sketchybar
+          "nikitabobko/tap" # used for aerospace
+        ];
+        brews = [
+          "borders"
+          "sketchybar"
+          "ifstat"
+          "mas"
+        ];
+        casks = [
+          "aerospace"
+          "firefox"
+          "docker"
+          "nextcloud"
+          "font-fira-code-nerd-font"
+          "font-hack-nerd-font"
+          "mongodb-compass"
+        ];
+      };
+
       nixpkgs = {
         hostPlatform = "aarch64-darwin";
         config = {
@@ -46,7 +70,9 @@
         pkgs.neovim
         pkgs.openshift
         pkgs.p7zip
+        pkgs.sketchybar-app-font
         pkgs.tmux
+        pkgs.unixtools.watch
         pkgs.utm
         pkgs.vault
         pkgs.vivid
@@ -82,6 +108,10 @@
           ShowStatusBar = true;
           _FXShowPosixPathInTitle = true;
         };
+      };
+
+      security.pam = {
+        enableSudoTouchIdAuth = true;
       };
 
       # Set Git commit hash for darwin-version.
