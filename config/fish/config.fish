@@ -2,13 +2,12 @@
 set -a PATH ~/.dotfiles/bin
 set -a PATH ~/bin
 
-# locale
+# no greeting
+set fish_greeting ""
+
 set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
 set -x LC_CTYPE en_US.utf8
-
-# no greeting
-set fish_greeting ""
 
 if command -v vivid > /dev/null
     set -gx LS_COLORS (vivid generate molokai)
@@ -88,3 +87,16 @@ end
 
 # golang
 set -g GOPATH ~/go
+
+set os_name (uname -s)
+
+# Load macOS-specific configuration
+set darwin_dir = $HOME/.dotfiles/config/fish/darwin_functions
+if test $os_name = "Darwin"
+  set fish_greeting "Darwin fish config"
+  for file in $darwin_dir/*.fish
+    if test -f $file
+      source $file
+    end
+  end
+end
