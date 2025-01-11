@@ -16,10 +16,6 @@ if command -v mise > /dev/null
     mise activate fish | source
 end
 
-if test -d /opt/homebrew/bin
-    set -gx PATH /opt/homebrew/bin $PATH
-end
-
 # git alias
 git config --global alias.co checkout
 git config --global alias.ci commit
