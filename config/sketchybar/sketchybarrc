@@ -5,6 +5,7 @@
 
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
+FONT="Hack Nerd Font"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -13,9 +14,10 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000 y_offset=
 
 sketchybar --add event aerospace_workspace_change
+sketchybar --set bar layer=top
 
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
@@ -50,8 +52,8 @@ sketchybar --set space.10 icon=
 default=(
   padding_left=5
   padding_right=5
-  icon.font="Hack Nerd Font:Bold:17.0"
-  label.font="Hack Nerd Font:Bold:14.0"
+  icon.font="$FONT:Bold:17.0"
+  label.font="$FONT:Bold:14.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -85,6 +87,10 @@ sketchybar --add item chevron left \
 source $ITEM_DIR/clock.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/volume.sh
+source $ITEM_DIR/ram.sh
+source $ITEM_DIR/cpu.sh
+source $ITEM_DIR/disk.sh
+source $ITEM_DIR/network.sh
 
 
 ##### Force all scripts to run the first time (never do this in a script) #####
