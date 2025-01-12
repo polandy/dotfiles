@@ -60,9 +60,11 @@
       environment.systemPackages = [
         pkgs.alacritty
         pkgs.bat
+        pkgs.brave
         pkgs.colima
         pkgs.docker-compose
         pkgs.git
+        pkgs.findutils
         pkgs.flameshot
         pkgs.google-chrome
         pkgs.htop
