@@ -6,13 +6,9 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-core = { url = "github:homebrew/homebrew-core"; flake = false; };
-    homebrew-cask = { url = "github:homebrew/homebrew-cask"; flake = false;  };
-    homebrew-bundle = { url = "github:homebrew/homebrew-bundle"; flake = false; };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, homebrew-bundle }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { lib, pkgs, ... }: {
       # Necessary for using flakes on this system.
@@ -21,17 +17,29 @@
       programs.fish.enable = true;
 
       homebrew = {
-        enable= true;
-        casks = [
-          "docker"
-          "firefox"
-          "mongodb-compass"
+        # Note that enabling this option does not install Homebrew, see the Homebrew website for installation instructions.
+        enable = true;
+        taps = [
+          "FelixKratz/formulae" # used for borders and sketchybar
+          "nikitabobko/tap" # used for aerospace
         ];
-
-        masApps = {
-          "wireguard" = 1451685025;
-        };
-
+        brews = [
+          "borders"
+          "sketchybar"
+          "ifstat"
+          "mas"
+        ];
+        casks = [
+          "aerospace"
+          "firefox"
+          "docker"
+          "nextcloud"
+#          "font-awesome"
+          "font-fira-code-nerd-font"
+          "font-hack-nerd-font"
+          "mongodb-compass"
+          "whatsapp"
+        ];
       };
 
       nixpkgs = {
@@ -52,7 +60,10 @@
       environment.systemPackages = [
         pkgs.alacritty
         pkgs.bat
+        pkgs.colima
+        pkgs.docker-compose
         pkgs.git
+        pkgs.flameshot
         pkgs.google-chrome
         pkgs.htop
         pkgs.jetbrains.idea-ultimate
@@ -64,42 +75,61 @@
         pkgs.neovim
         pkgs.openshift
         pkgs.p7zip
+        pkgs.sketchybar-app-font
         pkgs.tmux
+        pkgs.unixtools.watch
         pkgs.utm
         pkgs.vault
         pkgs.vivid
         pkgs.vscode
+
+        pkgs.kubeconform
+        pkgs.kube-linter
+        pkgs.yamllint
+        pkgs.kubernetes-helm
       ];
       # system settings
-      system.defaults = {
-        controlcenter.BatteryShowPercentage = true;
-        spaces = {
-          spans-displays = true;
+      system = {
+        defaults = {
+          controlcenter.BatteryShowPercentage = true;
+          spaces = {
+            spans-displays = true;
+          };
+          WindowManager = {
+            EnableStandardClickToShowDesktop = false;
+            StandardHideDesktopIcons = true;
+            StandardHideWidgets = true;
+          };
+          dock = {
+            autohide = true;
+            largesize = 80;
+            launchanim = false;
+            mineffect = "scale";
+            orientation = "bottom";
+          };
+          finder = {
+            AppleShowAllExtensions = true;
+            AppleShowAllFiles = true;
+            CreateDesktop = false;
+            NewWindowTarget = "Home";
+            FXDefaultSearchScope = "SCcf";
+            FXEnableExtensionChangeWarning = false;
+            QuitMenuItem = true;
+            ShowPathbar = true;
+            ShowStatusBar = true;
+            _FXShowPosixPathInTitle = true;
+          };
         };
-        WindowManager = {
-          EnableStandardClickToShowDesktop = false;
-          StandardHideDesktopIcons = true;
-          StandardHideWidgets = true;
+
+        keyboard = {
+          enableKeyMapping = true;
+          remapCapsLockToEscape = true;
         };
-        dock = {
-          autohide = true;
-          largesize = 80;
-          launchanim = false;
-          mineffect = "scale";
-          orientation = "bottom";
-        };
-        finder = {
-          AppleShowAllExtensions = true;
-          AppleShowAllFiles = true;
-          CreateDesktop = false;
-          NewWindowTarget = "Home";
-          FXDefaultSearchScope = "SCcf";
-          FXEnableExtensionChangeWarning = false;
-          QuitMenuItem = true;
-          ShowPathbar = true;
-          ShowStatusBar = true;
-          _FXShowPosixPathInTitle = true;
-        };
+      };
+
+
+      security.pam = {
+        enableSudoTouchIdAuth = true;
       };
 
       # Set Git commit hash for darwin-version.
@@ -115,20 +145,6 @@
     darwinConfigurations."ambp" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            enableRosetta = true;
-            user = "andy";
-            taps = {
-              "homebrew/homebrew-core" = homebrew-core;
-              "homebrew/homebrew-cask" = homebrew-cask;
-              "homebrew/homebrew-bundle" = homebrew-bundle;
-            };
-            mutableTaps = false;
-          };
-        }
       ];
     };
     darwinPackages = self.darwinConfigurations."ambp".pkgs;
