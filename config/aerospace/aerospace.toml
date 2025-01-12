@@ -8,7 +8,7 @@ after-login-command = []
 # so it won't be run twice on AeroSpace restart
 after-startup-command = [
   'exec-and-forget sketchybar',
-  'exec-and-forget borders active_color=0xff4C7899 inactive_color=0xff494d64 width=5.0',
+  'exec-and-forget borders',
 ]
 
 # Notify Sketchybar about workspace change
@@ -179,6 +179,7 @@ l = 'resize smart +50'
 right = 'resize smart +50'
 esc = ['mode main']
 
+# use `aerospace list-monitors` to see monitor names
 [workspace-to-monitor-force-assignment]
 1  = 1
 2  = 1
