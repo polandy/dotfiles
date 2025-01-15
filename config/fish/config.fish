@@ -30,34 +30,20 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 # abbreviations
 abbr -a g 'git'
 abbr -a gp 'git push'
-abbr -a gpa 'git push --all'
 abbr -a gu 'git pull --rebase'
 abbr -a gl 'git lg'
 abbr -a glgf "git log --color --graph --pretty format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 abbr -a gs 'git status'
-abbr -a gdt 'git difftool -y'
-abbr -a gdtd 'git difftool -d'
 abbr -a gd 'git diff'
-abbr -a gdtc 'git difftool --cached -y'
 abbr -a gm 'git commit -m'
-abbr -a gcamend 'git commit --amend'
-abbr -a gma 'git commit -am'
-abbr -a gb 'git branch'
-abbr -a gba 'git branch -a'
 abbr -a gco 'git checkout'
 abbr -a gcb 'git checkout -b'
-abbr -a gci 'git commit'
 abbr -a gr 'git rebase'
 abbr -a grv 'git remote -v'
 abbr -a gcd 'git rev-parse 2>/dev/null && cd "./$(git rev-parse --show-cdup)"'
 abbr -a glol 'git lol'
 abbr -a glola 'git lola'
 
-abbr -a gstash 'git stash'
-abbr -a gua "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -P 40 -n 1 -I '{}' sh -c 'cd {}; git pull'"
-abbr -a gsa "find . -maxdepth 3 -type d -name .git | xargs dirname |xargs -n 1 -I '{}' sh -c 'cd {}; git status'"
-abbr -a gau "git add -u :/"
-abbr -a ga "git add "
 abbr -a stash "git stash "
 abbr -a pop "git stash pop"
 
