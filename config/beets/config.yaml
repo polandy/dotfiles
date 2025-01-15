@@ -41,3 +41,4 @@ replaygain:
   backend: gstreamer
 rewrite:
   artist JAY-Z.*Linkin Park: Linkin Park
+  artist OVERWERK*: OVERWERK
