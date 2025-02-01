@@ -35,7 +35,7 @@
     bindsym $mod+Shift+r exec swaymsg reload
 
     # window border
-    default_border pixel 2
+    default_border pixel 4
     titlebar_border_thickness 1
     titlebar_padding 1 1
 
@@ -69,7 +69,7 @@ output eDP-1 scale 1.5
 
 ### Input configuration
     input * {
-        xkb_layout ch,us
+        xkb_layout us,ch
         xkb_options "grp:win_space_toggle"
     }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
