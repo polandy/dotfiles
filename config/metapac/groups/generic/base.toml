@@ -38,7 +38,6 @@ arch = [
   "openvpn",
   "plocate",
   "pacman-contrib",
-  "p7zip",
   "python-pynvim",
   "qt6-imageformats",
   "reflector",
@@ -61,4 +60,6 @@ arch = [
   "yay",
   "yt-dlp",
   "zram-generator",
+
+  "hugo",
 ]

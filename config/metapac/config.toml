@@ -40,7 +40,6 @@ x1 = [
   "generic/base-ui",
   "generic/wayland",
   "generic/photography",
-  "generic/java-dev.toml",
   "hosts/x1",
 ]
 coolermaster = [
@@ -52,6 +51,7 @@ coolermaster = [
   "generic/base-ui",
   "generic/photography",
   "generic/virtualbox",
+  "generic/latex",
   "hosts/coolermaster"
 ]
 #server = ["example_group"]

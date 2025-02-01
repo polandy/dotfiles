@@ -11,7 +11,7 @@ arch = [
   "intel-ucode",
 
   "libva-intel-driver",
-  "libva-mesa-driver",
+  "mesa",
 
   "vulkan-intel",
   "wireguard-tools",

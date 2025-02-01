@@ -1,0 +1,4 @@
+arch = [
+  "texstudio",
+  "texlive"
+]
