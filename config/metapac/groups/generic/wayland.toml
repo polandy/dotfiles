@@ -6,7 +6,7 @@ arch = [
   "sway",
   "swaybg",
   "swayidle",
-  "swaylock",
+  "swaylock-effects",
   "waybar",
   "wdisplays",
   "wl-clipboard",

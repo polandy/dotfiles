@@ -29,6 +29,22 @@
 
         $screenshots-dir ~/Pictures/screenshots/
         $notify-send-screenshot "Screenshot created in $screenshots-dir"
+
+        $Locker swaylock \
+        --screenshots \
+        --clock \
+        --indicator \
+        --indicator-radius 100 \
+        --indicator-thickness 7 \
+        --effect-blur 7x20 \
+        --effect-vignette 0.5:0.5 \
+        --ring-color bb00cc \
+        --key-hl-color 880033 \
+        --line-color 00000000 \
+        --inside-color 00000088 \
+        --separator-color 00000000 \
+        --grace 0 \
+        --fade-in 0.2
     }
 
     # reload sway config
@@ -55,17 +71,13 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output eDP-1 scale 1.5
 
 ### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 # This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
+# your displays after another 600 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+    timeout 300 '$Locker' \
+    timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep '$Locker'
 
 ### Input configuration
     input * {
