@@ -1,6 +1,7 @@
 # dotfiles related stuff
 set -a PATH ~/.dotfiles/bin
 set -a PATH ~/bin
+set -a PATH ~/.local/bin
 
 # no greeting
 set fish_greeting ""
