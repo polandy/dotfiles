@@ -15,4 +15,7 @@ arch = [
 
   "vulkan-intel",
   "wireguard-tools",
+
+  # driver which allows to use the fingeprint reader as usual using fprintd
+  "python-validity",
 ]
