@@ -28,16 +28,22 @@
           "sketchybar"
           "ifstat"
           "mas"
+
+          "geeqie"
+          "hicolor-icon-theme"
         ];
         casks = [
           "aerospace"
-          "firefox"
           "docker"
+          "firefox"
+#          "jetbrains-gateway"
           "nextcloud"
 #          "font-awesome"
           "font-fira-code-nerd-font"
           "font-hack-nerd-font"
+          "logseq"
           "mongodb-compass"
+          "threema"
           "whatsapp"
         ];
       };
@@ -47,9 +53,13 @@
         config = {
           allowUnsupportedSystem = true;
           allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+            "discord"
             "idea-ultimate"
+            "jetbrains.gateway"
+            "gateway"
             "google-chrome"
             "displaylink"
+            "signal-desktop"
             "vault"
             "vscode"
           ];
@@ -62,12 +72,16 @@
         pkgs.bat
         pkgs.brave
         pkgs.colima
+        pkgs.lima
         pkgs.docker-compose
+        pkgs.devpod
+        pkgs.discord
         pkgs.git
         pkgs.findutils
         pkgs.flameshot
         pkgs.google-chrome
         pkgs.htop
+        pkgs.jetbrains.gateway
         pkgs.jetbrains.idea-ultimate
         pkgs.kitty
         pkgs.mas
@@ -77,6 +91,7 @@
         pkgs.neovim
         pkgs.openshift
         pkgs.p7zip
+        pkgs.signal-desktop
         pkgs.sketchybar-app-font
         pkgs.tmux
         pkgs.unixtools.watch
@@ -89,6 +104,7 @@
         pkgs.kube-linter
         pkgs.yamllint
         pkgs.kubernetes-helm
+        pkgs.yq
       ];
       # system settings
       system = {
