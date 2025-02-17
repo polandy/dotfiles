@@ -3,11 +3,12 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
 after-startup-command = [
+  # Run Sketchybar together with AeroSpace
+  # sketchbar has a built-in detection of already running process,
+  # so it won't be run twice on AeroSpace restart
   'exec-and-forget sketchybar',
+  # run jankyborders
   'exec-and-forget borders',
 ]
 
@@ -100,7 +101,7 @@ outer.right =      0
 
 #alt-enter = 'exec-and-forget open -na alacritty'
 alt-enter = 'exec-and-forget open -na kitty'
-alt-shift-q = 'close'
+alt-shift-q = 'close --quit-if-last-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -149,7 +150,7 @@ cmd-alt-h = [] # Disable "hide others"
 
 # i3-like configuration
 alt-f = 'fullscreen'
-#alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+alt-w = 'layout h_accordion' # 'layout tabbed' in i3
 alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-b = 'split horizontal'
@@ -162,8 +163,8 @@ alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
-ctrl-alt-h = 'workspace prev'
-ctrl-alt-l = 'workspace next'
+ctrl-alt-h = 'workspace --wrap-around prev'
+ctrl-alt-l = 'workspace --wrap-around next'
 shift-alt-backspace =  'workspace-back-and-forth'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
@@ -181,17 +182,17 @@ esc = ['mode main']
 
 # use `aerospace list-monitors` to see monitor names
 [workspace-to-monitor-force-assignment]
-1  = 1
-2  = 1
-3  = 1
-4  = 1
-5  = 1
+1  = ['SF16T', 1]
+2  = ['SF16T', 1]
+3  = ['SF16T', 1]
+4  = ['BenQ PD3220U', 1 ]
+5  = ['BenQ PD3220U', 1 ]
 6  = 2
 7  = 2
 8  = 2
 9  = 2
 10 = 2
-11 = [3, 2]
+11 = 2
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
