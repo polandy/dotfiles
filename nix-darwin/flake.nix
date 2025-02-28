@@ -9,19 +9,8 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
-    configuration = { lib, pkgs, ... }: {
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-      # Enable alternative shell support in nix-darwin.
-      programs.fish.enable = true;
-
-      security.pam = {
-        enableSudoTouchIdAuth = true;
-      };
-
-    };
-  system = "aarch64-darwin";
-  lib = nixpkgs.lib;
+    system = "aarch64-darwin";
+    lib = nixpkgs.lib;
   in
   {
     # $ darwin-rebuild build --flake .#ambp
@@ -31,12 +20,12 @@
         # Pass 'self' to modules
         specialArgs = { inherit self lib; };
         modules = [
-          configuration
-          ./modules/system.nix
+          ./modules/default.nix
           ./modules/base-packages.nix
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
           ./modules/devops-homebrew.nix
+          ./modules/macos.nix
         ];
       };
     };
