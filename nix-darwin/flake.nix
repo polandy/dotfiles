@@ -145,7 +145,6 @@
         };
       };
 
-
       security.pam = {
         enableSudoTouchIdAuth = true;
       };
@@ -160,11 +159,12 @@
   in
   {
     # $ darwin-rebuild build --flake .#ambp
-    darwinConfigurations."ambp" = nix-darwin.lib.darwinSystem {
-      modules = [
-        configuration
-      ];
+    darwinConfigurations = {
+      "ambp" = nix-darwin.lib.darwinSystem {
+        modules = [
+          configuration
+        ];
+      };
     };
-    darwinPackages = self.darwinConfigurations."ambp".pkgs;
   };
 }
