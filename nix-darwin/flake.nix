@@ -5,7 +5,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
@@ -106,63 +105,24 @@
         pkgs.kubernetes-helm
         pkgs.yq
       ];
-      # system settings
-      system = {
-        defaults = {
-          controlcenter.BatteryShowPercentage = true;
-          spaces = {
-            spans-displays = true;
-          };
-          WindowManager = {
-            EnableStandardClickToShowDesktop = false;
-            StandardHideDesktopIcons = true;
-            StandardHideWidgets = true;
-          };
-          dock = {
-            autohide = true;
-            largesize = 80;
-            launchanim = false;
-            mineffect = "scale";
-            orientation = "bottom";
-          };
-          finder = {
-            AppleShowAllExtensions = true;
-            AppleShowAllFiles = true;
-            CreateDesktop = false;
-            NewWindowTarget = "Home";
-            FXDefaultSearchScope = "SCcf";
-            FXEnableExtensionChangeWarning = false;
-            QuitMenuItem = true;
-            ShowPathbar = true;
-            ShowStatusBar = true;
-            _FXShowPosixPathInTitle = true;
-          };
-        };
-
-        keyboard = {
-          enableKeyMapping = true;
-          remapCapsLockToEscape = true;
-        };
-      };
 
       security.pam = {
         enableSudoTouchIdAuth = true;
       };
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
     };
+  system = "aarch64-darwin";
   in
   {
     # $ darwin-rebuild build --flake .#ambp
     darwinConfigurations = {
       "ambp" = nix-darwin.lib.darwinSystem {
+        inherit system;
+        # Pass 'self' to modules
+        specialArgs = { inherit self; };
         modules = [
           configuration
+          ./modules/system.nix
         ];
       };
     };
