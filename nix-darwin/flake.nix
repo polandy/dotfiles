@@ -47,71 +47,13 @@
         ];
       };
 
-      nixpkgs = {
-        hostPlatform = "aarch64-darwin";
-        config = {
-          allowUnsupportedSystem = true;
-          allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-            "discord"
-            "idea-ultimate"
-            "jetbrains.gateway"
-            "gateway"
-            "google-chrome"
-            "displaylink"
-            "signal-desktop"
-            "vault"
-            "vscode"
-          ];
-        };
-      };
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages = [
-        pkgs.alacritty
-        pkgs.bat
-        pkgs.brave
-        pkgs.colima
-        pkgs.lima
-        pkgs.docker-compose
-        pkgs.devpod
-        pkgs.discord
-        pkgs.git
-        pkgs.findutils
-        pkgs.flameshot
-        pkgs.google-chrome
-        pkgs.htop
-        pkgs.jetbrains.gateway
-        pkgs.jetbrains.idea-ultimate
-        pkgs.kitty
-        pkgs.mas
-        pkgs.minio-client
-        pkgs.mise
-        pkgs.ncdu
-        pkgs.neovim
-        pkgs.openshift
-        pkgs.p7zip
-        pkgs.signal-desktop
-        pkgs.sketchybar-app-font
-        pkgs.tmux
-        pkgs.unixtools.watch
-        pkgs.utm
-        pkgs.vault
-        pkgs.vivid
-        pkgs.vscode
-
-        pkgs.kubeconform
-        pkgs.kube-linter
-        pkgs.yamllint
-        pkgs.kubernetes-helm
-        pkgs.yq
-      ];
-
       security.pam = {
         enableSudoTouchIdAuth = true;
       };
 
     };
   system = "aarch64-darwin";
+  lib = nixpkgs.lib;
   in
   {
     # $ darwin-rebuild build --flake .#ambp
@@ -119,10 +61,12 @@
       "ambp" = nix-darwin.lib.darwinSystem {
         inherit system;
         # Pass 'self' to modules
-        specialArgs = { inherit self; };
+        specialArgs = { inherit self lib; };
         modules = [
           configuration
           ./modules/system.nix
+          ./modules/base-packages.nix
+          ./modules/devops-packages.nix
         ];
       };
     };
