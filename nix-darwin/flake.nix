@@ -28,6 +28,17 @@
           ./modules/macos.nix
         ];
       };
+      "amba" = nix-darwin.lib.darwinSystem {
+        inherit system;
+        # Pass 'self' to modules
+        specialArgs = { inherit self lib; };
+        modules = [
+          ./modules/default.nix
+          ./modules/base-packages.nix
+          ./modules/base-homebrew.nix
+          ./modules/macos.nix
+        ];
+      };
     };
   };
 }
