@@ -5,29 +5,31 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     pkgs.alacritty
+    pkgs.kitty
     pkgs.bat
-    pkgs.brave
     pkgs.docker-compose
-    pkgs.devpod
-    pkgs.discord
     pkgs.git
     pkgs.findutils
-    pkgs.flameshot
-    pkgs.google-chrome
     pkgs.htop
-    pkgs.kitty
     pkgs.mas
     pkgs.mise
     pkgs.ncdu
     pkgs.neovim
     pkgs.p7zip
-    pkgs.signal-desktop
-    pkgs.sketchybar-app-font
     pkgs.tmux
     pkgs.unixtools.watch
-    pkgs.utm
     pkgs.vivid
+    pkgs.sketchybar-app-font
+
+    pkgs.raycast
+    pkgs.utm
     pkgs.vscode
+
+    pkgs.brave
+    pkgs.discord
+    pkgs.flameshot
+    pkgs.google-chrome
+    pkgs.signal-desktop
 
     pkgs.colima
     pkgs.lima

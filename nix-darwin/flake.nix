@@ -21,11 +21,12 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/base-environment.nix
+          ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
           ./modules/devops-homebrew.nix
-          ./modules/macos.nix
         ];
       };
       "amba" = nix-darwin.lib.darwinSystem {
@@ -34,10 +35,15 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/base-environment.nix
+          ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/base-homebrew.nix
-          ./modules/macos.nix
+          { # Inline module to disable Nix
+            nix.enable = false;
+          }
         ];
+
       };
     };
   };

@@ -1,8 +1,17 @@
 { config, pkgs, self, ... }:
 
 {
+  environment = {
+    shells = [ pkgs.fish ];
+  };
   system = {
     defaults = {
+      NSGlobalDomain = {
+        _HIHideMenuBar = true;
+        "com.apple.keyboard.fnState" = true;
+        "com.apple.mouse.tapBehavior" = 1;
+        "com.apple.swipescrolldirection" = false;
+      };
       controlcenter.BatteryShowPercentage = true;
       spaces = {
         spans-displays = true;
@@ -37,7 +46,7 @@
       remapCapsLockToEscape = true;
     };
   };
-  security.pam = {
-    enableSudoTouchIdAuth = true;
+  security.pam.services = {
+    sudo_local.touchIdAuth = true;
   };
 }
