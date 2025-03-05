@@ -7,7 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, }:
   let
     system = "aarch64-darwin";
     lib = nixpkgs.lib;
