@@ -39,6 +39,9 @@
           ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/base-homebrew.nix
+          ./modules/personal-packages.nix
+          ./modules/personal-homebrew.nix
+
           { # Inline module to disable Nix
             nix.enable = false;
           }

@@ -26,13 +26,14 @@
     pkgs.vscode
 
     pkgs.brave
-    pkgs.discord
     pkgs.flameshot
     pkgs.google-chrome
     pkgs.signal-desktop
 
     pkgs.colima
     pkgs.lima
+
+    pkgs.mpv
   ];
 
 }
