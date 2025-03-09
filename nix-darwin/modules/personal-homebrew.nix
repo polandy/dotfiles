@@ -6,6 +6,7 @@
     ];
     casks = [
       "digikam"
+      "fujifilm-x-raw-studio"
       "steam"
     ];
   };
