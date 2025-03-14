@@ -5,7 +5,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
     pkgs.alacritty
-    pkgs.kitty
     pkgs.bat
     pkgs.docker-compose
     pkgs.git

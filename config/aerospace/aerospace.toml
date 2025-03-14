@@ -99,8 +99,7 @@ outer.right =      0
 # end tell'
 # '''
 
-#alt-enter = 'exec-and-forget open -na alacritty'
-alt-enter = 'exec-and-forget open -na kitty'
+alt-enter = 'exec-and-forget open -na alacritty'
 alt-shift-q = 'close --quit-if-last-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
