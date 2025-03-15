@@ -1,6 +1,8 @@
 # Lots of junk goes in here.
 /caches/
 /backups/
+.idea/
+.DS_Store
 
 # Top secret stuff!
 /link/.ssh/authorized_keys
