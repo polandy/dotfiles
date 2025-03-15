@@ -21,7 +21,6 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
-          ./modules/base-environment.nix
           ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/devops-packages.nix
@@ -35,7 +34,6 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
-          ./modules/base-environment.nix
           ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/base-homebrew.nix
