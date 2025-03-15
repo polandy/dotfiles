@@ -17,9 +17,6 @@
       "sketchybar"
       "ifstat"
       "mas"
-
-      "geeqie"
-      "hicolor-icon-theme"
     ];
     casks = [
       "aerospace"
