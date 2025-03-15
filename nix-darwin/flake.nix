@@ -7,7 +7,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, }:
   let
     system = "aarch64-darwin";
     lib = nixpkgs.lib;
@@ -21,11 +21,11 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
           ./modules/devops-homebrew.nix
-          ./modules/macos.nix
         ];
       };
       "amba" = nix-darwin.lib.darwinSystem {
@@ -34,10 +34,17 @@
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/base-homebrew.nix
-          ./modules/macos.nix
+          ./modules/personal-packages.nix
+          ./modules/personal-homebrew.nix
+
+          { # Inline module to disable Nix
+            nix.enable = false;
+          }
         ];
+
       };
     };
   };
