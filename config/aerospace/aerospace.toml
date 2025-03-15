@@ -130,6 +130,7 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
 alt-minus = 'workspace 11'
+alt-equal = 'workspace 12'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -143,6 +144,7 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 alt-shift-minus = 'move-node-to-workspace 11'
+alt-shift-equal = 'move-node-to-workspace 12'
 
 cmd-h = [] # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
@@ -183,9 +185,9 @@ esc = ['mode main']
 [workspace-to-monitor-force-assignment]
 1  = ['SF16T', 1]
 2  = ['SF16T', 1]
-3  = ['SF16T', 1]
-4  = ['BenQ PD3220U', 1 ]
-5  = ['BenQ PD3220U', 1 ]
+3  = ['SF16T', 'PA328',  1]
+4  = ['BenQ PD3220U', 'PA328', 1 ]
+5  = ['BenQ PD3220U', 'PA328', 1 ]
 6  = 2
 7  = 2
 8  = 2
