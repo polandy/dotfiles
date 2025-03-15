@@ -14,6 +14,7 @@
       };
       controlcenter.BatteryShowPercentage = true;
       spaces = {
+        # one space spans across all physical displays. suggested for aerospace.
         spans-displays = true;
       };
       WindowManager = {
@@ -39,6 +40,16 @@
         ShowPathbar = true;
         ShowStatusBar = true;
         _FXShowPosixPathInTitle = true;
+      };
+      hitoolbox = {
+        AppleFnUsageType = "Change Input Source";
+      };
+      trackpad = {
+        # enable trackpad tap to click
+        Clicking = true;
+      };
+      universalaccess = {
+        reduceMotion = true;
       };
     };
     keyboard = {
