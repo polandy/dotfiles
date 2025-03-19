@@ -3,12 +3,11 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = []
 
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
 after-startup-command = [
-  # Run Sketchybar together with AeroSpace
-  # sketchbar has a built-in detection of already running process,
-  # so it won't be run twice on AeroSpace restart
   'exec-and-forget sketchybar',
-  # run jankyborders
   'exec-and-forget borders',
 ]
 
@@ -151,7 +150,7 @@ cmd-alt-h = [] # Disable "hide others"
 
 # i3-like configuration
 alt-f = 'fullscreen'
-alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+#alt-w = 'layout h_accordion' # 'layout tabbed' in i3
 alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-b = 'split horizontal'
