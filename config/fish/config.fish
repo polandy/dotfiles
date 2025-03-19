@@ -56,9 +56,9 @@ abbr -a dclf 'docker-compose logs -f'
 abbr -a dce 'docker-compose exec app'
 
 # vim related stuff
-alias vi="vim"
+alias vi="nvim -p"
 alias vim="nvim -p"
-set -x EDITOR vi
+set -x EDITOR nvim
 set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
 # misc aliases
