@@ -1,4 +1,4 @@
-{ config, pkgs, lib, self, ... }:
+{  pkgs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
@@ -6,7 +6,6 @@
   environment.systemPackages = [
     pkgs.alacritty
     pkgs.bat
-    pkgs.docker-compose
     pkgs.git
     pkgs.findutils
     pkgs.htop
@@ -16,9 +15,9 @@
     pkgs.neovim
     pkgs.p7zip
     pkgs.tmux
+    pkgs.tree
     pkgs.unixtools.watch
     pkgs.vivid
-    pkgs.sketchybar-app-font
 
     pkgs.raycast
     pkgs.utm
@@ -29,10 +28,20 @@
     pkgs.google-chrome
     pkgs.signal-desktop
 
+    pkgs.docker-compose
     pkgs.colima
     pkgs.lima
 
     pkgs.mpv
+
+    pkgs.lua
+    pkgs.sketchybar-app-font
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.cargo
+    pkgs.lazygit
   ];
 
 }
