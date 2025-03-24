@@ -7,22 +7,22 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, }:
+  outputs = { self, nix-darwin, nixpkgs, ... }:
   let
     system = "aarch64-darwin";
     lib = nixpkgs.lib;
   in
   {
-    # $ darwin-rebuild build --flake .#ambp
     darwinConfigurations = {
       "ambp" = nix-darwin.lib.darwinSystem {
         inherit system;
-        # Pass 'self' to modules
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/darwin-default.nix
           ./modules/macos.nix
           ./modules/base-packages.nix
+          ./modules/base-darwin-packages.nix
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
           ./modules/devops-homebrew.nix
@@ -30,22 +30,32 @@
       };
       "amba" = nix-darwin.lib.darwinSystem {
         inherit system;
-        # Pass 'self' to modules
         specialArgs = { inherit self lib; };
         modules = [
           ./modules/default.nix
+          ./modules/darwin-default.nix
           ./modules/macos.nix
           ./modules/base-packages.nix
+          ./modules/base-darwin-packages.nix
           ./modules/base-homebrew.nix
           ./modules/personal-packages.nix
           ./modules/personal-homebrew.nix
-
-          { # Inline module to disable Nix
+          {
             nix.enable = false;
           }
         ];
-
       };
+    };
+
+    nixosConfigurations.nixvm = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [
+        ./modules/default.nix
+        ./modules/nixvm-configuration.nix
+        ./modules/nixvm-hardware-configuration.nix
+        ./modules/base-packages.nix
+
+      ];
     };
   };
 }

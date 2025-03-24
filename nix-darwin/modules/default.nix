@@ -15,12 +15,4 @@
     LANG = "en_US.UTF-8";
   };
 
-  system = {
-    # Set Git commit hash for darwin-version.
-    configurationRevision = self.rev or self.dirtyRev or null;
-    # Used for backwards compatibility, please read the changelog before changing.
-    # $ darwin-rebuild changelog
-    stateVersion = 5;
-  };
-
 }

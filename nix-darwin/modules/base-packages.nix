@@ -10,7 +10,6 @@
     pkgs.git
     pkgs.findutils
     pkgs.htop
-    pkgs.mas
     pkgs.mise
     pkgs.ncdu
     pkgs.neovim
@@ -18,19 +17,12 @@
     pkgs.tmux
     pkgs.unixtools.watch
     pkgs.vivid
-    pkgs.sketchybar-app-font
 
-    pkgs.raycast
-    pkgs.utm
     pkgs.vscode
 
     pkgs.brave
     pkgs.flameshot
-    pkgs.google-chrome
     pkgs.signal-desktop
-
-    pkgs.colima
-    pkgs.lima
 
     pkgs.mpv
   ];
