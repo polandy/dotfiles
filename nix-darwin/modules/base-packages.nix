@@ -15,6 +15,7 @@
     pkgs.neovim
     pkgs.p7zip
     pkgs.tmux
+    pkgs.tree
     pkgs.unixtools.watch
     pkgs.vivid
 
@@ -25,6 +26,11 @@
     pkgs.signal-desktop
 
     pkgs.mpv
+
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.jetbrains-mono
+    pkgs.ripgrep
+    pkgs.fd
   ];
 
 }
