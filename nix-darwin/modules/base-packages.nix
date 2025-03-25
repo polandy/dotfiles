@@ -31,6 +31,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.ripgrep
     pkgs.fd
+    pkgs.gcc
   ];
 
 }

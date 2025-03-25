@@ -51,10 +51,11 @@
       system = "aarch64-linux";
       modules = [
         ./modules/default.nix
+        ./modules/base-packages.nix
+        ./modules/devops-packages.nix
         ./modules/nixvm-configuration.nix
         ./modules/nixvm-hardware-configuration.nix
-        ./modules/base-packages.nix
-
+        ./modules/nixvm-andy.nix
       ];
     };
   };

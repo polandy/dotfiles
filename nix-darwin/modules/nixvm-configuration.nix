@@ -37,16 +37,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.andy = {
-    isNormalUser = true;
-    password = "1234";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-  };
-
   programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
