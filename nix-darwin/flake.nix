@@ -56,6 +56,8 @@
         ./modules/nixvm-configuration.nix
         ./modules/nixvm-hardware-configuration.nix
         ./modules/nixvm-andy.nix
+#        ./modules/nixvm-wiayland.nix
+        ./modules/nixvm-x11.nix
       ];
     };
   };
