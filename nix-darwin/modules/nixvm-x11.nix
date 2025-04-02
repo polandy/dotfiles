@@ -7,27 +7,30 @@
   ];
   services = {
     xserver = {
+      enable = true;
       layout = "us";
       xkbVariant = "";
-      enable = true;
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          i3status
-          rofi
-        ];
-      };
+#      windowManager.i3 = {
+#        enable = true;
+#        extraPackages = with pkgs; [
+#          i3status
+#          rofi
+#        ];
+#      };
       desktopManager = {
         xterm.enable = false;
-        xfce = {
-          enable = true;
-          noDesktop = true;
-          enableXfwm = false;
-        };
+        plasma6 = {
+            enable = true;
+          };
+#        xfce = {
+#          enable = true;
+#          noDesktop = true;
+#          enableXfwm = false;
+#        };
       };
       displayManager = {
-        lightdm.enable = true;
-        defaultSession = "xfce+i3";
+        sddm.enable = true;
+#        defaultSession = "xfce+i3";
       };
     };
   };
