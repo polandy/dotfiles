@@ -40,6 +40,7 @@
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.ripgrep
     pkgs.fd
+    pkgs.fzf
     pkgs.cargo
     pkgs.lazygit
   ];
