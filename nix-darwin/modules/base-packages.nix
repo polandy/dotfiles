@@ -28,7 +28,6 @@
     pkgs.brave
     pkgs.flameshot
     pkgs.google-chrome
-    pkgs.signal-desktop
 
     pkgs.docker-compose
     pkgs.colima
