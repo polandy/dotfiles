@@ -1,20 +1,22 @@
-{ config, pkgs, lib, self, ... }:
+{pkgs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.jetbrains.gateway
-    pkgs.jetbrains.idea-ultimate
-    pkgs.openshift
-    pkgs.minio-client
-    pkgs.vault
+  environment.systemPackages = with pkgs;  [
+    jetbrains.gateway
+    jetbrains.idea-ultimate
+    openshift
+    minio-client
+    vault
 
-    pkgs.kubeconform
-    pkgs.kube-linter
-    pkgs.yamllint
-    pkgs.kubernetes-helm
-    pkgs.yq
+    kubectl
+    kubectl-validate
+    kubeconform
+    kube-linter
+    kubernetes-helm
+    yamllint
+    yq
   ];
 
 }
