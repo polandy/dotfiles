@@ -5,7 +5,7 @@
     brews = [
     ];
     casks = [
-      "mongodb-compass"
+      "keepassxc"
     ];
   };
 }

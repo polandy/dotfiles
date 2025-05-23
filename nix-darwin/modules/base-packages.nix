@@ -8,6 +8,7 @@
     pkgs.bat
     pkgs.git
     pkgs.findutils
+    pkgs.gnused
     pkgs.htop
     pkgs.mas
     pkgs.mise
@@ -17,6 +18,7 @@
     pkgs.tmux
     pkgs.tree
     pkgs.unixtools.watch
+    pkgs.wget
     pkgs.vivid
 
     pkgs.raycast
