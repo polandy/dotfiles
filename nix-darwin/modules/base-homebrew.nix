@@ -23,7 +23,6 @@
       "bitwarden"
       "docker"
       "firefox"
-      "nextcloud"
       "font-fira-code-nerd-font"
       "font-hack-nerd-font"
       "logseq"
