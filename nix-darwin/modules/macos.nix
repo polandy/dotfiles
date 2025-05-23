@@ -5,6 +5,7 @@
     shells = [ pkgs.fish ];
   };
   system = {
+    primaryUser = "andy";
     defaults = {
       NSGlobalDomain = {
         _HIHideMenuBar = true;
