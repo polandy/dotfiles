@@ -17,6 +17,7 @@
     kubernetes-helm
     yamllint
     yq
+    k9s
   ];
 
 }
