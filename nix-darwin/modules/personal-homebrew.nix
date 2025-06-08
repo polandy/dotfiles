@@ -1,4 +1,4 @@
-{ config, pkgs, lib, self, ... }:
+{ pkgs, ... }:
 
 {
   homebrew = {
@@ -6,6 +6,7 @@
     ];
     casks = [
       "nextcloud"
+      "darktable"
       "digikam"
       "fujifilm-x-raw-studio"
       "steam"
