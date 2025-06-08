@@ -6,6 +6,7 @@
     ];
     casks = [
       "keepassxc"
+      "docker"
     ];
   };
 }

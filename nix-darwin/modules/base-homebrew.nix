@@ -21,7 +21,6 @@
     casks = [
       "aerospace"
       "bitwarden"
-      "docker"
       "firefox"
       "font-fira-code-nerd-font"
       "font-hack-nerd-font"

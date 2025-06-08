@@ -10,6 +10,11 @@
     minio-client
     vault
 
+    docker-compose
+    colima
+    lima
+
+
     kubectl
     kubectl-validate
     kubeconform

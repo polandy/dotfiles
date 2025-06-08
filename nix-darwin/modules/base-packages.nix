@@ -29,10 +29,6 @@
     pkgs.flameshot
     pkgs.google-chrome
 
-    pkgs.docker-compose
-    pkgs.colima
-    pkgs.lima
-
     pkgs.mpv
 
     pkgs.lua
