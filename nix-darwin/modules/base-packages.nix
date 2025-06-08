@@ -6,6 +6,7 @@
   environment.systemPackages = [
     pkgs.alacritty
     pkgs.bat
+    pkgs.coreutils # gnu core utilities
     pkgs.git
     pkgs.findutils
     pkgs.gnused
