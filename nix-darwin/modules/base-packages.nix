@@ -27,7 +27,6 @@
     pkgs.vscode
 
     pkgs.brave
-    pkgs.flameshot
     pkgs.google-chrome
 
     pkgs.mpv
