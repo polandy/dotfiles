@@ -8,7 +8,6 @@
     jetbrains.idea-ultimate
     openshift
     minio-client
-    vault
 
     docker-compose
     colima
