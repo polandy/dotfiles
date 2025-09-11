@@ -26,6 +26,10 @@
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
           ./modules/devops-homebrew.nix
+
+          { # Inline module to disable Nix
+            nix.enable = false;
+          }
         ];
       };
       "amba" = nix-darwin.lib.darwinSystem {
