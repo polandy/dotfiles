@@ -35,8 +35,10 @@ coolermaster = [
   "generic/xorg",
   "generic/base-ui",
   "generic/photography",
-  "generic/virtualbox",
+  #  "generic/virtualbox",
   "generic/latex",
+  "generic/beets",
+  "generic/davinciresolve",
   "hosts/coolermaster"
 ]
 #server = ["example_group"]

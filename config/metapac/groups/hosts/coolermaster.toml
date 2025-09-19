@@ -10,7 +10,15 @@ arch = [
   "nvidia-settings",
   "nvtop",
 
+  "cuda",
+
   "opencl-nvidia",
+  "davinci-resolve",
 
   "steam",
+  "sunshine-git",
+
+  "lightworks",
+
+  "jdownloader2"
 ]
