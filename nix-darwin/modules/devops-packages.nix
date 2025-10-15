@@ -20,7 +20,7 @@
     kube-linter
     kubernetes-helm
     yamllint
-    yq
+    yq-go
     k9s
   ];
 
