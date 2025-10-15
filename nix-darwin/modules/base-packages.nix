@@ -32,7 +32,7 @@
     pkgs.mpv
 
     pkgs.lua
-    pkgs.sketchybar-app-font
+    #    pkgs.sketchybar-app-font
     pkgs.nerd-fonts.fira-code
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.ripgrep

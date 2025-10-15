@@ -8,18 +8,18 @@
     # and if the formula is a cask, removes all files associated with that cask.
     # In other words, brew uninstall --zap is run for all those formulae.
     onActivation.cleanup = "zap";
-    taps = [
-      "FelixKratz/formulae" # used for borders and sketchybar
-      "nikitabobko/tap" # used for aerospace
-    ];
+    #    taps = [
+    #      "FelixKratz/formulae" # used for borders and sketchybar
+    #      "nikitabobko/tap" # used for aerospace
+    #    ];
     brews = [
-      "borders"
-      "sketchybar"
+      #"borders"
+      #      "sketchybar"
       "ifstat"
       "mas"
     ];
     casks = [
-      "aerospace"
+#      "aerospace"
       "bitwarden"
       "firefox"
       "font-fira-code-nerd-font"
