@@ -8,6 +8,13 @@
     primaryUser = "andy";
     defaults = {
       NSGlobalDomain = {
+        InitialKeyRepeat = 15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
+        KeyRepeat = 4;         # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
+        NSAutomaticSpellingCorrectionEnabled = false;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
         _HIHideMenuBar = true;
         "com.apple.keyboard.fnState" = true;
         "com.apple.mouse.tapBehavior" = 1;
