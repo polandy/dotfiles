@@ -1,39 +1,4 @@
-call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'preservim/nerdtree'
-Plug 'kien/ctrlp.vim'
-
-"Plug 'davidhalter/jedi-vim', { 'on': []}
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" highlights multiple instances of the same word that is under the cursor
-Plug 'RRethy/vim-illuminate'
-
-" input quote and brackets as pairs
-Plug 'jiangmiao/auto-pairs'
-
-Plug 'scrooloose/nerdcommenter'
-
-Plug 'SirVer/ultisnips'
-
-" status/tabline for vim
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'morhetz/gruvbox'
-
-Plug 'machakann/vim-highlightedyank'
-
-Plug 'tpope/vim-markdown'
-
-" A Vim plugin which shows a git diff in the sign column. 
-Plug 'airblade/vim-gitgutter'
-
-call plug#end()
-
-
 set nocompatible        " use Vim defaults (much better!)
-colorscheme gruvbox
 set background=dark
 syntax on
 filetype on

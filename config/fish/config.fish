@@ -10,10 +10,10 @@ set -g LANG en_US.utf8
 set -x LC_ALL en_US.utf8
 set -x LC_CTYPE en_US.utf8
 
-if command -v vivid > /dev/null
+if command -v vivid >/dev/null
     set -gx LS_COLORS (vivid generate molokai)
 end
-if command -v mise > /dev/null
+if command -v mise >/dev/null
     mise activate fish | source
 end
 
@@ -29,7 +29,7 @@ git config --global alias.subst "submodule status --recursive"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # abbreviations
-abbr -a g 'git'
+abbr -a g git
 abbr -a gp 'git push'
 abbr -a gu 'git pull --rebase'
 abbr -a gl 'git lg'
@@ -49,15 +49,15 @@ abbr -a stash "git stash "
 abbr -a pop "git stash pop"
 
 # docker stuff
-abbr -a dc 'docker-compose'
+abbr -a dc docker-compose
 abbr -a dcu 'docker-compose up'
 abbr -a dcud 'docker-compose up -d'
 abbr -a dclf 'docker-compose logs -f'
 abbr -a dce 'docker-compose exec app'
 
 # vim related stuff
-alias vi="nvim -p"
-alias vim="nvim -p"
+alias vi="vim -p"
+alias vim="vim -p"
 set -x EDITOR nvim
 set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 
@@ -65,7 +65,7 @@ set -x VISUAL_EDITOR nvim -p -u ~/.vim/.vimrc
 alias ssh="env TERM=xterm ssh"
 
 if test -e ~/.config/fish/config_local.fish
-  . ~/.config/fish/config_local.fish
+    . ~/.config/fish/config_local.fish
 end
 
 # golang
@@ -75,11 +75,11 @@ set os_name (uname -s)
 
 # Load macOS-specific configuration
 set darwin_dir = $HOME/.dotfiles/config/fish/darwin_functions
-if test $os_name = "Darwin"
-  set fish_greeting "Darwin fish config"
-  for file in $darwin_dir/*.fish
-    if test -f $file
-      source $file
+if test $os_name = Darwin
+    set fish_greeting "Darwin fish config"
+    for file in $darwin_dir/*.fish
+        if test -f $file
+            source $file
+        end
     end
-  end
 end
