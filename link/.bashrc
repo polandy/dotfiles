@@ -24,8 +24,8 @@ function dotfiles() {
 
 # functionallity for the 'sm' command, that let's one switch
 # the user but keeping it's own environment
-export INIT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"	# dir this script is in
-export HOME_DIR=$(eval echo ~$(id -un))	# home dir of current user
+export INIT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" # dir this script is in
+export HOME_DIR=$(eval echo ~$(id -un))                         # home dir of current user
 
 # make sure to use right history file
 HISTFILE=$HOME_DIR/.bash_history
@@ -47,9 +47,11 @@ if [ -r $INIT_DIR/.tmux.conf ]; then
   alias tmux="HOME=$INIT_DIR tmux -f $INIT_DIR/.tmux.conf"
 fi
 
-
 src
 
 unset INIT_DIR
 export HOME=$HOME_DIR
-cd $HOME_DIR
+
+if [[ $- == *i* ]] && command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi
