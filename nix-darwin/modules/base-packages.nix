@@ -27,8 +27,6 @@
     pkgs.vscode
 
     pkgs.brave
-    pkgs.google-chrome
-
     pkgs.mpv
 
     pkgs.lua

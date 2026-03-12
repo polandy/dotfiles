@@ -5,7 +5,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;  [
     jetbrains.gateway
-    jetbrains.idea-ultimate
+    jetbrains.idea
     openshift
     minio-client
 
