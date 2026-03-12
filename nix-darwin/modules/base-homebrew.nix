@@ -16,11 +16,11 @@
       "borders"
       "sketchybar"
       "ifstat"
+      "mas"
       "gemini-cli"
     ];
     casks = [
       "aerospace"
-      "bitwarden"
       "firefox"
       "google-chrome"
       "font-fira-code-nerd-font"
@@ -35,6 +35,7 @@
    # even if is set to "uninstall" or "zap" (this is currently a limitation of Homebrew Bundle).
     masApps = {
      wireguard = 1451685025;
+     bitwarden = 1352778147;
     };
   };
 }
