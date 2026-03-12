@@ -16,6 +16,7 @@
       "borders"
       "sketchybar"
       "ifstat"
+      "gemini-cli"
     ];
     casks = [
       "aerospace"
@@ -26,6 +27,7 @@
       "font-hack-nerd-font"
       "logseq"
       "whatsapp"
+      "claude"
     ];
 
    # Note that you need to be signed into the Mac App Store for mas to successfully install and upgrade applications, 
