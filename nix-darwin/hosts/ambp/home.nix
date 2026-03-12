@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ../../modules/home-manager/syncthing.nix
-    ../../modules/home-manager/ssh.nix
     ../../modules/home-manager/macos-aerospace-desktop.nix
   ];
 
