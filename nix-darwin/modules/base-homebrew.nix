@@ -21,7 +21,6 @@
     ];
     casks = [
       "aerospace"
-      "bitwarden"
       "firefox"
       "font-fira-code-nerd-font"
       "font-hack-nerd-font"
@@ -35,6 +34,7 @@
    # even if is set to "uninstall" or "zap" (this is currently a limitation of Homebrew Bundle).
     masApps = {
      wireguard = 1451685025;
+     bitwarden = 1352778147;
     };
   };
 }
