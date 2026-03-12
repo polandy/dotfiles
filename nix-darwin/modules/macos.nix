@@ -4,6 +4,10 @@
   environment = {
     shells = [ pkgs.fish ];
   };
+  users.users.andy = {
+    name = "andy";
+    home = "/Users/andy";
+  };
   system = {
     primaryUser = "andy";
     defaults = {
