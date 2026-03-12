@@ -18,3 +18,28 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 ## Install powerline fonts for airline
 
 - [powerline-fonts](https://github.com/powerline/fonts)
+
+## Nix Darwin
+
+### Build and Switch
+
+```bash
+darwin-rebuild switch --flake ~/.dotfiles/nix-darwin#amba
+```
+
+### Maintenance and Rollback
+
+To list all generations:
+```bash
+darwin-rebuild --list-generations
+```
+
+To rollback to the previous generation:
+```bash
+darwin-rebuild switch --rollback
+```
+
+To switch to a specific generation:
+```bash
+darwin-rebuild switch --switch-generation <number>
+```
