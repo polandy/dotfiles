@@ -13,17 +13,17 @@
     automatically-unhide-macos-hidden-apps = false
 
     # AeroSpace doesn't inherit the Nix profile PATH.
-    # We inject the absolute Nix store paths to ensure sketchybar and borders can be found.
+    # We inject the absolute Nix store paths to ensure sketchybar, aerospace, and borders can be found.
     # For borders, we run the Home Manager generated bordersrc script so it picks up our config options.
     after-startup-command = [
-      "exec-and-forget /bin/bash -c 'PATH=${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:$PATH sketchybar'",
+      "exec-and-forget /bin/bash -c 'PATH=${pkgs.aerospace}/bin:${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:$PATH sketchybar'",
       "exec-and-forget /bin/bash -c 'PATH=${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:$PATH ~/.config/borders/bordersrc'"
     ]
 
     exec-on-workspace-change = [
       "/run/current-system/sw/bin/bash",
       "-c",
-      "PATH=${pkgs.sketchybar}/bin:$PATH sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
+      "PATH=${pkgs.aerospace}/bin:${pkgs.sketchybar}/bin:$PATH sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
     ]
 
     [key-mapping]
