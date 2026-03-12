@@ -16,7 +16,6 @@
       "borders"
       "sketchybar"
       "ifstat"
-      "mas"
     ];
     casks = [
       "aerospace"
