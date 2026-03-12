@@ -27,6 +27,7 @@
           ./modules/base-packages.nix
           ./modules/devops-packages.nix
           ./modules/base-homebrew.nix
+          ./modules/base-mas-apps.nix
           ./modules/devops-homebrew.nix
 
           { # Inline module to disable Nix
@@ -43,6 +44,7 @@
           ./modules/macos.nix
           ./modules/base-packages.nix
           ./modules/base-homebrew.nix
+          ./modules/base-mas-apps.nix
           ./modules/personal-packages.nix
           ./modules/personal-homebrew.nix
 
