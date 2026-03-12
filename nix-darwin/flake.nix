@@ -20,40 +20,21 @@
       "ambp" = nix-darwin.lib.darwinSystem {
         inherit system;
         # Pass 'self' to modules
-        specialArgs = { inherit self lib; };
+        specialArgs = { inherit self lib home-manager; };
         modules = [
-          ./modules/default.nix
-          ./modules/macos.nix
-          ./modules/base-packages.nix
-          ./modules/devops-packages.nix
-          ./modules/base-homebrew.nix
-          ./modules/base-mas-apps.nix
-          ./modules/devops-homebrew.nix
+          ./hosts/ambp
 
           { # Inline module to disable Nix
             nix.enable = false;
           }
         ];
-      };
-      "amba" = nix-darwin.lib.darwinSystem {
+        };
+        "amba" = nix-darwin.lib.darwinSystem {
         inherit system;
         # Pass 'self' to modules
-        specialArgs = { inherit self lib; };
+        specialArgs = { inherit self lib home-manager; };
         modules = [
-          ./modules/default.nix
-          ./modules/macos.nix
-          ./modules/base-packages.nix
-          ./modules/base-homebrew.nix
-          ./modules/base-mas-apps.nix
-          ./modules/personal-packages.nix
-          ./modules/personal-homebrew.nix
-
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.andy = import ./modules/home-manager/home.nix;
-          }
+          ./hosts/amba
 
           { # Inline module to disable Nix
             nix.enable = false;

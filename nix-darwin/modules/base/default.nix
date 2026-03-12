@@ -1,6 +1,13 @@
 { config, pkgs, self, ... }:
 
 {
+  imports = [
+    ./packages.nix
+    ./homebrew.nix
+    ./mas-apps.nix
+    ./user.nix
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # Necessary for using flakes on this system.

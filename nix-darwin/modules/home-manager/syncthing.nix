@@ -1,13 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.stateVersion = "24.05"; # Match a recent stable version or unstable
-  home.username = "andy";
-  home.homeDirectory = "/Users/andy";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   services.syncthing = {
     enable = true;
     settings = {
