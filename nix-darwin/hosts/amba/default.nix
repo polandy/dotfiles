@@ -14,5 +14,6 @@
   # Home Manager context, which doesn't know what home-manager.useGlobalPkgs means.
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+  home-manager.backupFileExtension = "backup";
   home-manager.users.andy = import ./home.nix;
 }

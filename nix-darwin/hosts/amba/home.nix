@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home-manager/syncthing.nix
+    ../../modules/home-manager/ssh.nix
   ];
 
   home.stateVersion = "24.05"; # Match a recent stable version or unstable
