@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.packages = with pkgs; [
-    jankyborders
-  ];
-
   xdg.configFile."borders/bordersrc" = {
     executable = true;
     text = ''

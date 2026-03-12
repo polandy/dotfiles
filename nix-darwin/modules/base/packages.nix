@@ -29,6 +29,10 @@
     pkgs.brave
     pkgs.mpv
 
+    pkgs.aerospace
+    pkgs.sketchybar
+    pkgs.jankyborders
+
     pkgs.lua
     pkgs.sketchybar-app-font
     pkgs.nerd-fonts.fira-code
