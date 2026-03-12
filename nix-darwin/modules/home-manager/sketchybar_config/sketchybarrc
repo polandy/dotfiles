@@ -3,6 +3,12 @@
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
 
+# When launched by AeroSpace, the $CONFIG_DIR environment variable may not be set.
+# This fallback ensures SketchyBar can always locate its items and plugins.
+if [ -z "$CONFIG_DIR" ]; then
+  CONFIG_DIR="$HOME/.config/sketchybar"
+fi
+
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
 FONT="Hack Nerd Font"

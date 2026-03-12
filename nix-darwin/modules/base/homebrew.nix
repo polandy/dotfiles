@@ -9,18 +9,13 @@
     # In other words, brew uninstall --zap is run for all those formulae.
     onActivation.cleanup = "zap";
     taps = [
-      "FelixKratz/formulae" # used for borders and sketchybar
-      "nikitabobko/tap" # used for aerospace
     ];
     brews = [
-      "borders"
-      "sketchybar"
       "ifstat"
       "mas"
       "gemini-cli"
     ];
     casks = [
-      "aerospace"
       "firefox"
       "google-chrome"
       "font-fira-code-nerd-font"
