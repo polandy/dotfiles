@@ -14,10 +14,9 @@ FONT="Hack Nerd Font"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000 y_offset=
+sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000 y_offset=0
 
 sketchybar --add event aerospace_workspace_change
-sketchybar --set bar layer=top
 
 for sid in $(aerospace list-workspaces --all); do
   sketchybar --add item space.$sid left \
