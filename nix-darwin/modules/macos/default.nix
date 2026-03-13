@@ -5,5 +5,6 @@
     ./ui.nix
     ./hardware.nix
     ./system.nix
+    ./fonts.nix
   ];
 }
