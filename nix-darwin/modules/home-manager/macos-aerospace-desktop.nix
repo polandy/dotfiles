@@ -6,4 +6,11 @@
     ./jankyborders.nix
     ./sketchybar.nix
   ];
+
+  home.packages = with pkgs; [
+    aerospace
+    sketchybar
+    jankyborders
+    sketchybar-app-font
+  ];
 }

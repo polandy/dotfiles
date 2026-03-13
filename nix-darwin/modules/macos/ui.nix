@@ -1,10 +1,6 @@
 { config, pkgs, self, ... }:
 
 {
-  services.aerospace.enable = true;
-  # Override the launchd command to drop the auto-generated --config-path.
-  # This forces AeroSpace to fall back to the Home Manager config at ~/.config/aerospace/aerospace.toml.
-  launchd.user.agents.aerospace.command = pkgs.lib.mkForce "${config.services.aerospace.package}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace";
   system = {
     defaults = {
       NSGlobalDomain = {
