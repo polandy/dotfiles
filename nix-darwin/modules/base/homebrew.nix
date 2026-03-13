@@ -16,6 +16,12 @@
       "gemini-cli"
     ];
     casks = [
+      "alacritty"
+      "raycast"
+      "utm"
+      "visual-studio-code"
+      "brave-browser"
+      "mpv"
       "firefox"
       "google-chrome"
       "font-fira-code-nerd-font"

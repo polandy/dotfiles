@@ -22,3 +22,8 @@ action = "ReceiveChar"
 key = "F"
 mods = "Command|Shift"
 
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

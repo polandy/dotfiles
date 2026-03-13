@@ -40,6 +40,18 @@ Start a Colima instance, a lightweight virtual machine running a container runti
 
 ## AeroSpace Startup Configuration
 
+## GUI App Permissions (TCC)
+
+macOS grants app permissions (e.g. Accessibility, Full Disk Access) by binary path or bundle ID.
+Nix packages install to `/nix/store/<hash>-<name>/`, and the hash changes with every update —
+causing macOS to revoke permissions and prompt for re-authorization after each `darwin-rebuild switch`.
+
+To avoid this, GUI apps that require system permissions are installed via Homebrew Cask instead
+of as Nix packages. Homebrew Cask installs to `/Applications/<App>.app` with a stable bundle ID,
+so permissions persist across updates.
+
+## AeroSpace Startup Configuration
+
 AeroSpace is configured to start automatically as a user-level service via Home Manager (`launchd.agents.aerospace.enable = true`) rather than its native `start-at-login` setting in `aerospace.toml`.
 
 This is intentional: the native `start-at-login` mechanism registers an absolute application path in macOS Login Items. Because Nix updates often change this path in the `/nix/store`, the native registration would break after every update. Using the Home Manager `launchd` service ensures the agent always points to the current, correct version of AeroSpace provided by Nix.

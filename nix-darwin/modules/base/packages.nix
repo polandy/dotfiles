@@ -4,7 +4,6 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    pkgs.alacritty
     pkgs.bat
     pkgs.coreutils # gnu core utilities
     pkgs.git
@@ -21,13 +20,6 @@
     pkgs.unixtools.watch
     pkgs.wget
     pkgs.vivid
-
-    pkgs.raycast
-    pkgs.utm
-    pkgs.vscode
-
-    pkgs.brave
-    pkgs.mpv
 
     pkgs.lua
     pkgs.nerd-fonts.fira-code
