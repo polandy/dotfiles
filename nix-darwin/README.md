@@ -37,3 +37,9 @@ Start a Colima instance, a lightweight virtual machine running a container runti
   * `--cpu 2`: Allocates 2 CPU cores to the virtual machine.
   * `--memory 2`: Allocates 2 GB of RAM to the virtual machine.
   * `--disk 20`: Allocates 20 GB of disk space for the virtual machine.
+
+## AeroSpace Startup Configuration
+
+AeroSpace is configured to start automatically via `nix-darwin` services (`services.aerospace.enable = true`) rather than its native `start-at-login` setting in `aerospace.toml`.
+
+This is intentional: the native `start-at-login` mechanism registers the absolute path of the application in macOS Login Items. Because Nix updates often change the path in the `/nix/store`, the native registration would break after every update. Using the `nix-darwin` service ensures `launchd` always points to the current version of AeroSpace.

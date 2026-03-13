@@ -1,6 +1,7 @@
 { config, pkgs, self, ... }:
 
 {
+  services.aerospace.enable = true;
   system = {
     defaults = {
       NSGlobalDomain = {
