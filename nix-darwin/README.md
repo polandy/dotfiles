@@ -43,3 +43,5 @@ Start a Colima instance, a lightweight virtual machine running a container runti
 AeroSpace is configured to start automatically via `nix-darwin` services (`services.aerospace.enable = true`) rather than its native `start-at-login` setting in `aerospace.toml`.
 
 This is intentional: the native `start-at-login` mechanism registers the absolute path of the application in macOS Login Items. Because Nix updates often change the path in the `/nix/store`, the native registration would break after every update. Using the `nix-darwin` service ensures `launchd` always points to the current version of AeroSpace.
+
+Note: `services.aerospace.enable` in `nix-darwin` defaults to generating its own configuration and passing it via `--config-path`. We explicitly override the `launchd` command in `modules/macos/ui.nix` to omit this flag, allowing AeroSpace to fall back to the rich configuration managed by Home Manager at `~/.config/aerospace/aerospace.toml`.
