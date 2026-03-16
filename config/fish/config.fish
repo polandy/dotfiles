@@ -71,15 +71,3 @@ end
 # golang
 set -g GOPATH ~/go
 
-set os_name (uname -s)
-
-# Load macOS-specific configuration
-set darwin_dir = $HOME/.dotfiles/config/fish/darwin_functions
-if test $os_name = Darwin
-    set fish_greeting "Darwin fish config"
-    for file in $darwin_dir/*.fish
-        if test -f $file
-            source $file
-        end
-    end
-end
