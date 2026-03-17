@@ -1,3 +1,3 @@
 function ll
-  ls -lsh --color $argv
+  eza -l --icons $argv
 end

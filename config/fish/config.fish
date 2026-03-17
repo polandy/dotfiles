@@ -16,6 +16,9 @@ end
 if command -v mise >/dev/null
     mise activate fish | source
 end
+if command -v zoxide >/dev/null
+    zoxide init fish | source
+end
 
 # git alias
 git config --global alias.co checkout

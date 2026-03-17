@@ -1,3 +1,3 @@
 function la
-  ls -lsha --color $argv
+  eza -la --icons $argv
 end
