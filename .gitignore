@@ -9,7 +9,10 @@
 /link/.ssh/id_*
 /link/.ssh/*.pem
 /link/.ssh/known_hosts
+
+# Vim
 vimrc_local
+config/vim/.netrwhist
 
 # ignore local fish config
 /config/fish/config_local.fish
