@@ -7,7 +7,7 @@
     "margin-top": 5,
     "spacing": 4,
     "modules-left": [
-        "hyprland/workspaces",
+        "custom/workspaces",
         "hyprland/window"
     ],
     "modules-center": [],
@@ -22,34 +22,11 @@
         "clock",
         "tray"
     ],
-    "hyprland/workspaces": {
-        "on-click": "activate",
-        "all-outputs": true,
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        },
-        "format": "{name} <span size=\"large\">{icon}</span>",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
-            "7": "",
-            "8": "",
-            "9": "",
-            "10": ""
-        }
+    "custom/workspaces": {
+        "exec": "~/.dotfiles/util/waybar/workspaces.py",
+        "return-type": "json",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window": {
         "format": "{}",

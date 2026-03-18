@@ -44,26 +44,9 @@ button:hover {
 
 /* Workspaces */
 
-#workspaces button {
+#custom-workspaces {
+  padding: 0 4px;
   color: @grey;
-  padding: 0 8px;
-  min-width: 26px;
-}
-
-#workspaces button.active,
-#workspaces button.focused {
-  color: @green;
-  background: @bg2;
-  border-radius: 12px;
-}
-
-#workspaces button.urgent {
-  color: @red;
-}
-
-#workspaces button.empty:not(.active):not(.focused) {
-  color: @grey;
-  opacity: 0.5;
 }
 
 /* Active window */
