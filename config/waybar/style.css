@@ -53,6 +53,8 @@ button:hover {
 #workspaces button.active,
 #workspaces button.focused {
   color: @green;
+  background: @bg2;
+  border-radius: 12px;
 }
 
 #workspaces button.urgent {
