@@ -9,9 +9,22 @@ arch = [
   "swaylock-effects",
   "waybar",
   "wdisplays",
-  "wl-clipboard",
   "wofi",
   "xdg-desktop-portal-wlr",
   # run X clients under wayland
   "xorg-xwayland",
+
+  "wl-clipboard",
+  "cliphist",
+
+  # niri, see https://github.com/niri-wm/niri/wiki/Getting-Started
+  "niri",
+  "xwayland-satellite",
+  "xdg-desktop-portal-gnome",
+  "xdg-desktop-portal-gtk",
+  "dms-shell-bin",
+  "matugen",
+  "cava",
+  "qt6-multimedia-ffmpeg",
+
 ]

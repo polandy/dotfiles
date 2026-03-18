@@ -52,6 +52,7 @@ arch = [
   "pavucontrol",
   "poppler-data",
   "poppler-glib",
+  "rofi",
   "sddm",
   "system-config-printer",
   "thunar",
