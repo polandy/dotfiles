@@ -19,8 +19,9 @@ font pango:$font
 # Random Background image example
 #set $Locker i3lock -i $(find $HOME/Pictures/wallpapers -name "*2560x1440.png" | shuf -n1) && sleep 1
 set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
-set $MonitorScript $HOME/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
+#set $MonitorScript $HOME/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
 set $SetxkbmapUs "setxkbmap us && setxkbmap -option compose:ralt"
+set $MapCapsLockToEscape "setxkbmap -option caps:escape"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -289,12 +290,14 @@ bindsym $mod+T mode "$mode_thinkpad"
 #                Autostart                  #
 #############################################
 exec --no-startup-id $SetxkbmapUs
+exec --no-startup-id $MapCapsLockToEscape
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id copyq
 exec --no-startup-id blueman-applet
 exec --no-startup-id $MonitorScript
 exec --no-startup-id numlockx on
+exec --no-startup-id (sleep 1 && xset s off -dpms)&
 
 exec_always --no-startup-id feh --bg-fill $(find $HOME/Nextcloud/wallpapers/ -iname "*.jpg" -o -iname "*.png"| shuf -n1)
 
