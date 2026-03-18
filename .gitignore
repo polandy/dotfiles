@@ -31,6 +31,8 @@ config/vim/.netrwhist
 # Darktable
 /config/darktable/library.db*
 /config/darktable/data.db*
+/config/darktable/darktablerc
+/config/darktable/shortcutsrc*
 
 # digikam
 /config/digikamrc
@@ -38,6 +40,9 @@ config/vim/.netrwhist
 
 # geeqie
 /config/geeqie/history
+/config/geeqie/accels
+/config/geeqie/geeqierc.xml
+/config/geeqie/marks
 
 #copyq
 /config/copyq/*
