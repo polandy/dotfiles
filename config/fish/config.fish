@@ -11,8 +11,9 @@ set -x LC_ALL en_US.utf8
 set -x LC_CTYPE en_US.utf8
 
 if command -v vivid >/dev/null
-    set -gx LS_COLORS (vivid generate molokai)
+    set -gx LS_COLORS (vivid generate catppuccin-mocha)
 end
+set -gx EZA_COLORS "da=38;5;245:sn=38;5;114:sb=38;5;245:uu=38;5;183:un=38;5;203:gu=38;5;183:gn=38;5;203:ur=38;5;222:uw=38;5;215:ux=38;5;114:ue=38;5;114:gr=38;5;222:gw=38;5;215:gx=38;5;114:tr=38;5;222:tw=38;5;215:tx=38;5;114:ga=38;5;114:gm=38;5;222:gd=38;5;203:gv=38;5;183:gt=38;5;215:gi=38;5;245:gc=1;38;5;203"
 if command -v mise >/dev/null
     mise activate fish | source
 end
