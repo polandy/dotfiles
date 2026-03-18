@@ -77,7 +77,7 @@
     },
     "network": {
         "format-wifi": "󰤨",
-        "format-ethernet": "",
+        "format-ethernet": "󰈀",
         "format-disconnected": "󰤮",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
@@ -120,6 +120,7 @@
     "tray": {
         "icon-size": 18,
         "spacing": 5,
-        "show-passive-items": true
+        "show-passive-items": true,
+        "icon-theme": "breeze"
     }
 }
