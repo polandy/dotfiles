@@ -11,6 +11,17 @@ arch = [
   "wdisplays",
   "wofi",
   "xdg-desktop-portal-wlr",
+
+  # hyprland
+  "hyprland",
+  "hyprlock",
+  "hypridle",
+  "kanshi",
+  "swww",
+  "brightnessctl",
+  "rofi-wayland",
+  "nwg-displays",
+  "wlr-randr",
   # run X clients under wayland
   "xorg-xwayland",
 

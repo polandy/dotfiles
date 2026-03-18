@@ -1,0 +1,16 @@
+# kanshi monitor profile configuration
+# See https://sr.ht/~emersion/kanshi/
+#
+# Run `kanshi` after logging into Hyprland.
+# Use `nwg-displays` or `wlr-randr` to discover output names,
+# then add named profiles below.
+#
+# Example named profile:
+# profile docked {
+#     output eDP-1 disable
+#     output "Dell Inc. Dell U2720Q" enable scale 1.5 position 0,0
+# }
+
+profile default {
+    output * enable
+}
