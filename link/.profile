@@ -3,4 +3,6 @@
 setxkbmap us
 
 # set the dpi for high resolution display
-xrandr --dpi 180
+if ! xrandr | grep -q "180"; then
+  xrandr --dpi 180
+fi
