@@ -36,7 +36,8 @@ coolermaster = [
   "generic/base-ui",
   "generic/photography",
   #  "generic/virtualbox",
-  "generic/latex",
+  #  "generic/latex",
+  "generic/wayland",
   "generic/beets",
   "generic/davinciresolve",
   "hosts/coolermaster"

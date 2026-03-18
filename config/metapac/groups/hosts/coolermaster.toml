@@ -6,19 +6,20 @@ arch = [
 
   "lib32-nvidia-utils",
 
-  "nvidia",
+  "nvidia-open",
   "nvidia-settings",
   "nvtop",
 
   "cuda",
 
   "opencl-nvidia",
-  "davinci-resolve",
 
   "steam",
   "sunshine-git",
 
-  "lightworks",
+  "jdownloader2",
 
-  "jdownloader2"
+  "calibre",
+
+  "ansible"
 ]
