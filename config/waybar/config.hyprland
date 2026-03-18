@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 33,
+    "height": 42,
     "margin-left": 5,
     "margin-right": 5,
     "margin-top": 5,
@@ -42,9 +42,9 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": "",
             "6": "",
-            "7": "",
+            "7": "",
             "8": "",
             "9": "",
             "10": ""
@@ -57,17 +57,17 @@
     },
     "clock": {
         "interval": 60,
-        "format": " {:%d.%m. %H:%M}",
+        "format": "󰥔 {:%d.%m. %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "interval": 2,
-        "format": " {usage}%",
+        "format": "󰻠 {usage}%",
         "tooltip": false
     },
     "memory": {
         "interval": 2,
-        "format": " {percentage}%",
+        "format": "󰍛 {percentage}%",
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
     },
     "disk": {
@@ -94,9 +94,9 @@
             "headphone": "󰋋",
             "headset": "󰋎",
             "default": [
-                "",
-                "",
-                ""
+                "󰕿",
+                "󰖀",
+                "󰕾"
             ]
         },
         "on-click": "pavucontrol"

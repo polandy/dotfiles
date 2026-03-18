@@ -14,8 +14,8 @@
 
 * {
   min-height: 0;
-  font-family: "sketchybar-app-font", "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, sans-serif;
-  font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font", "Hack Nerd Font", FontAwesome, sans-serif;
+  font-size: 14px;
 }
 
 window#waybar {
@@ -46,8 +46,8 @@ button:hover {
 
 #workspaces button {
   color: @grey;
-  padding: 0 6px;
-  min-width: 20px;
+  padding: 0 8px;
+  min-width: 26px;
 }
 
 #workspaces button.active,
@@ -81,7 +81,7 @@ button:hover {
 #network,
 #pulseaudio,
 #tray {
-  padding: 0 8px;
+  padding: 0 10px;
   color: @fg;
 }
 
