@@ -16,6 +16,7 @@
         "memory",
         "disk",
         "network",
+        "custom/vpn",
         "pulseaudio",
         "battery",
         "clock",
@@ -76,13 +77,18 @@
         "tooltip-format": "{used} / {total}"
     },
     "network": {
-        "format-wifi": "󰤨",
-        "format-ethernet": "󰈀",
+        "format-wifi": "󰤨 {ipaddr}",
+        "format-ethernet": "󰈀 {ipaddr}",
         "format-disconnected": "󰤮",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "nm-connection-editor"
+    },
+    "custom/vpn": {
+        "exec": "~/.config/waybar/vpn-status.sh",
+        "interval": 5,
+        "return-type": ""
     },
     "pulseaudio": {
         "scroll-step": 5,

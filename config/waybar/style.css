@@ -141,6 +141,10 @@ button:hover {
   color: @magenta;
 }
 
+#custom-vpn {
+  color: @green;
+}
+
 #tray > .needs-attention {
   color: @red;
 }
