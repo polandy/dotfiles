@@ -19,9 +19,8 @@ font pango:$font
 # Random Background image example
 #set $Locker i3lock -i $(find $HOME/Pictures/wallpapers -name "*2560x1440.png" | shuf -n1) && sleep 1
 set $Locker $HOME/.dotfiles/config/i3/bin/lock.sh
-#set $MonitorScript $HOME/.dotfiles/link/.screenlayout/1x32inch-dp-coolmaster.sh
-set $SetxkbmapUs "setxkbmap us && setxkbmap -option compose:ralt"
-set $MapCapsLockToEscape "setxkbmap -option caps:escape"
+set $MonitorScript autorandr --change
+set $SetxkbmapUs "setxkbmap us -option compose:ralt,caps:escape"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -181,20 +180,6 @@ bindsym $mod+Shift+Next         move container to workspace next
 bindsym $mod+Shift+BackSpace    workspace back_and_forth
 bindsym $mod+Shift+b            move container to workspace back_and_forth
 
-# workspaces on specific screens
-set $screen_internal   "DP-4"
-set $screen_external_1 "DP-3"
-workspace $workspace_chat          output $screen1
-workspace $workspace_mail          output $screen1
-workspace $workspace_misc          output $screen1
-workspace $workspace_browser       output $screen1
-workspace $workspace_terminal      output $screen1
-workspace $workspace_code          output $screen2
-workspace $workspace_imgprocessing output $screen2
-workspace $workspace8              output $screen2
-workspace $workspace9              output $screen2
-workspace $workspace_filebrowser   output $screen2
-
 # Create empty workspace
 bindsym   $mod+n                   exec   $HOME/.dotfiles/config/i3/bin/i3_empty_workspace.sh
 
@@ -223,7 +208,7 @@ for_window [class="^steam$" title="^Steam$"] floating disable
 set $mode_kblayout (C)H, (U)S
 mode "$mode_kblayout" {
     bindsym u exec --no-startup-id $SetxkbmapUs, mode "default"
-    bindsym c exec --no-startup-id setxkbmap ch, mode "default"
+    bindsym c exec --no-startup-id setxkbmap ch -option caps:escape, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -290,7 +275,6 @@ bindsym $mod+T mode "$mode_thinkpad"
 #                Autostart                  #
 #############################################
 exec --no-startup-id $SetxkbmapUs
-exec --no-startup-id $MapCapsLockToEscape
 exec --no-startup-id nm-applet
 exec --no-startup-id nextcloud
 exec --no-startup-id copyq
@@ -305,7 +289,6 @@ exec_always --no-startup-id feh --bg-fill $(find $HOME/Nextcloud/wallpapers/ -in
 #                 i3-bar                    #
 #############################################
 bar {
-#    status_command     i3status
     position           top
     workspace_buttons  yes
     tray_output        primary
