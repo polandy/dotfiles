@@ -11,38 +11,12 @@ import os
 import socket
 import subprocess
 import sys
+from pathlib import Path
 
-PLACEHOLDER = {
-    1:  "\uf086",   # comment
-    2:  "\uf0e0",   # envelope
-    3:  "\uf135",   # rocket
-    4:  "\uf269",   # firefox
-    5:  "\uf120",   # terminal
-    6:  "\uf121",   # repeat
-    7:  "\uf030",   # camera
-    8:  "\uf135",   # rocket
-    9:  "\uf005",   # star
-    10: "\uf108",   # desktop
-}
+sys.path.insert(0, str(Path(__file__).parent))
+from icons import APP_ICONS, APP_DEFAULT, WORKSPACE_PLACEHOLDERS as PLACEHOLDER
 
-APP_ICONS = {
-    "alacritty":        "\uf120",      # terminal
-    "firefox":          "\U000f0239",  # firefox
-    "thunderbird":      "\U000f01ee",  # mail
-    "jetbrains-idea":   "\U000f0eb4",  # intellij
-    "code":             "\U000f0e28",  # vscode
-    "codium":           "\U000f0e28",  # vscode
-    "vscodium":         "\U000f0e28",  # vscode
-    "steam":            "\U000f0296",  # steam
-    "thunar":           "\uf07b",      # folder
-    "copyq":            "\U000f0147",  # clipboard
-    "pavucontrol":      "\U000f057e",  # volume high
-    "blueman-manager":  "\U000f00af",  # bluetooth
-    "galculator":       "\uf1ec",      # calculator
-    "nextcloud":        "\U000f0178",  # cloud
-}
-
-DEFAULT_ICON = "\uf128"  # question mark
+DEFAULT_ICON = APP_DEFAULT
 
 TRIGGER_EVENTS = {
     "openwindow",
