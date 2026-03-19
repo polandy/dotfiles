@@ -8,7 +8,6 @@ arch = [
 
   "nvidia-open",
   "nvidia-settings",
-  "nvtop",
 
   "cuda",
 
@@ -18,8 +17,4 @@ arch = [
   "sunshine-git",
 
   "jdownloader2",
-
-  "calibre",
-
-  "ansible"
 ]

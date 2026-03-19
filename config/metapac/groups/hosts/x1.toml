@@ -1,6 +1,4 @@
 arch = [
-  "brightnessctl",
-
   "grub",
   "grub-btrfs",
 

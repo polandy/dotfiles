@@ -1,7 +1,4 @@
 arch = [
-  "darktable",
-  "digikam",
-  "hugin",
   "libopenraw",
-  "rapid-photo-downloader"
+  "rapid-photo-downloader",
 ]
