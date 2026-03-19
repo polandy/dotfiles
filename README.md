@@ -19,6 +19,17 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 
 - [powerline-fonts](https://github.com/powerline/fonts)
 
+## Package Management Strategy (Linux)
+
+On Arch Linux, two package managers coexist:
+
+| Manager | What goes here |
+|---------|---------------|
+| **yay/metapac** (this repo) | AUR packages, system daemons and drivers, anything requiring pacman hooks or systemd system units |
+| **home-manager** ([nix-config repo](https://github.com/polandy/nix-darwin-config)) | User-level tools and apps available in nixpkgs, dotfile/config management |
+
+**Rule of thumb:** if it's AUR (e.g. `-bin`, `-git` suffixes) or touches the system (kernel, display manager, portals, bluetooth), it stays here. If it's in nixpkgs and user-level, it belongs in home-manager.
+
 ## Nix Darwin
 
 ### Build and Switch
