@@ -48,28 +48,28 @@
     },
     "clock": {
         "interval": 60,
-        "format": "󰥔 {:%d.%m. %H:%M}",
+        "format": " {:%d.%m. %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "interval": 2,
-        "format": "󰻠 {usage}%",
+        "format": " {usage}%",
         "tooltip": false
     },
     "memory": {
         "interval": 2,
-        "format": "󰍛 {percentage}%",
+        "format": " {percentage}%",
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
     },
     "disk": {
         "interval": 30,
-        "format": "󰋊 {percentage_used}%",
+        "format": " {percentage_used}%",
         "tooltip-format": "{used} / {total}"
     },
     "network": {
-        "format-wifi": "󰤨 {ipaddr}",
-        "format-ethernet": "󰈀 {ipaddr}",
-        "format-disconnected": "󰤮",
+        "format-wifi": " {ipaddr}",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format-disconnected": "Disconnected",
@@ -83,16 +83,16 @@
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon} {volume}%",
-        "format-muted": "󰖁",
+        "format-muted": "",
         "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": "󰖁",
+        "format-bluetooth-muted": "",
         "format-icons": {
-            "headphone": "󰋋",
-            "headset": "󰋎",
+            "headphone": "",
+            "headset": "",
             "default": [
-                "󰕿",
-                "󰖀",
-                "󰕾"
+                "",
+                "",
+                ""
             ]
         },
         "on-click": "pavucontrol"
