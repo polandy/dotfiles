@@ -45,6 +45,9 @@ APP_VOLUME       = "\U000f057e"  # nf-md-volume_high    (pavucontrol)
 APP_BLUETOOTH    = "\U000f00af"  # nf-md-bluetooth      (blueman-manager)
 APP_CALCULATOR   = "\uf1ec"      # fa-calculator        (galculator)
 APP_CLOUD        = "\U000f0178"  # nf-md-cloud          (nextcloud)
+APP_CAMERA       = "\uf030"      # fa-camera            (digikam)
+APP_CAMERA_RETRO = "\uf083"      # fa-camera-retro      (darktable)
+APP_BANK         = "\uf19c"      # fa-bank              (homebank)
 APP_DEFAULT      = "\uf128"      # fa-question-circle
 
 APP_ICONS = {
@@ -64,6 +67,9 @@ APP_ICONS = {
     "blueman-manager":  APP_BLUETOOTH,
     "galculator":       APP_CALCULATOR,
     "nextcloud":        APP_CLOUD,
+    "digikam":          APP_CAMERA,
+    "darktable":        APP_CAMERA_RETRO,
+    "homebank":         APP_BANK,
 }
 
 # ── System / status bar ───────────────────────────────────────────────────────
