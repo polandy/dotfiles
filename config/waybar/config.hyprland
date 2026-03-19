@@ -7,7 +7,16 @@
     "margin-top": 5,
     "spacing": 4,
     "modules-left": [
-        "custom/workspaces",
+        "custom/ws1",
+        "custom/ws2",
+        "custom/ws3",
+        "custom/ws4",
+        "custom/ws5",
+        "custom/ws6",
+        "custom/ws7",
+        "custom/ws8",
+        "custom/ws9",
+        "custom/ws10",
         "hyprland/window"
     ],
     "modules-center": [],
@@ -22,12 +31,16 @@
         "clock",
         "tray"
     ],
-    "custom/workspaces": {
-        "exec": "~/.dotfiles/util/waybar/workspaces.py",
-        "return-type": "json",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
-    },
+    "custom/ws1":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 1",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws2":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 2",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws3":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 3",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws4":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 4",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws5":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 5",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws6":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 6",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws7":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 7",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws8":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 8",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws9":  { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 9",  "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
+    "custom/ws10": { "exec": "~/.dotfiles/util/waybar/workspaces.py --workspace 10", "return-type": "json", "on-scroll-up": "hyprctl dispatch workspace e+1", "on-scroll-down": "hyprctl dispatch workspace e-1" },
     "hyprland/window": {
         "format": "{}",
         "max-length": 60,

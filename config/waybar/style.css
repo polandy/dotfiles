@@ -44,9 +44,23 @@ button:hover {
 
 /* Workspaces */
 
-#custom-workspaces {
-  padding: 0 4px;
+#custom-ws1, #custom-ws2, #custom-ws3, #custom-ws4, #custom-ws5,
+#custom-ws6, #custom-ws7, #custom-ws8, #custom-ws9, #custom-ws10 {
+  padding: 0 6px;
   color: @grey;
+  border-radius: 0;
+}
+
+#custom-ws1.active, #custom-ws2.active, #custom-ws3.active, #custom-ws4.active, #custom-ws5.active,
+#custom-ws6.active, #custom-ws7.active, #custom-ws8.active, #custom-ws9.active, #custom-ws10.active {
+  color: @green;
+  background: @bg2;
+  border-radius: 12px;
+}
+
+#custom-ws1.empty, #custom-ws2.empty, #custom-ws3.empty, #custom-ws4.empty, #custom-ws5.empty,
+#custom-ws6.empty, #custom-ws7.empty, #custom-ws8.empty, #custom-ws9.empty, #custom-ws10.empty {
+  opacity: 0.5;
 }
 
 /* Active window */
