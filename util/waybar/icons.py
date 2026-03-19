@@ -35,7 +35,7 @@ WORKSPACE_PLACEHOLDERS = {
 APP_TERMINAL     = "\uf120"      # fa-terminal          (alacritty, kitty, …)
 APP_FILES        = "\uf07b"      # fa-folder-open       (thunar, nautilus)
 APP_FIREFOX      = "\U000f0239"  # nf-md-firefox
-APP_CHROME       = "\U000f0239"  # nf-md-firefox        (chromium fallback)
+APP_CHROME       = "\uf268"      # fa-chrome
 APP_VSCODE       = "\U000f0e28"  # nf-md-microsoft_visual_studio_code
 APP_INTELLIJ     = "\U000f0eb4"  # nf-md-language_java  (jetbrains-idea)
 APP_MAIL         = "\U000f01ee"  # nf-md-email          (thunderbird)
@@ -50,6 +50,8 @@ APP_DEFAULT      = "\uf128"      # fa-question-circle
 APP_ICONS = {
     "alacritty":        APP_TERMINAL,
     "firefox":          APP_FIREFOX,
+    "chrome":           APP_CHROME,
+    "chromium":         APP_CHROME,
     "thunderbird":      APP_MAIL,
     "jetbrains-idea":   APP_INTELLIJ,
     "code":             APP_VSCODE,
