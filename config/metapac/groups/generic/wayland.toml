@@ -21,6 +21,7 @@ arch = [
   "swww",
   "brightnessctl",
   "nwg-displays",
+  "hyprswitch",
   "wlr-randr",
   # run X clients under wayland
   "xorg-xwayland",
