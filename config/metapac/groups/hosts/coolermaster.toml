@@ -8,9 +8,9 @@ arch = [
 
   "nvidia-open",
   "nvidia-settings",
+  "nvtop",
 
   "cuda",
-
   "opencl-nvidia",
 
   "steam",
