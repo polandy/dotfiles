@@ -1,0 +1,51 @@
+embedart:
+  auto: true
+  remove_art_file: true
+fetchart:
+  auto: true
+format_album: $albumartist - $year - $album
+format_item: $artist - $year - $album - $title
+ftintitle:
+  auto: true
+import:
+  copy: false
+  move: true
+  write: true
+lyrics:
+  auto: true
+paths:
+  albumtype:"Audio Drama": Audio_Dramas/%the{$albumartist}/$year-$album%aunique{}/$track $title
+  albumtype:"compilation": Compilations/$year-$album%aunique{}/$track $artist $title
+  albumtype:"soundtrack": soundtrack/$year-$album%aunique{}/$track $artist $title
+  default: Music/%the{$albumartist}/$year-$album%aunique{}/$track $title
+plugins:
+- fetchart
+- embedart
+- ftintitle
+- lyrics
+- types
+- lastgenre
+- badfiles
+- replaygain
+- the
+- missing
+- rewrite
+replace:
+  '[<>:"\?\*\|]': _
+  '[\\//]': _
+  '[\x00-\x1f]': _
+  '\ ': _
+  \.$: _
+  \s+$: ''
+  ^-: _
+  ^\.: _
+  ^\s+: ''
+replaygain:
+  auto: false
+  backend: gstreamer
+rewrite:
+  artist JAY-Z.*Linkin Park: Linkin Park
+  artist OVERWERK*: OVERWERK
+types:
+  radioplay: bool
+  ripped: bool
