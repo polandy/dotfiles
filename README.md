@@ -19,6 +19,20 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 
 - [powerline-fonts](https://github.com/powerline/fonts)
 
+## System Config Files
+
+Some config files must be owned by root and cannot be symlinked. These live in
+`system/` and are deployed via:
+
+```bash
+bin/install-system-config
+```
+
+| File | Destination | Purpose |
+|------|-------------|---------|
+| `system/sddm.conf.d/autologin.conf` | `/etc/sddm.conf.d/autologin.conf` | SDDM autologin |
+| `system/usr-local-bin/timeshift` | `/usr/local/bin/timeshift` | Wrapper that re-exports `DBUS_SESSION_BUS_ADDRESS` so timeshift can send desktop notifications when invoked as root from a pacman hook |
+
 ## Package Management Strategy (Linux)
 
 On Arch Linux, two package managers coexist:

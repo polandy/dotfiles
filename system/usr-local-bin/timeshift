@@ -1,0 +1,9 @@
+#!/bin/bash
+# Re-export the user's D-Bus session bus so timeshift can send desktop
+# notifications when invoked as root from a pacman hook.
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    for _bus in /run/user/*/bus; do
+        [ -S "$_bus" ] && export DBUS_SESSION_BUS_ADDRESS="unix:path=$_bus" && break
+    done
+fi
+exec /usr/bin/timeshift "$@"
