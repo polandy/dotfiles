@@ -1,6 +1,0 @@
-arch = [
-  "bluez",
-  "bluez-libs",
-  "bluez-utils",
-  "iwd"
-]

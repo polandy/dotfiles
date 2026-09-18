@@ -1,5 +1,0 @@
-arch = [
-  "beets",
-  "python-pylast",
-  "mp3val"
-]

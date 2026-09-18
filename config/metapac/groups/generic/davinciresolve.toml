@@ -1,8 +1,0 @@
-arch = [
-  "libpng12",
-  "qt5-webengine",
-  "qt5-quickcontrols2",
-  "apr-util",
-  "libc++",
-  "libc++abi"
-]
