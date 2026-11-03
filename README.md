@@ -1,22 +1,14 @@
 dotfiles
 ========
 
-User configuration (shell, editor, tmux, desktop, app configs) lives in
-[nix-darwin-config](https://github.com/polandy/nix-darwin-config) and is managed
-by home-manager. This repo only keeps root-owned system files and helper scripts.
+User configuration (shell, editor, tmux, desktop, app configs) and all package
+declarations (metapac on Arch, nix-darwin on macOS) live in
+[nix-darwin-config](https://github.com/polandy/nix-darwin-config) and are
+managed by home-manager. See its README for building, switching and the
+package management strategy.
 
-## Tools
-
-- [neovim](https://github.com/neovim/neovim)
-- [alacritty](https://github.com/alacritty/alacritty)
-- [fish-shell](https://github.com/fish-shell/fish-shell)
-- [mise-en-place](https://github.com/creationix/nvm)
-- [gnome-keyring](https://wiki.gnome.org/Projects/GnomeKeyring) and [libsecret](https://wiki.gnome.org/Projects/Libsecret) to store secrets, passwords, keys, certificates and make them available to applications
-- [vivid](https://github.com/sharkdp/vivid) generator for LS_COLORS
-
-## Install powerline fonts for airline
-
-- [powerline-fonts](https://github.com/powerline/fonts)
+This repo only keeps what home-manager cannot manage: root-owned system files
+and a few standalone helper scripts.
 
 ## System Config Files
 
@@ -32,38 +24,17 @@ bin/install-system-config
 | `system/sddm.conf.d/autologin.conf` | `/etc/sddm.conf.d/autologin.conf` | SDDM autologin |
 | `system/usr-local-bin/timeshift` | `/usr/local/bin/timeshift` | Wrapper that re-exports `DBUS_SESSION_BUS_ADDRESS` so timeshift can send desktop notifications when invoked as root from a pacman hook |
 
-## Package Management Strategy (Linux)
+## Scripts
 
-On Arch Linux, two package managers coexist:
+| Path | Purpose |
+|------|---------|
+| `bin/install-system-config` | Deploys the files in `system/` |
+| `bin/whatsapp` | Opens WhatsApp Web as a Chromium app window |
+| `util/audio/` | Raise/lower volume, cycle the default audio sink |
+| `util/hyprland/windows.sh` | Hyprland window switcher (uses wofi, which is no longer installed) |
+| `util/misc/toggle-touchpad.sh` | Toggle the touchpad |
+| `util/screenshot/screenshot.sh` | rofi menu for grimblast screenshots (area/screen/window, clipboard or file) |
+| `util/set-mouse-acceleration.sh` | Set mouse acceleration (X11/xinput only) |
+| `util/waybar/` | Waybar workspace/icon scripts (home-manager ships its own copy) |
 
-| Manager | What goes here |
-|---------|---------------|
-| **yay/metapac** (this repo) | AUR packages, system daemons and drivers, anything requiring pacman hooks or systemd system units |
-| **home-manager** ([nix-config repo](https://github.com/polandy/nix-darwin-config)) | User-level tools and apps available in nixpkgs, dotfile/config management |
-
-**Rule of thumb:** if it's AUR (e.g. `-bin`, `-git` suffixes) or touches the system (kernel, display manager, portals, bluetooth), it stays here. If it's in nixpkgs and user-level, it belongs in home-manager.
-
-## Nix Darwin
-
-### Build and Switch
-
-```bash
-darwin-rebuild switch --flake ~/.dotfiles/nix-darwin#amba
-```
-
-### Maintenance and Rollback
-
-To list all generations:
-```bash
-darwin-rebuild --list-generations
-```
-
-To rollback to the previous generation:
-```bash
-darwin-rebuild switch --rollback
-```
-
-To switch to a specific generation:
-```bash
-darwin-rebuild switch --switch-generation <number>
-```
+None of these scripts are referenced by the home-manager configuration.
