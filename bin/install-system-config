@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Installs system-level config files that require sudo and can't be symlinked.
+# Run this after cloning/updating dotfiles on a new machine.
+
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+echo "Installing system config files..."
+
+# SDDM autologin
+sudo mkdir -p /etc/sddm.conf.d
+sudo cp "$DOTFILES/system/sddm.conf.d/autologin.conf" /etc/sddm.conf.d/autologin.conf
+echo "  ✔ /etc/sddm.conf.d/autologin.conf"
+
+# timeshift D-Bus wrapper
+sudo install -Dm755 "$DOTFILES/system/usr-local-bin/timeshift" /usr/local/bin/timeshift
+echo "  ✔ /usr/local/bin/timeshift"
+
+echo "Done."

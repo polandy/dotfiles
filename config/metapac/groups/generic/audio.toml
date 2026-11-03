@@ -1,9 +1,0 @@
-arch = [
-  "gst-plugin-pipewire",
-  "libpulse",
-  "pipewire",
-  "pipewire-alsa",
-  "pipewire-jack",
-  "pipewire-pulse",
-  "wireplumber"
-]

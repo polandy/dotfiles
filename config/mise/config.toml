@@ -1,7 +1,0 @@
-[tools]
-go = "1.21"
-java = "17"
-# install plugin: `mise plugin install maven`
-maven = "3"
-node = "22"
-usage = "latest"

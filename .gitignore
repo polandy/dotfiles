@@ -33,6 +33,7 @@ config/vim/.netrwhist
 /config/darktable/data.db*
 /config/darktable/darktablerc
 /config/darktable/shortcutsrc*
+/config/darktable/darktablerc-common
 
 # digikam
 /config/digikamrc
@@ -55,3 +56,4 @@ config/vim/.netrwhist
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
 .aider*
+__pycache__/
