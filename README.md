@@ -1,10 +1,9 @@
-Installation
-============
+dotfiles
+========
 
-```
-
-bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
-```
+User configuration (shell, editor, tmux, desktop, app configs) lives in
+[nix-darwin-config](https://github.com/polandy/nix-darwin-config) and is managed
+by home-manager. This repo only keeps root-owned system files and helper scripts.
 
 ## Tools
 
@@ -13,7 +12,7 @@ bash -c "$(curl -fsSL https://raw.github.com/polandy/dotfiles/master/bin/dotfile
 - [fish-shell](https://github.com/fish-shell/fish-shell)
 - [mise-en-place](https://github.com/creationix/nvm)
 - [gnome-keyring](https://wiki.gnome.org/Projects/GnomeKeyring) and [libsecret](https://wiki.gnome.org/Projects/Libsecret) to store secrets, passwords, keys, certificates and make them available to applications
-- [vivid](https://github.com/sharkdp/vivid) generator for LS_COLORS which is used in [config.fish](config/fish/config.fish)
+- [vivid](https://github.com/sharkdp/vivid) generator for LS_COLORS
 
 ## Install powerline fonts for airline
 

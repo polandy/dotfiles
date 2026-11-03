@@ -4,55 +4,6 @@
 .idea/
 .DS_Store
 
-# Top secret stuff!
-/link/.ssh/authorized_keys
-/link/.ssh/id_*
-/link/.ssh/*.pem
-/link/.ssh/known_hosts
-
-# Vim
-vimrc_local
-config/vim/.netrwhist
-
-# ignore local fish config
-/config/fish/config_local.fish
-/config/fish/fish_history
-/config/fish/fishd*
-/config/fish/fish_variables
-
-# ignore deoplete stuff
-*-rplugin*
-
-# Beets
-/config/beets/library.db
-/config/beets/state.pickle
-/config/beets/gmusicapi.yaml
-
-# Darktable
-/config/darktable/library.db*
-/config/darktable/data.db*
-/config/darktable/darktablerc
-/config/darktable/shortcutsrc*
-/config/darktable/darktablerc-common
-
-# digikam
-/config/digikamrc
-/config/gconf/apps/rapid-photo-downloader/
-
-# geeqie
-/config/geeqie/history
-/config/geeqie/accels
-/config/geeqie/geeqierc.xml
-/config/geeqie/marks
-
-#copyq
-/config/copyq/*
-!/config/copyq/*.conf
-!/config/copyq/*.ini
-/config/copyq/copyq-bak.conf
-/config/copyq/copyq_tabs.ini
-/config/copyq/copyq_geometry.ini
-
 # Ignore any file with LOCAL in the name (good for per-machine vars/functions)
 *LOCAL*
 .aider*
