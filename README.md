@@ -31,7 +31,7 @@ bin/install-system-config
 | `bin/install-system-config` | Deploys the files in `system/` |
 | `bin/whatsapp` | Opens WhatsApp Web as a Chromium app window |
 | `util/audio/` | Raise/lower volume, cycle the default audio sink |
-| `util/hyprland/windows.sh` | Hyprland window switcher (uses wofi, which is no longer installed) |
+| `util/hyprland/windows.sh` | Hyprland window switcher via wofi |
 | `util/misc/toggle-touchpad.sh` | Toggle the touchpad |
 | `util/screenshot/screenshot.sh` | rofi menu for grimblast screenshots (area/screen/window, clipboard or file) |
 | `util/set-mouse-acceleration.sh` | Set mouse acceleration (X11/xinput only) |
