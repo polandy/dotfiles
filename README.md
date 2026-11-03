@@ -8,7 +8,7 @@ managed by home-manager. See its README for building, switching and the
 package management strategy.
 
 This repo only keeps what home-manager cannot manage: root-owned system files
-and a few standalone helper scripts.
+and two small helper scripts.
 
 ## System Config Files
 
@@ -30,11 +30,3 @@ bin/install-system-config
 |------|---------|
 | `bin/install-system-config` | Deploys the files in `system/` |
 | `bin/whatsapp` | Opens WhatsApp Web as a Chromium app window |
-| `util/audio/` | Raise/lower volume, cycle the default audio sink |
-| `util/hyprland/windows.sh` | Hyprland window switcher via wofi |
-| `util/misc/toggle-touchpad.sh` | Toggle the touchpad |
-| `util/screenshot/screenshot.sh` | rofi menu for grimblast screenshots (area/screen/window, clipboard or file) |
-| `util/set-mouse-acceleration.sh` | Set mouse acceleration (X11/xinput only) |
-| `util/waybar/` | Waybar workspace/icon scripts (home-manager ships its own copy) |
-
-None of these scripts are referenced by the home-manager configuration.
